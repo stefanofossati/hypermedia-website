@@ -6,6 +6,8 @@ node_modules
 # System files
 *.log
 
+# static site
+dist
 
 # Local env files
 .env

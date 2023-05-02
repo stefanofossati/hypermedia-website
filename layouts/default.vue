@@ -6,6 +6,7 @@
         <Header>
             <h1>Header</h1>
         </Header>
+        <slot />
     </div>
 </template>
 

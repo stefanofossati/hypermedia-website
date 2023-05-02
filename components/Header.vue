@@ -2,6 +2,9 @@
 <template>
     <header>
         <h1>Header</h1>
+        <nav>
+            <NuxtLink to = "/projects">Projects</NuxtLink>
+        </nav>
     </header>
 </template>
 
@@ -19,5 +22,11 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+    nav {
+        display: flex;
+        gap: 30px;
+        font-size: 17pt;
+        font-weight: bold;
     }
 </style>

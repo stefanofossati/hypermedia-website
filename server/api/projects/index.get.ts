@@ -12,8 +12,7 @@ export default async function defineEventHandler(event: any){
     }catch (error){
         throw new Error("Error form get");
     }
-
-    return data;
+    return data.data;
 };
 
 

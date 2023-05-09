@@ -14,3 +14,9 @@ dist
 
 # VSCode
 .vscode
+
+#JetBrians IDE
+.idea
+
+#Visual Studio
+.vs

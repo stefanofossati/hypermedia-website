@@ -1,7 +1,7 @@
 {
   "name": "hypermedia-website",
   "scripts": {
-    "dev": "tailwindcss build ./assets/css/styles.css -o ./assets/css/tailwind.css && nuxt dev",
+    "dev": "tailwindcss -i ./assets/css/styles.css -o ./assets/css/tailwind.css --watch & nuxt dev &",
     "build": "nuxt build",
     "generate": "nuxt generate",
     "start": "nuxt start"

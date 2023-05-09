@@ -11,7 +11,7 @@
                         <NuxtLink to='/about'>About</NuxtLink>
                     </li>
                     <li class="bg-green-200 hover:bg-green-700 rounded-xl text-green-700 hover:text-green-200 font-bold px-1.5">
-                        <NuxtLink to='/contact'>Contact</NuxtLink>
+                        <NuxtLink to='/contact'>Contacts</NuxtLink>
                     </li>
                 </menu>
             </nav>

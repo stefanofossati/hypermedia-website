@@ -1,11 +1,13 @@
-import type { NuxtConfig } from '@nuxt/types'
+import type {NuxtConfig} from '@nuxt/types'
 
 const config: NuxtConfig = {
   buildModules: [
-      '@nuxt/typescript-build'
+      '@nuxt/typescript-build',
+
   ],
   modules: [
-    '@nuxtjs/supabase'
+    '@nuxtjs/supabase',
+    '@nuxtjs/tailwindcss'
   ]
 }
 

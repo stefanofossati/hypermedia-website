@@ -1,24 +1,9 @@
 <!-- Home page -->
-
 <template>
-  <main>
-        <img id = "main-img" src = "~/assets/i3lab.png" />
-        <h2>
+    <div class="flex flex-col items-center justify-evenly h-full">
+        <img src="../assets/i3lab.png" alt="i3lab"/>
+        <h1 class="text-6xl">
             First Draft
-        </h2>
-    </main>
+        </h1>
+    </div>
 </template>
-
-<style>
-    #main-img {
-    width: 80%;
-    max-width: 1000px;
-    height: auto;
-    }
-    main {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-</style>

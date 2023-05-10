@@ -1,7 +1,9 @@
 {
   "name": "hypermedia-website",
   "scripts": {
-    "dev": "nuxt dev",
+    "css": "tailwindcss -i ./assets/css/styles.css -o ./assets/css/tailwind.css --watch",
+    "development": "nuxt dev",
+    "dev": "concurrently \"tailwindcss -i ./assets/css/styles.css -o ./assets/css/tailwind.css --watch\" \"nuxt dev\"",
     "build": "nuxt build",
     "generate": "nuxt generate",
     "start": "nuxt start"
@@ -15,6 +17,8 @@
     "@nuxt/types": "^2.16.3",
     "@nuxt/typescript-build": "^3.0.1",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "@nuxtjs/tailwindcss": "^6.6.7",
+    "concurrently": "^8.0.1",
     "typescript": "^4.9.5"
   }
 }

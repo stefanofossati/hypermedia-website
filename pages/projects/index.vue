@@ -7,7 +7,7 @@
       </div>
       <h1>Projects names</h1>
       <div id="card-container">
-          <p v-for="project in projects"> <span>{{project.name}}</span></p>
+          <p v-for="project in projects" > <span :ref = "'/projects/' + project.id">{{project.name}}</span></p>
       </div>
   </main>
 </template>
@@ -16,7 +16,6 @@
 import {ref, useFetch} from "~/.nuxt/imports";
 
 const {data : projects} =  await useFetch('api/projects', {method: "GET"}); // need to specify the type, we can use typescript for this part, strange behavior when the page is refreshed
-
 
 
 const projectName: any = ref("")
@@ -35,6 +34,7 @@ async function sendNewProject(){
             alert("Errore di prova");
         }
     }
+
 }
 
 </script>

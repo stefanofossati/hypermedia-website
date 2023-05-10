@@ -7,5 +7,3 @@
         </h1>
     </div>
 </template>
-
-<!-- Test -->

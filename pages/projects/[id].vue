@@ -1,8 +1,8 @@
 <template>
   <main>
       <div>
-          <p>name: <span>{{project.data.name}}</span></p>
-          <p>timestemp: <span>{{project.data.prova}}</span></p>
+          <p>name: <span>{{project.data.project_title}}</span></p>
+          <p>short_description: <span>{{project.data.short_description}}</span></p>
       </div>
   </main>
 </template>

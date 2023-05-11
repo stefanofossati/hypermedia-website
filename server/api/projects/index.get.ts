@@ -8,7 +8,7 @@ export default async function defineEventHandler(event: any){
 
     let data: any;
     try{
-        data  = await clientDB.from('projects').select("id, name");
+        data  = await clientDB.from('projects').select("id, project_title, short_description");
     }catch (error){
         throw new Error("Error form get");
     }

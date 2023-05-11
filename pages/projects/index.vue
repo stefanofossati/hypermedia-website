@@ -1,75 +1,34 @@
 <template>
   <main>
-      <p>Prova di input</p>
-      <div class ="input-container">
-          <input id="project-name" type = "text" placeholder="Name" v-model = "projectName">
-          <button id="button-project" @click = "sendNewProject">Send </button>
-      </div>
-      <h1>Projects names</h1>
-      <div id="card-container">
-          <p v-for="project in projects" > <span :ref = "'/projects/' + project.id">{{project.name}}</span></p>
+      <p class = "font-bold  ">All Projects</p>
+      <div id="main_proj">
+          <ProjectPreview v-for="pj in projects" :project_title = "pj.project_title" :short_description = "pj.short_description" :link = "'/projects/' + pj.id" />
       </div>
   </main>
 </template>
 
 <script setup lang="ts">
-import {ref, useFetch} from "~/.nuxt/imports";
 
-const {data : projects} =  await useFetch('api/projects', {method: "GET"}); // need to specify the type, we can use typescript for this part, strange behavior when the page is refreshed
-
-
-const projectName: any = ref("")
-
-async function sendNewProject(){
-    if(projectName != ""){
-        try{
-            await $fetch('api/projects', {
-                method: "POST",
-                body: {
-                    name: projectName.value
-                }
-            })
-            projectName.value = "";
-        }catch {
-            alert("Errore di prova");
-        }
-    }
-
+interface project{
+    id: number,
+    project_title: string,
+    short_description: string,
 }
+
+import {useFetch} from "~/.nuxt/imports";
+
+const {data: projects} =  await useFetch('api/projects', {method: "GET"}); // need to specify the type, we can use typescript for this part, strange behavior when the page is refreshed
+
+
 
 </script>
 
-<style scoped>
-    #card-container
-    {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: center;
-        align-content: flex-start;
-        gap: 20px;
-    }
-    main
-    {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-content: flex-start;
-        gap: 10px;
-    }
-
-    .input-container {
-        width: 90%;
-        border-radius: 10px;
-        border: 2px solid darkblue;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-content: flex-start;
-        gap: 20px;
-
-        background-color: darkcyan;
-        padding: 20px;
-    }
-
+<style>
+  #main_proj{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+  }
 </style>

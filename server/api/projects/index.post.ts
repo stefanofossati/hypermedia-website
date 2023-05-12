@@ -2,6 +2,7 @@ import {SupabaseClient} from "@supabase/supabase-js";
 // @ts-ignore
 import {serverSupabaseClient} from "#supabase/server";
 import {readBody} from 'h3';
+import { createError } from "nuxt/app";
 
 
 export default async function defineEventHandler(event: any){
@@ -15,7 +16,7 @@ export default async function defineEventHandler(event: any){
         }])
         console.log(data);
     }catch (error){
-        throw new Error("Error from post");
+        throw createError({statusCode: 500, statusMessage:"Error form post"});
     }
 
     return data;

@@ -1,12 +1,12 @@
 <template>
-  <div class = "block rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-      <span class = "mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">{{project_title}}</span>
+  <div class = "container">
+      <span class = "title">{{project_title}}</span>
       <span>"image"</span>
-      <span class = "mb-4 text-base text-neutral-600 dark:text-neutral-200">{{short_description}}</span>
+      <span class = "description">{{short_description}}</span>
       <NuxtLink :to = "link">
         <button
                 type="button"
-                class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+                class="button"
                 data-te-ripple-init
                 data-te-ripple-color="light">
             Button
@@ -19,6 +19,40 @@
   const props = defineProps(['project_title', 'image', 'short_description', 'link'])
 </script>
 
-<style scoped>
+<style>
+
+.container
+{
+    display: flex;
+    flex-flow: column;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+    width: fit-content;
+    height: fit-content;
+}
+
+.title
+{
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.description{
+    font-size: 1.5em;
+}
+
+.button{
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    padding: 10px 24px;
+    text-align: center;
+}
+
+.button:hover{
+    background-color: black;
+    color: white;
+}
 
 </style>

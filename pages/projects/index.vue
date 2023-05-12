@@ -1,7 +1,7 @@
 <template>
   <main>
       <p class = "font-bold  ">All Projects</p>
-      <div id="main_proj">
+      <div id="main_projs">
           <ProjectPreview v-for="pj in projects" :project_title = "pj.project_title" :short_description = "pj.short_description" :link = "'/projects/' + pj.id" />
       </div>
   </main>
@@ -24,11 +24,12 @@ const {data: projects} =  await useFetch('api/projects', {method: "GET"}); // ne
 </script>
 
 <style>
-  #main_proj{
+  #main_projs {
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      flex-wrap: wrap;
+      flex-direction: row;
       justify-content: center;
-      height: 100vh;
+      align-content: flex-start;
+      gap: 20px;
   }
 </style>

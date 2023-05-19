@@ -20,3 +20,7 @@ dist
 
 #Visual Studio
 .vs
+
+# Tailwind css
+assets/css/tailwind.css
+```

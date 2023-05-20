@@ -1,13 +1,13 @@
 <!-- Default layout used by all the page -->
 <template>
-    <main>
-        <slot></slot>
-        <footer class="relative bottom-0 bg-green-500 shadow-inner">
-            <p class="text-center text-green-200">Footer © 2023</p>
-        </footer>
+    <main class="flex flex-col">
+        <Header class=flex-none></Header>
+        <slot class="flax-auto"></slot>
+        <Footer class="flex-none"></Footer>
     </main>
-    <Header></Header>
 
+
+    
 </template>
 
 <style>
@@ -17,4 +17,5 @@
 </style>
 <script setup lang="ts">
 import Header from "~/components/Header.vue";
+import Footer from "~/components/Footer.vue";
 </script>

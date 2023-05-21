@@ -1,21 +1,7 @@
 <!-- Default layout used by all the page -->
 <template>
-    <div class="h-screen bg-blue-300 flex flex-col">
-        <header>
-            <nav class="bg-emerald-700 rounded-xl shadow-inner mx-10 my-3 p-1.5">
-                <menu class="flex justify-evenly items-center">
-                    <li class="bg-emerald-200 hover:bg-emerald-800 rounded-xl text-emerald-700 hover:text-emerald-200 font-bold px-1.5">
-                        <NuxtLink to='/'>Home</NuxtLink>
-                    </li>
-                    <li class="bg-emerald-200 hover:bg-emerald-800 rounded-xl text-emerald-700 hover:text-emerald-200 font-bold px-1.5">
-                        <NuxtLink to='/about'>About</NuxtLink>
-                    </li>
-                    <li class="bg-emerald-200 hover:bg-emerald-800 rounded-xl text-emerald-700 hover:text-emerald-200 font-bold px-1.5">
-                        <NuxtLink to='/contact'>Contacts</NuxtLink>
-                    </li>
-                </menu>
-            </nav>
-        </header>
+    <div class="h-full bg-blue-300 flex flex-col">
+        <Header/>
         <main class="h-full">
             <slot></slot>
         </main>

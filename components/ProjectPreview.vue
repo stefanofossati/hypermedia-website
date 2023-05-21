@@ -1,57 +1,23 @@
 <template>
-  <div class = "container">
-      <span class = "title">{{project_title}}</span>
-      <span>"image"</span>
+  <div class = "container border-gray-200 bg-blue-100">
+      <img src = "../assets/i3lab.png" alt = "image" class="h-32 w-auto"/>
       <NuxtLink :to = "link">
-        <button
-                type="button"
-                class="button"
-                data-te-ripple-init
-                data-te-ripple-color="light">
-            Button
-        </button>
+          <button class="text-black font-bold text-2xl px-1 py-1 hover:bg-blue-700 hover:text-white ">
+              {{project_title}}
+          </button>
       </NuxtLink>
+      <div class="grid grid-cols-5" >
+          <button class="hover:bg-red-700 hover:text-white" v-for="tag in tags" >
+              {{tag}}
+          </button>
+      </div>
+
   </div>
 </template>
 
 <script setup lang="ts">
-  const props = defineProps(['project_title', 'image', 'link'])
+  const props = defineProps(['project_title', 'image', 'link', 'tags'])
 </script>
 
 <style>
-
-.container
-{
-    display: flex;
-    flex-flow: column;
-    padding: 20px;
-    border: 2px solid black;
-    border-radius: 20px;
-    width: fit-content;
-    height: fit-content;
-}
-
-.title
-{
-    font-size: 2em;
-    font-weight: bold;
-}
-
-.description{
-    font-size: 1.5em;
-}
-
-.button{
-    background-color: white;
-    border-radius: 10px;
-    color: black;
-    padding: 10px 24px;
-    text-align: center;
-}
-
-.button:hover{
-    background-color: black;
-    color: white;
-}
-
 </style>

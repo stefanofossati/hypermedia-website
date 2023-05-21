@@ -8,7 +8,7 @@ export default async function defineEventHandler(event: any){
 
     let data: any;
     try{
-        data  = await clientDB.from('projects').select("id, project_title, project_description");
+        data  = await clientDB.from('projects').select("id, project_title, project_description, tags");
     }catch (error){
         throw createError({statusCode: 500, statusMessage:"Error form get"});
     }

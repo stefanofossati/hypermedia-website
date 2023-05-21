@@ -2,7 +2,6 @@
   <div class = "container">
       <span class = "title">{{project_title}}</span>
       <span>"image"</span>
-      <span class = "description">{{short_description}}</span>
       <NuxtLink :to = "link">
         <button
                 type="button"
@@ -16,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-  const props = defineProps(['project_title', 'image', 'short_description', 'link'])
+  const props = defineProps(['project_title', 'image', 'link'])
 </script>
 
 <style>

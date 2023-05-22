@@ -1,40 +1,37 @@
 <!-- Header of the page -->
 
 <template>
-  <header class="w-screen">
-    <nav class="bg-gray-800">
-      <div class="max-w-7xl px-2 sm:px-6 lg:px-8">
-        <div class="relative flex h-28 ">
-          <div class="flex-1 sm:items-stretch sm:justify-start">
-            <div class="flex flex-shrink-0 items-center -mt-4">
-              <NuxtLink to="/">
-                <img class="block h-36 ml-32 w-auto mr-auto cursor-pointer" src="../assets/LogoDraft.svg"
-                     alt="StartMeUp">
-              </NuxtLink>
-              <div class="flex space-x-12 sm:ml-6 sm:block -mr-32">
-                <NuxtLink to=""
-                          class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-lg font-bold cursor-pointer">
-                  All Areas
-                </NuxtLink>
-                <NuxtLink to=""
-                          class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-lg font-bold cursor-pointer">
-                  All Projects
-                </NuxtLink>
-                <NuxtLink to="/team"
-                          class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-lg font-bold cursor-pointer">
-                  Team
-                </NuxtLink>
-                <NuxtLink to=""
-                          class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-lg font-bold cursor-pointer">
-                  About Us
-                </NuxtLink>
-              </div>
+    <header>
+        <div class="fixed top-0 z-40 w-full h-1/7 backdrop-blur flex-none transition-colors duration-500 dark:border-slate-50/[0.06] bg-white/95 supports-backdrop-blur:bg-white/60 dark:bg-transparent">
+            <div class="max-w-8xl mx-auto">
+                <div class="py-4 border-b border-slate-900/10 dark:border-slate-300/10 mx-4 lg:mx-0">
+                    <div class="relative flex items-center">
+                        <NuxtLink to="" class=" h-20 flex-none overflow-hidden cursor-pointer">
+                            <img src="../assets/LogoDraft.svg" class="h-20 ml-32">
+                        </NuxtLink>
+                        <div class="relative hidden lg:flex items-center ml-auto">
+                            <nav class="text-lg leading-6 font-bold text-slate-700 dark:text-slate-200">
+                                <ul class="flex space-x-24 mt-2 mr-12">
+                                    <li>
+                                        <NuxtLink to="areas" class="hover:text-orange-500 cursor-pointer">All Areas</NuxtLink>
+                                    </li>
+                                    <li>
+                                        <NuxtLink to="" class="hover:text-orange-500 cursor-pointer">All Projects</NuxtLink>
+                                    </li>
+                                    <li>
+                                        <NuxtLink to="" class="hover:text-orange-500 cursor-pointer">Team</NuxtLink>
+                                    </li>
+                                    <li>
+                                        <NuxtLink to="" class="hover:text-orange-500 cursor-pointer">About Us</NuxtLink>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </nav>
-  </header>
+    </header>
 </template>
 <style>
 * {

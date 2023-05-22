@@ -1,21 +1,21 @@
-<!--
-    Default layout used by all the page
--->
+<!-- Default layout used by all the page -->
 <template>
-    <div class = 'page'>
-        <Header>
-            <h1>Header</h1>
-        </Header>
-        <slot />
-    </div>
+    <main class="flex flex-col">
+        <Header class=flex-none></Header>
+        <slot class="flax-auto"></slot>
+        <Footer class="flex-none"></Footer>
+    </main>
+
+
+    
 </template>
 
 <style>
-    .page {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        background-color: rgb(18, 225, 236);
-        margin: 0;
-    }
+/*.router-link-exact-active {*/
+/*    color: red;*/
+/*}*/
 </style>
+<script setup lang="ts">
+import Header from "~/components/Header.vue";
+import Footer from "~/components/Footer.vue";
+</script>

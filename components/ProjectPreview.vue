@@ -20,7 +20,6 @@ const props: Readonly<{
         {{ tag }}
       </button>
     </div>
-
   </div>
 </template>
 

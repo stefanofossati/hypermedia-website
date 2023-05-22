@@ -1,5 +1,6 @@
 <template>
-  <main>
+  <div>
+
     <div class="relative inset-0 w-screen bg-gray-100"> <!-- Presentation -->
       <img src="../../assets/i3lab.png" alt="i3lab" class="h-1/4"/>
       <h1 class="absolute text-5xl text-black top-5 left-5">
@@ -46,11 +47,10 @@
         <div>
           <img src="../../assets/i3lab.png" alt="i3lab" class="w-auto"/>
         </div>
-
       </div>
     </div>
 
-  </main>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -60,7 +60,7 @@ import {Project} from "~/model/Types";
 const project_title: string = useRoute().params.project as string;
 // useRuntimeConfig provide us with environment variables set up in the nuxtconfig file
 
-const {data: pj, error} = await useFetch<{data: Project}>(
+const {data: pj, error} = await useFetch<{ data: Project }>(
     "/api/projects/" + project_title,
     {
       method: "GET",
@@ -69,4 +69,11 @@ const {data: pj, error} = await useFetch<{data: Project}>(
 </script>
 
 <style scoped>
+.page-enter-active {
+  animation: bounce-in 0.5s;
+}
+
+.page-leave-active {
+  animation: bounce-out 0.5s;
+}
 </style>

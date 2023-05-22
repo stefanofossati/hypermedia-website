@@ -8,17 +8,10 @@
 </template>
 
 <script setup lang="ts">
-
-interface project{
-    id: number,
-    project_title: string,
-    project_description: string,
-    tags: string[],
-}
-
 import {useFetch} from "~/.nuxt/imports";
+import {project} from "~/models/project";
 
-const {data: projects} =  await useFetch('api/projects', {method: "GET"}); // need to specify the type, we can use typescript for this part, strange behavior when the page is refreshed
+const {projects} =  await useFetch<project[]>('api/projects', {method: "GET"}); // need to specify the type, we can use typescript for this part, strange behavior when the page is refreshed
 
 </script>
 

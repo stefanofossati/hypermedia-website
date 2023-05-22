@@ -57,9 +57,9 @@
 import {useRoute, useFetch} from "~/.nuxt/imports";
 
   const route = useRoute()
-  const id = route.params.id
+  const project_title = route.params.project
   // useRuntimeConfig provide us with environment variables set up in the nuxtconfig file
-  const { data: project } = await useFetch('/api/projects/' + id)
+  const { data: project } = await useFetch('/api/projects/' + project_title)
 </script>
 
 <style scoped>

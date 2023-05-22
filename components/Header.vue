@@ -6,7 +6,7 @@
             <div class="max-w-8xl mx-auto">
                 <div class="py-4 border-b border-slate-900/10 dark:border-slate-300/10 mx-4 lg:mx-0">
                     <div class="relative flex items-center">
-                        <NuxtLink to="" class=" h-20 flex-none overflow-hidden cursor-pointer">
+                        <NuxtLink to="/" class=" h-20 flex-none overflow-hidden cursor-pointer">
                             <img src="../assets/LogoDraft.svg" class="h-20 ml-32">
                         </NuxtLink>
                         <div class="relative hidden lg:flex items-center ml-auto">

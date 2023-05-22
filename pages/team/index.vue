@@ -32,21 +32,29 @@ for (let i = 0; i < 10; i++) {
 
 <template>
   <!-- page with team's profile pictures and names -->
-  <div class="flex flex-col items-center text-center">
-    <span class="text-6xl font-bold m-10">Team</span>
-    <div class="grid grid-cols-4 gap-5 w-full px-5">
-      <div v-for="person in people">
-        <NuxtLink :to="`/team/${person.name}`"
-                  class="hover:animate-pulse flex flex-col items-center rounded-xl bg-gray-600 p-1.5">
-          <span class="text-6xl text-gray-300 my-3">{{ person.name }}</span>
-          <img :src="person.img" :alt="person.name" class="rounded-b-xl"/>
-        </NuxtLink>
+  <div>
+    <div class="flex flex-col items-center text-center">
+      <span class="text-6xl font-bold m-10">Team</span>
+      <div class="grid grid-cols-4 gap-5 w-full px-5">
+        <div v-for="person in people">
+          <NuxtLink :to="`/team/${person.name}`"
+                    class="hover:animate-pulse flex flex-col items-center rounded-xl bg-gray-600 p-1.5">
+            <span class="text-6xl text-gray-300 my-3">{{ person.name }}</span>
+            <img :src="person.img" :alt="person.name" class="rounded-b-xl"/>
+          </NuxtLink>
+        </div>
       </div>
     </div>
   </div>
 
 </template>
 
-<style scoped>
+<style>
+.page-enter-active {
+  animation: bounce-in 0.5s;
+}
 
+.page-leave-active {
+  animation: bounce-out 0.5s;
+}
 </style>

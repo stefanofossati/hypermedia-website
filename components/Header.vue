@@ -13,7 +13,7 @@
                             <nav class="text-lg leading-6 font-bold text-slate-700 dark:text-slate-200">
                                 <ul class="flex space-x-24 mt-2 mr-12">
                                     <li>
-                                        <NuxtLink to="" class="hover:text-orange-500 cursor-pointer">All Areas</NuxtLink>
+                                        <NuxtLink to="areas" class="hover:text-orange-500 cursor-pointer">All Areas</NuxtLink>
                                     </li>
                                     <li>
                                         <NuxtLink to="" class="hover:text-orange-500 cursor-pointer">All Projects</NuxtLink>

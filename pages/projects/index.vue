@@ -14,13 +14,13 @@
 import {useFetch} from "nuxt/app";
 import {Project} from "~/model/Types";
 
-const {data: projects, error} = await useFetch<{ data: Project[] }>(
+//@ts-ignore
+const {data: projects, error}: { data: Project[] } = await useFetch(
     '/api/projects',
     {
       method: "GET",
     }
 );
-
 
 
 </script>

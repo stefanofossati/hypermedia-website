@@ -60,7 +60,8 @@ import {Project} from "~/model/Types";
 const project_title: string = useRoute().params.project as string;
 // useRuntimeConfig provide us with environment variables set up in the nuxtconfig file
 
-const {data: pj, error} = await useFetch<{ data: Project }>(
+//@ts-ignore
+const {data: pj, error}: { data: Project } = await useFetch(
     "/api/projects/" + project_title,
     {
       method: "GET",

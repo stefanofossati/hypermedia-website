@@ -1,10 +1,12 @@
 export interface Person {
+    id: number;
     name: string;
     age: number;
     address: string;
     phone: string;
     email: string;
     img: string;
+    pitch: string;
 }
 
 export interface Project {

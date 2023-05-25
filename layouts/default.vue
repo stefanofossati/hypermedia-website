@@ -7,7 +7,7 @@
     </main>
 
 
-    
+
 </template>
 
 <style>

@@ -18,7 +18,17 @@
                   Project Info
               </button>
               <div id="project_infos" class="project-infos-div flex bg-red-400">
-                  <p>Project Budget: {{pj.budget}}</p>
+                  <div class="grid-cols-4 justify-center flex-col">
+                      <div class="gap-1 border-2">
+                          <img src="../../assets/i3lab.png" alt="" class="h-1/16">
+                      </div>
+                      <div class="gap-3">
+                          <p>{{pj.budget}}</p>
+                          <p>Project Budget</p>
+                      </div>
+
+                  </div>
+
                   <p>Project Start Date: {{pj.start_date}}</p>
                   <p>Project End Date: {{pj.end_date}}</p>
               </div>
@@ -35,9 +45,38 @@
           <div class="sm:col-span-1 sm:sticky sm:inset-y-0 sm:right-0 sm:flex sm:flex-col border-l-2 border-slate-700 hidden bg-red-100">
               <p class="text-xl">Projects Info</p>
               <div class="divide-y border-t-1 border-slate-700 divide-slate-700 justify-center">
-                  <p>Project Budget: {{pj.budget}}</p>
-                  <p>Project Start Date: {{pj.start_date}}</p>
-                  <p>Project End Date: {{pj.end_date}}</p>
+                  <div id="project_infos" class="project-infos-div bg-red-400">
+                      <div class="grid grid-cols-4 justify-center flex-col py-4">
+                          <div class="col-span-1 border-2 ">
+                              <img src="../../assets/i3lab.png" alt="" class="h-10">
+                          </div>
+                          <div class="col-span-3 px-10">
+                              <p>{{pj.budget}}</p>
+                              <p>Project Budget</p>
+                          </div>
+
+                      </div>
+                      <div class="grid grid-cols-4 justify-center flex-col py-4">
+                          <div class="col-span-1 border-2 ">
+                              <img src="../../assets/i3lab.png" alt="" class="h-10">
+                          </div>
+                          <div class="col-span-3 px-10">
+                              <p>{{pj.start_date}}</p>
+                              <p>Project Start Data</p>
+                          </div>
+
+                      </div>
+                      <div class="grid grid-cols-4 justify-center flex-col py-3">
+                          <div class="col-span-1 border-2 ">
+                              <img src="../../assets/i3lab.png" alt="" class="h-10">
+                          </div>
+                          <div class="col-span-3 px-10">
+                              <p class="text-black text-lg">{{pj.end_date}}</p>
+                              <p class="text-slate-500 text-sm">Project Budget</p>
+                          </div>
+
+                      </div>
+                  </div>
               </div>
 
 

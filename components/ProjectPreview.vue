@@ -19,7 +19,9 @@ const props: Readonly<{
     </NuxtLink>
     <div class="grid grid-cols-5">
       <button class="hover:bg-red-700 hover:text-white px-1 py-1" v-for="tag in props.tags">
+        <NuxtLink :to="'/area/' + tag">
         {{ tag }}
+        </NuxtLink>
       </button>
     </div>
   </div>

@@ -25,5 +25,6 @@ const {data: projects, error}: { data: Project[] } = await useFetch(
 
 </script>
 
-<style>
+<style scoped>
+
 </style>

@@ -69,11 +69,5 @@ const {data: pj, error}: { data: Project } = await useFetch(
 </script>
 
 <style scoped>
-.page-enter-active {
-  animation: bounce-in 0.5s;
-}
 
-.page-leave-active {
-  animation: bounce-out 0.5s;
-}
 </style>

@@ -1,14 +1,16 @@
 import type {NuxtConfig} from '@nuxt/types'
 
 const config: NuxtConfig = {
-  buildModules: [
-      '@nuxt/typescript-build',
-
-  ],
-  modules: [
-    '@nuxtjs/supabase',
-    '@nuxtjs/tailwindcss'
-  ]
+    app: {
+        pageTransition: {name: 'slide-right', mode: 'out-in'},
+    },
+    buildModules: [
+        '@nuxt/typescript-build',
+    ],
+    modules: [
+        '@nuxtjs/supabase',
+        '@nuxtjs/tailwindcss'
+    ],
 }
 
 export default config

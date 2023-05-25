@@ -17,13 +17,10 @@
               <button @click="hide_function">
                   Project Info
               </button>
-              <div id="project_infos" class="project-infos-div flex-col bg-red-400">
-                  <p>
-                      Project Budget {{pj.budget}}
-                  </p>
-                  <p>
-                      ddddd
-                  </p>
+              <div id="project_infos" class="project-infos-div flex bg-red-400">
+                  <p>Project Budget: {{pj.budget}}</p>
+                  <p>Project Start Date: {{pj.start_date}}</p>
+                  <p>Project End Date: {{pj.end_date}}</p>
               </div>
 
           </div>
@@ -35,8 +32,15 @@
                   {{ pj.project_description }}
               </p>
           </div>
-          <div class="sm:col-span-1 sm:sticky sm:inset-y-0 sm:right-0 sm:flex hidden bg-red-100">
-              <p>Projects Info</p>
+          <div class="sm:col-span-1 sm:sticky sm:inset-y-0 sm:right-0 sm:flex sm:flex-col border-l-2 border-slate-700 hidden bg-red-100">
+              <p class="text-xl">Projects Info</p>
+              <div class="divide-y border-t-1 border-slate-700 divide-slate-700 justify-center">
+                  <p>Project Budget: {{pj.budget}}</p>
+                  <p>Project Start Date: {{pj.start_date}}</p>
+                  <p>Project End Date: {{pj.end_date}}</p>
+              </div>
+
+
           </div>
       </div>
       <div>

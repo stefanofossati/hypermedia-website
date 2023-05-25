@@ -14,8 +14,7 @@ const {data: person, error}: { data: Person } = await useFetch(
 </script>
 
 <template>
-  <!-- page with Pippo's profile pc and general infos -->
-  <div>
+  <div> <!-- page with Pippo's profile pc and general infos -->
     <div class="flex flex-col items-center text-center">
       <span class="text-6xl font-bold m-10">{{ person.name }}'s profile</span>
       <div class="w-full mb-10 flex flex-row justify-evenly">

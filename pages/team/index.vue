@@ -13,8 +13,7 @@ const {data: team, error}: { data: Person[] } = await useFetch(
 </script>
 
 <template>
-  <!-- page with team's profile pictures and names -->
-  <div>
+  <div> <!-- page with team's profile pictures and names -->
     <div class="flex flex-col items-center text-center">
       <span class="text-6xl font-bold m-10">Team</span>
       <div class="grid grid-cols-4 gap-5 w-full px-5">
@@ -28,7 +27,6 @@ const {data: team, error}: { data: Person[] } = await useFetch(
       </div>
     </div>
   </div>
-
 </template>
 
 <style>

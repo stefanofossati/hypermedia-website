@@ -17,49 +17,11 @@
               <button @click="hide_function">
                   Project Info
               </button>
-              <div class="divide-y border-t-1 border-slate-700 divide-slate-700 justify-center">
-                  <div id="project_infos" class="project-infos-div bg-red-400">
-                      <div class="grid grid-cols-4 justify-center flex-col py-4">
-                          <div class="col-span-1 border-2 ">
-                              <img src="../../assets/i3lab.png" alt="" class="h-10">
-                          </div>
-                          <div class="col-span-3 px-10">
-                              <p>{{pj.supervisor}}</p>
-                              <p>Project Supervisor</p>
-                          </div>
-
-                      </div>
-                      <div class="grid grid-cols-4 justify-center flex-col py-4">
-                          <div class="col-span-1 border-2 ">
-                              <img src="../../assets/i3lab.png" alt="" class="h-10">
-                          </div>
-                          <div class="col-span-3 px-10">
-                              <p>{{pj.budget}}</p>
-                              <p>Project Budget</p>
-                          </div>
-
-                      </div>
-                      <div class="grid grid-cols-4 justify-center flex-col py-4">
-                          <div class="col-span-1 border-2 ">
-                              <img src="../../assets/i3lab.png" alt="" class="h-10">
-                          </div>
-                          <div class="col-span-3 px-10">
-                              <p>{{pj.start_date}}</p>
-                              <p>Project Start Data</p>
-                          </div>
-
-                      </div>
-                      <div class="grid grid-cols-4 justify-center flex-col py-3">
-                          <div class="col-span-1 border-2 ">
-                              <img src="../../assets/i3lab.png" alt="" class="h-10">
-                          </div>
-                          <div class="col-span-3 px-10">
-                              <p class="text-black text-lg">{{pj.end_date}}</p>
-                              <p class="text-slate-500 text-sm">Project End Data</p>
-                          </div>
-
-                      </div>
-                  </div>
+              <span class="material-icons-outlined">
+                  info
+              </span>
+              <div class="divide-y border-t-1 justify-center items-center">
+                  <ProjectsProjectInfo :info_supervisor="pj.supervisor" :info_budget="pj.budget" :info_start_date="pj.start_date" :info_end_date="pj.end_date"/>
               </div>
 
           </div>
@@ -73,52 +35,9 @@
           </div>
           <div class="sm:col-span-1 sm:sticky sm:inset-y-0 sm:right-0 sm:flex sm:flex-col border-l-2 border-slate-700 hidden bg-red-100">
               <p class="text-xl">Projects Info</p>
-              <div class="divide-y border-t-1 border-slate-700 divide-slate-700 justify-center">
-                  <div id="project_infos" class="project-infos-div bg-red-400">
-                      <div class="grid grid-cols-4 justify-center flex-col py-4">
-                          <div class="col-span-1 border-2 ">
-                              <img src="../../assets/i3lab.png" alt="" class="h-10">
-                          </div>
-                          <div class="col-span-3 px-10">
-                              <p>{{pj.supervisor}}</p>
-                              <p>Project Supervisor</p>
-                          </div>
-
-                      </div>
-                      <div class="grid grid-cols-4 justify-center flex-col py-4">
-                          <div class="col-span-1 border-2 ">
-                              <img src="../../assets/i3lab.png" alt="" class="h-10">
-                          </div>
-                          <div class="col-span-3 px-10">
-                              <p>{{pj.budget}}</p>
-                              <p>Project Budget</p>
-                          </div>
-
-                      </div>
-                      <div class="grid grid-cols-4 justify-center flex-col py-4">
-                          <div class="col-span-1 border-2 ">
-                              <img src="../../assets/i3lab.png" alt="" class="h-10">
-                          </div>
-                          <div class="col-span-3 px-10">
-                              <p>{{pj.start_date}}</p>
-                              <p>Project Start Data</p>
-                          </div>
-
-                      </div>
-                      <div class="grid grid-cols-4 justify-center flex-col py-3">
-                          <div class="col-span-1 border-2 ">
-                              <img src="../../assets/i3lab.png" alt="" class="h-10">
-                          </div>
-                          <div class="col-span-3 px-10">
-                              <p class="text-black text-lg">{{pj.end_date}}</p>
-                              <p class="text-slate-500 text-sm">Project End Data</p>
-                          </div>
-
-                      </div>
-                  </div>
+              <div class="divide-y border-t-1 justify-center items-center">
+                <ProjectsProjectInfo :info_supervisor="pj.supervisor" :info_budget="pj.budget" :info_start_date="pj.start_date" :info_end_date="pj.end_date"/>
               </div>
-
-
           </div>
       </div>
       <div>

@@ -15,7 +15,7 @@ const {data: team, error}: { data: Person[] } = await useFetch(
 <template>
   <div> <!-- page with team's profile pictures and names -->
     <div class="flex flex-col items-center text-center">
-      <span class="text-6xl font-bold m-10">Team</span>
+      <span class="text-6xl font-bold m-10 dark:text-white">Team</span>
       <div class="grid grid-cols-4 gap-5 w-full px-5">
         <div v-for="person in team">
           <NuxtLink :to="`/team/${person.name}`"

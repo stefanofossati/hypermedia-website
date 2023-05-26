@@ -1,45 +1,32 @@
 <!-- Default layout used by all the page -->
 <template>
-  <main class="flex flex-col">
-    <Header class="flex-none"/>
-    <div class="flex-none bg-white dark:bg-gray-900 h-1/7"/> <!-- FIXME: barra sotto l'header -->
-    <slot class="flax-auto"/>
-    <Footer class="flex-none"/>
-  </main>
-
-
+  <div>
+    <main class="flex flex-col bg-gray-200 dark:bg-gray-950">
+      <Header class="flex-none"/>
+      <div class="flex-none bg-white dark:bg-gray-900 h-28"/> <!-- FIXME: barra sotto l'header -->
+      <slot class="flax-auto"/>
+      <Footer class="flex-none"/>
+    </main>
+  </div>
 </template>
 
 <style>
-/*.router-link-exact-active {*/
-/*    color: red;*/
-/*}*/
-/*.slide-left-enter-active,
-.slide-left-leave-active,*/
-.slide-right-enter-active,
-.slide-right-leave-active {
-  transition: all 0.2s;
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.5s;
 }
 
-/*.slide-left-enter-from {
-  opacity: 0;
-  transform: translate(50px, 0);
-}
-.slide-left-leave-to {
-  opacity: 0;
-  transform: translate(-50px, 0);
-}*/
-.slide-right-enter-from {
-  /*opacity: 0;*/
-  transform: translate(-50px, 0);
+.page-enter-from {
+  transform: translate(100%, 0);
+  scale: 0.8;
 }
 
-.slide-right-leave-to {
-  /*opacity: 0;*/
-  transform: translate(50px, 0);
+.page-leave-to {
+  transform: translate(-100%, 0);
+  scale: 0.8;
 }
-
 </style>
+
 <script setup lang="ts">
 import Header from "~/components/Header.vue";
 import Footer from "~/components/Footer.vue";

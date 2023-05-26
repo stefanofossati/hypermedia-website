@@ -25,5 +25,6 @@ export default <Partial<Config>>{
         `./error.{js,ts,vue}`,
         `./app.config.{js,ts}`,
         `!./**/*.{spec,test}.*`
-    ]
+    ],
+    darkMode: 'class',
 }

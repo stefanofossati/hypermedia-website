@@ -15,11 +15,5 @@
 </template>
 
 <style>
-.page-enter-active {
-  animation: bounce-in 1s;
-}
 
-.page-leave-active {
-  animation: bounce-out 1s;
-}
 </style>

@@ -1,7 +1,5 @@
 <script setup lang="ts">
 const barHeight: number = 10;
-
-
 </script>
 
 <template>

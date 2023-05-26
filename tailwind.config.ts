@@ -1,12 +1,11 @@
 import type {Config} from 'tailwindcss'
-import defaultTheme from 'tailwindcss/defaultTheme'
 
 export default <Partial<Config>>{
     theme: {
         extend: {
             colors: {
                 //primary: defaultTheme.colors.green
-            }
+            },
         }
     },
     content: [
@@ -22,5 +21,6 @@ export default <Partial<Config>>{
         `./error.{js,ts,vue}`,
         `./app.config.{js,ts}`,
         `!./**/*.{spec,test}.*`
-    ]
+    ],
+    darkMode: 'class',
 }

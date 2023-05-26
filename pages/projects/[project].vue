@@ -17,12 +17,8 @@
               <button @click="hide_function">
                   Project Info
               </button>
-              <span class="material-icons-outlined">
-                  info
-              </span>
-              <div class="divide-y border-t-1 justify-center items-center">
-                  <ProjectsProjectInfo :info_supervisor="pj.supervisor" :info_budget="pj.budget" :info_start_date="pj.start_date" :info_end_date="pj.end_date"/>
-              </div>
+              <ProjectsProjectInfo :info_supervisor="pj.supervisor" :info_budget="pj.budget" :info_start_date="pj.start_date" :info_end_date="pj.end_date"/>
+
 
           </div>
           <div class="sm:col-span-3 sm:box-content sm:sticky sm:inset-y-0 sm:py-1 left-0 bg-blue-100 ">
@@ -33,11 +29,8 @@
                   {{ pj.project_description }}
               </p>
           </div>
-          <div class="sm:col-span-1 sm:sticky sm:inset-y-0 sm:right-0 sm:flex sm:flex-col border-l-2 border-slate-700 hidden bg-red-100">
-              <p class="text-xl">Projects Info</p>
-              <div class="divide-y border-t-1 justify-center items-center">
-                <ProjectsProjectInfo :info_supervisor="pj.supervisor" :info_budget="pj.budget" :info_start_date="pj.start_date" :info_end_date="pj.end_date"/>
-              </div>
+          <div class="sm:col-span-1 sm:sticky sm:inset-y-0 sm:right-0 sm:flex sm:flex-col border-l-2 border-slate-700 hidden bg-red-500">
+              <ProjectsProjectInfo :info_supervisor="pj.supervisor" :info_budget="pj.budget" :info_start_date="pj.start_date" :info_end_date="pj.end_date"/>
           </div>
       </div>
       <div>

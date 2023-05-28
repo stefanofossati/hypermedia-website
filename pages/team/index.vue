@@ -18,10 +18,11 @@ const {data: team, error}: { data: Person[] } = await useFetch(
       <span class="text-6xl font-bold m-10 dark:text-white">Team</span>
       <div class="grid grid-cols-4 gap-5 w-full px-5">
         <div v-for="person in team">
-          <NuxtLink :to="`/team/${person.name}`"
+          <NuxtLink :to="`/team/${person.name}_${person.surname}`"
                     class="hover:animate-pulse flex flex-col items-center rounded-xl bg-gray-600 p-1.5 mb-10">
             <span class="text-6xl text-gray-300 my-3">{{ person.name }}</span>
-            <img :src="person.img" :alt="person.name" class="rounded-b-xl h-96"/>
+            <span class="text-6xl text-gray-300 my-3">{{ person.surname }}</span>
+            <img :src="person.img" :alt="`${person.name} ${person.surname}'s profile pic`" class="rounded-b-xl h-96"/>
           </NuxtLink>
         </div>
       </div>
@@ -30,11 +31,5 @@ const {data: team, error}: { data: Person[] } = await useFetch(
 </template>
 
 <style>
-.page-enter-active {
-  animation: bounce-in 0.5s;
-}
 
-.page-leave-active {
-  animation: bounce-out 0.5s;
-}
 </style>

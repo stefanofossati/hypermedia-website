@@ -6,13 +6,15 @@ import {Person} from "~/model/Types";
 
 export default async function eventHandler(event: any) {
     const clientDB: SupabaseClient<any, "public", any> = serverSupabaseClient(event);
-    const name: string = event.context.params.person;
+
+    const nameSurname: string[] = (event.context.params.person as string).split('_');
 
     // @ts-ignore
     const {data, error}: { data: Person } = await clientDB
         .from('team')
-        .select('name, age, address, phone, img, email, pitch')
-        .eq('name', name)
+        .select('name, surname, age, address, phone, img, email, pitch')
+        .eq('name', nameSurname[0])
+        .eq('surname', nameSurname[1])
         .limit(1)
         .single();
     if (error) {

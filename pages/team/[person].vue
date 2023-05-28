@@ -40,7 +40,7 @@ const {data: person, error}: { data: Person } = await useFetch(
           </div>
         </div>
       </div>
-      <span class="dark:text-gray-400 bottom-0 text-xs sm:text-sm md:text-lg w-3/4 pb-10 text-left">
+      <span class="dark:text-gray-400 bottom-0 text-sm md:text-lg w-3/4 pb-10 text-left">
       {{ person.pitch }}
     </span>
     </div>

@@ -3,11 +3,11 @@
 <template>
   <header>
     <div
-        class="fixed flex w-full top-0 dark:bg-gray-900 bg-white items-center justify-between">
-      <NuxtLink to="/" class="w-64 flex-none cursor-pointer ">
+        class="sticky flex h-16 lg:h-32 w-full top-0 dark:bg-gray-900 bg-white items-center justify-between">
+      <NuxtLink to="/" class="w-44 lg:w-64 flex-none cursor-pointer">
         <img alt="logo" src="../assets/LogoDraft.svg">
       </NuxtLink>
-      <div class="w-full invisible md:visible">
+      <div class="w-full hidden lg:block border">
         <nav class="text-lg w-full font-bold text-slate-700 dark:text-slate-200">
           <ul class="flex justify-end">
             <li class="mr-10 lg:mr-20">

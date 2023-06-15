@@ -8,10 +8,10 @@ const props: Readonly<{
 </script>
 
 <template>
-    <div class="divide-y border-t-1 justify-center items-center">
+    <div class="divide-y divide-slate-700 dark:divide-gray-500 border-t-1 justify-center items-center">
         <p class="text-2xl px-4 py-2 dark:text-white text-black">Projects Info</p>
-        <div id="project_infos" class="project-infos-div divide-y divide-slate-700">
-            <ProjectsProjectInfoRow :info_name="'Supervisor'" :info_description="props.info_supervisor" class="dark:text-white text-black fill-current h-16 w-16 mr-10 justify-center"
+        <div id="project_infos" class=" project-infos-div divide-y divide-slate-700 dark:divide-gray-500">
+            <ProjectsProjectInfoRow :info_name="'Supervisor'" :info_description="props.info_supervisor" class="dark:text-white text-black fill-current h-16 w-16 mb-10 justify-center "
                                     svg_path="M480-481q-66 0-108-42t-42-108q0-66 42-108t108-42q66 0 108 42t42 108q0 66-42 108t-108 42Zm260 321H220q-24.75 0-42.375-17.625T160-220v-34q0-38 19-65t49-41q67-30 128.5-45T480-420q62 0 123 15.5t127.921 44.694q31.301 14.126 50.19 40.966Q800-292 800-254v34q0 24.75-17.625 42.375T740-160Zm-520-60h520v-34q0-16-9.5-30.5T707-306q-64-31-117-42.5T480-360q-57 0-111 11.5T252-306q-14 7-23 21.5t-9 30.5v34Zm260-321q39 0 64.5-25.5T570-631q0-39-25.5-64.5T480-721q-39 0-64.5 25.5T390-631q0 39 25.5 64.5T480-541Zm0-90Zm0 411Z"/>
             <ProjectsProjectInfoRow :info_name="'Budget'" :info_description="props.info_budget" class="dark:text-white text-black fill-current h-16 w-16 mr-1.5 mb-1.5 justify-center"
                                     svg_path="M481-120q-13 0-21.5-8.5T451-150v-54q-48-8-82-34t-53-66q-5-11 0-23t17-17q11-5 22.5 0t17.5 16q18 34 47 51t67 17q48 0 79-24t31-66q0-44-27.5-68T466-467q-72-23-107.5-61T323-623q0-55 35.5-92t92.5-42v-53q0-13 8.5-21.5T481-840q13 0 21.5 8.5T511-810v53q36 5 64.5 22t47.5 44q7 10 3 21.5T610-653q-11 5-23 1t-20-15q-14-18-34.5-26.5T483-702q-46 0-73 21t-27 57q0 38 30 61.5T524-514q68 21 100.5 60.5T657-354q0 63-37 101.5T511-203v53q0 13-8.5 21.5T481-120Z"/>

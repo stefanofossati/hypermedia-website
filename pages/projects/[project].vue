@@ -1,8 +1,8 @@
 <template>
   <div>
 
-    <div class="relative inset-0 w-screen bg-gray-100"> <!-- Presentation -->
-      <img src="../../assets/i3lab.png" alt="i3lab" class="h-1/4"/>
+    <div class="relative inset-0 h-25 w-screen"> <!-- Presentation -->
+      <img :src="pj.main_image" alt="i3lab" class="object-cover h-full w-full"/>
       <h1 class="absolute text-5xl text-black top-5 left-5">
         {{ pj.project_title }}
       </h1>
@@ -24,15 +24,15 @@
 
 
           </div>
-          <div class="sm:col-span-3 sm:box-content sm:sticky sm:inset-y-0 sm:py-1 left-0 bg-blue-100 ">
-              <h2 class="text-3xl text-black ">
+          <div class="sm:col-span-3 sm:box-content sm:sticky sm:inset-y-0 sm:py-1 left-0  ">
+              <h2 class="text-3xl text-black dark:text-white py-1">
                   Description
               </h2>
-              <p class="text-1xl text-black">
+              <p class="text-1xl text-black dark:text-white ">
                   {{ pj.project_description }}
               </p>
           </div>
-          <div class="sm:col-span-1 sm:sticky sm:inset-y-0 sm:right-0 sm:flex sm:flex-col border-l-2 border-slate-700 hidden bg-red-500">
+          <div class="sm:col-span-1 sm:sticky sm:inset-y-0 sm:right-0 sm:flex sm:flex-col border-l-2 border-slate-700 dark:border-gray-500 hidden">
               <ProjectsProjectInfo :info_supervisor="pj.supervisor" :info_budget="pj.budget" :info_start_date="pj.start_date" :info_end_date="pj.end_date"/>
           </div>
       </div>

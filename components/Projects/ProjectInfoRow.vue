@@ -18,7 +18,7 @@ const props: Readonly<{
         </div>
         <div class="flex w-3/4 flex-col px-3">
             <p class="dark:text-white text-black text-lg">{{props.info_name}}</p>
-            <p class="text-gray-300 text-sm">{{props.info_description}}</p>
+            <p class="dark:text-gray-100 text-black-100 text-sm">{{props.info_description}}</p>
         </div>
 
     </div>

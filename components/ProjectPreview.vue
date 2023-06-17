@@ -17,7 +17,7 @@ const props: Readonly<{
         <p class="text-black font-bold text-2xl px-1 py-1 ">
           {{ props.project_title }}
         </p>
-        <img :src="props.main_image" alt="image" class="h-32 w-auto"/>
+        <div class="h-40 bg-cover bg-center" :style="{ backgroundImage: `url('${props.main_image}')`}"/>
 
         <p class="px-1 py-1">{{ props.short_description }}</p>
       </div>

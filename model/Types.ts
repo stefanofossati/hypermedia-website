@@ -20,4 +20,5 @@ export interface Project {
     budget: number;
     tags: string[];
     main_image: string;
+    gallery_images: string[];
 }

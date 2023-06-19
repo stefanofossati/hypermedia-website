@@ -3,16 +3,14 @@
     <!-- Presentation -->
     <div class="h-96 bg-cover bg-center" :style="{ backgroundImage: `url('${pj.main_image}')`}">
       <img :src="pj.main_image" alt="i3lab" class="object-cover h-full w-full"/>
-      <h1 class="absolute text-5xl text-black top-5 left-5">
+      <h1 class="absolute text-5xl text-black top-40 left-5">
         {{ pj.project_title }}
       </h1>
-      <h3 class="absolute text-2xl bottom-5 left-5">
-        Breadcrumbs
-      </h3>
     </div>
 
     <!-- Descriptions -->
     <div class="sm:grid sm:grid-cols-4 sm:gap-3 py-3 px-5 block">
+
       <!-- Project Info Mobile -->
       <div class="sm:hidden flex-col py-1 px-1 bg-yellow-800 relative">
         <button @click="hide_function" class="absolute top-0 right-0">
@@ -46,32 +44,44 @@
                 Project Images
             </h2>
         </div>
-        <div class = "grid grid-cols-5 gap-3">
-            <div>
-                <img src="../../assets/i3lab.png" alt="i3lab" class="w-auto"/>
-            </div>
-            <div>
-                <img src="../../assets/i3lab.png" alt="i3lab" class="w-auto"/>
-            </div>
-            <div>
-                <img src="../../assets/i3lab.png" alt="i3lab" class="w-auto"/>
-            </div>
-            <div>
-                <img src="../../assets/i3lab.png" alt="i3lab" class="w-auto"/>
-            </div>
-            <div>
-                <img src="../../assets/i3lab.png" alt="i3lab" class="w-auto"/>
-            </div>
-
+      <div class="grid grid-cols-12 grid-rows-4 gap 3 bg-red-400 justify-items-center place-items-center" >
+        <div class="col-span-4 row-span-4 self-center">
+          <img id="big_image" src="../../assets/i3lab.png" alt="" class=" h-96 w-full object-cover">
         </div>
+        <div class="col-span-8 row-span-1 bg-blue-500 ">
+          00
+        </div>
+        <div class="col-span-1 row-span-2  justify-self-start px-4">
+          L
+        </div>
+        <div  class="col-span-2 row-span-2 bg-gray-100 " v-on:click="change_image($event)">
+          <img id="image01" :src="pj.gallery_images[0]" alt="" class=" h-48 w-full object-cover " >
+        </div>
+        <div  class="col-span-2 row-span-2 " v-on:click="change_image($event)">
+          <img id="image02" :src="pj.gallery_images[1]" alt=""  class=" h-48 w-full object-cover ">
+        </div>
+        <div  class="col-span-2 row-span-2 bg-gray-100 " v-on:click="change_image($event)">
+          <img id="image03" :src="pj.gallery_images[2]" alt="" class=" h-48 w-full object-cover ">
+        </div>
+        <div class="col-span-1 row-span-2  justify-self-end px-4 " v-on:click="go_right">
+          4R
+        </div>
+        <div class="col-span-8 row-span-1 bg-blue-500">
+          00
+        </div>
+
+      </div>
+
     </div>
 
   </div>
 </template>
 
 <script setup lang="ts">
+
 import {useRoute, useFetch} from "nuxt/app";
 import {Project} from "~/model/Types";
+import {c} from "~/.output/public/_nuxt/entry.b191b10d";
 
 const project_title: string = useRoute().params.project as string;
 
@@ -94,6 +104,64 @@ function hide_function() {
         button_info.style.transform = "rotate(180deg)";
     }
 }
+
+function change_image(clicked: any){
+  const big_img: HTMLImageElement | null = document.getElementById("big_image")! as HTMLImageElement;
+  const children: HTMLCollection | null = clicked.currentTarget.children!;
+
+  if(children !== undefined && children !== null){
+    for(let child of Array.from(children)){
+      if(child.nodeName === "IMG"){
+        let img: HTMLImageElement = child as HTMLImageElement;
+        big_img.src = img.src
+      }
+    }
+  }
+}
+
+
+let i: number = 0;
+
+function go_right(){
+  const image_01: HTMLImageElement | null = document.getElementById("image01")! as HTMLImageElement;
+  const image_02: HTMLImageElement | null = document.getElementById("image02")! as HTMLImageElement;
+  const image_03: HTMLImageElement | null = document.getElementById("image03")! as HTMLImageElement;
+
+  console.log("go_right");
+  console.log(pj.gallery_images);
+
+  const images: Array<HTMLImageElement> = [image_01, image_02, image_03];
+
+  i++;
+  let j;
+  let k;
+
+  if(i>pj.gallery_images.length){
+    i = 0;
+  }
+
+  j = i + 1
+
+  if(j>pj.gallery_images.length){
+    j = 0;
+
+  }
+
+  k = j + 1
+
+  if(k>pj.gallery_images.length){
+    k = 0;
+  }
+
+  image_01.src = pj.gallery_images[i];
+  image_02.src = pj.gallery_images[j];
+  image_03.src = pj.gallery_images[k];
+}
+
+function go_left(){
+
+}
+
 </script>
 
 <style scoped>

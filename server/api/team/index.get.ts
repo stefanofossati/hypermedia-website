@@ -10,7 +10,7 @@ export default async function eventHandler(event: any) {
     // @ts-ignore
     const {data, error}: { data: Person[] } = await clientDB
         .from('team')
-        .select('id, name, img');
+        .select('name, surname, img');
     if (error) {
         throw createError({statusCode: 500, statusMessage: "Error form get"});
     }

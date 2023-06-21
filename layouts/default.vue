@@ -2,8 +2,8 @@
 <template>
   <div>
     <main class="flex flex-col bg-gray-200 dark:bg-gray-950">
+      <div class="h-16 lg:h-32 w-full bg-white"/>
       <Header class="flex-none"/>
-      <div class="flex-none bg-white dark:bg-gray-900 h-28"/> <!-- FIXME: barra sotto l'header -->
       <slot class="flax-auto"/>
       <Footer class="flex-none"/>
     </main>

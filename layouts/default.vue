@@ -1,25 +1,32 @@
 <!-- Default layout used by all the page -->
 <template>
-    <main class="flex flex-col ">
-        <Header class=flex-none></Header>
-        <slot class="flax-auto"></slot>
-        <Footer class="flex-none"></Footer>
+  <div>
+    <main class="flex flex-col bg-gray-200 dark:bg-gray-950">
+      <div class="h-16 lg:h-32 w-full bg-white"/>
+      <Header class="flex-none"/>
+      <slot class="flax-auto"/>
+      <Footer class="flex-none"/>
     </main>
-
-
-    
+  </div>
 </template>
 
 <style>
-    html{
-        scroll-snap-type: y mandatory;
-        overflow-y: scroll;
-        scroll-behavior: smooth;
-    }
-/*.router-link-exact-active {*/
-/*    color: red;*/
-/*}*/
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.5s;
+}
+
+.page-enter-from {
+  transform: translate(100%, 0);
+  scale: 0.8;
+}
+
+.page-leave-to {
+  transform: translate(-100%, 0);
+  scale: 0.8;
+}
 </style>
+
 <script setup lang="ts">
 import Header from "~/components/Header.vue";
 import Footer from "~/components/Footer.vue";

@@ -2,16 +2,20 @@
 
 <template>
   <header>
-    <div
-        class="fixed flex h-16 lg:h-32 w-full top-0 dark:bg-gray-900 bg-white items-center justify-between">
+    <div class="fixed flex h-16 lg:h-32 w-full top-0 dark:bg-gray-900 bg-white items-center justify-between">
       <NuxtLink to="/" class="w-44 lg:w-64 flex-none cursor-pointer">
         <img alt="logo" src="../assets/LogoDraft.svg">
       </NuxtLink>
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-orange-500 stroke-orange-500 lg:hidden">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+        </svg>
+      </div>
       <div class="w-full hidden lg:block">
         <nav class="text-lg w-full font-bold text-slate-700 dark:text-slate-200">
           <ul class="flex justify-end">
             <li class="mr-10 lg:mr-20">
-              <NuxtLink to="" class="hover:text-orange-500 cursor-pointer">All Areas</NuxtLink>
+              <NuxtLink to="/areas" class="hover:text-orange-500 cursor-pointer">All Areas</NuxtLink>
             </li>
             <li class="mr-10 lg:mr-20">
               <NuxtLink to="/projects" class="hover:text-orange-500 cursor-pointer">All Projects</NuxtLink>

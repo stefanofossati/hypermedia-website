@@ -7,7 +7,7 @@
       <NuxtLink to="/" class="w-44 lg:w-64 flex-none cursor-pointer">
         <img alt="logo" src="../assets/LogoDraft.svg">
       </NuxtLink>
-      <div class="w-full hidden lg:block border">
+      <div class="w-full hidden lg:block">
         <nav class="text-lg w-full font-bold text-slate-700 dark:text-slate-200">
           <ul class="flex justify-end">
             <li class="mr-10 lg:mr-20">

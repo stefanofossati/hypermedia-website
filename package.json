@@ -12,7 +12,8 @@
     "@headlessui/vue": "^1.7.13",
     "@nuxt/typescript-runtime": "latest",
     "@nuxtjs/supabase": "^0.3.5",
-    "nuxt": "^3.4.2"
+    "nuxt": "^3.4.2",
+    "vuetify": "^3.3.5"
   },
   "devDependencies": {
     "@nuxt/types": "^2.16.3",

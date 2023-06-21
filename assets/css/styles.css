@@ -2,3 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
+
+/* Style for the Contact Us */
+
+.contact_us_info_box {
+    @apply flex flex-col basis-1/6
+    border-4 border-blue-600 bg-blue-300
+    rounded-lg p-4
+    items-center
+}
+
+.contact_us_tab_name {
+    @apply border-2 p-1 text-red-900 bg-red-200 border-red-600 rounded-lg md:pl-16 md:pr-16 hover:bg-red-300 active:bg-red-400
+}
+
+.contact_us_form_title {
+    @apply text-2xl text-center text-blue-600
+}
+
+.contact_us_form_input {
+    @apply border-2 border-blue-600 rounded-lg p-1 text-black
+}
+
+.contact_us_form_line {
+    @apply w-full flex flex-row justify-center items-center
+}
+
+.contact_us_form_submit_button {
+    @apply border-2 border-blue-600 rounded-lg p-1 bg-blue-300 text-blue-900 mt-2
+}
+
+/* Style for the About Us */
+
+.about_us_row {
+    @apply flex flex-row items-center p-2
+}
+
+.about_us_dot {
+    @apply rounded-full h-6 w-6 bg-gray-100 flex-none border-4 border-gray-700
+}
+
+.about_us_image {
+    @apply h-14 md:h-28 w-auto rounded-xl border-2 border-gray-700 m-1
+}
+
+.about_us_topic {
+    @apply text-2xl font-bold w-96
+}
+
+.about_us_paragraph {
+    @apply text-lg italic text-justify m-1
+}

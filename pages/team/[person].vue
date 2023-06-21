@@ -16,7 +16,7 @@ const {data: person, error}: { data: Person } = await useFetch(
 <template>
   <div> <!-- page with Pippo's profile pc and general infos -->
     <div class="flex flex-col items-center text-center">
-      <BackButton route="/team" label="Back to Team"/>
+      <BackButton route="/team" label="Back to Team" class="place-self-start"/>
       <span class="text-3xl sm:text-4xl md:text-6xl font-bold m-10 dark:text-white">{{ person.name }} {{
           person.surname
         }}'s profile</span>

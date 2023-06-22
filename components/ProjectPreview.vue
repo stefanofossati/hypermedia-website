@@ -25,7 +25,7 @@ const props: Readonly<{
 
     <div class="flex flex-row">
       <NuxtLink :to="'/area/' + tag" v-for="tag in props.tags">
-        <div class="hover:bg-red-700 hover:text-white px-2 py-1 ">
+        <div class="dark:text-black text-white hover:bg-red-700 hover:text-white px-2 py-1 ">
           {{ tag}}
         </div>
       </NuxtLink>

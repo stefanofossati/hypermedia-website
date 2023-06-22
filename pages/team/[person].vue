@@ -11,15 +11,18 @@ const {data: person, error}: { data: Person } = await useFetch(
       method: "GET",
     }
 );
+//TODO: fix back button
 </script>
 
 <template>
   <div> <!-- page with Pippo's profile pc and general infos -->
     <div class="flex flex-col items-center text-center">
-      <BackButton route="/team" label="Back to Team" class="place-self-start"/>
-      <span class="text-3xl sm:text-4xl md:text-6xl font-bold m-10 dark:text-white">{{ person.name }} {{
-          person.surname
-        }}'s profile</span>
+      <div class="w-full flex flex-row place-items-center">
+        <BackButton route="/team" label="Back to Team" class=""/>
+        <span class="w-full text-3xl sm:text-4xl md:text-6xl font-bold dark:text-white">{{ person.name }} {{
+            person.surname
+          }}'s profile</span>
+      </div>
       <div class="w-full mb-10 flex lg:flex-row flex-col justify-evenly items-center">
         <img :src="person.img" :alt="`${person.name} ${person.surname}'s profile pic`"
              class="object-scale-down border-4 dark:border-gray-600 rounded-full shadow-2xl h-52 w-52 sm:h-72 sm:w-72 md:h-96 md:w-96 mb-10 lg:mb-0 aspect-square">

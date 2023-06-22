@@ -21,5 +21,10 @@ export interface Project {
     budget: number;
     tags: string[];
     main_image: string;
-    gallery_images: string[];
+    gallery_images: ImageGallery[];
+}
+
+export interface ImageGallery{
+    description: string;
+    url: string;
 }

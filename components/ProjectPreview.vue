@@ -10,16 +10,16 @@ const props: Readonly<{
 </script>
 
 <template>
-  <div class="container rounded-md border-2 border-white dark:border-gray-900 mx:auto ">
+  <div class="container rounded-md dark:bg-white bg-slate-500 mx:auto ">
 
     <NuxtLink :to=props.link>
       <div class="hover:animate-pulse">
-        <p class="text-black font-bold text-2xl px-1 py-1 ">
+        <p class="dark:text-black text-white font-bold text-2xl px-1 py-1 ">
           {{ props.project_title }}
         </p>
         <div class="h-40 bg-cover bg-center" :style="{ backgroundImage: `url('${props.main_image}')`}"/>
 
-        <p class="px-1 py-1">{{ props.short_description }}</p>
+        <p class="px-1 py-1 dark:text-black text-white">{{ props.short_description }}</p>
       </div>
     </NuxtLink>
 

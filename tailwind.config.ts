@@ -1,4 +1,5 @@
 import type {Config} from 'tailwindcss'
+import defaultTheme from 'tailwindcss/defaultTheme'
 
 export default <Partial<Config>>{
     theme: {
@@ -6,6 +7,9 @@ export default <Partial<Config>>{
             colors: {
                 //primary: defaultTheme.colors.green
             },
+            content:{
+                'externalLink': "url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0')"
+            }
         }
     },
     content: [

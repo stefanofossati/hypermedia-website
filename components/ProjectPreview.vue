@@ -2,24 +2,36 @@
 
 const props: Readonly<{
   project_title?: string,
+  short_description?: string,
   tags?: string[],
-  link?: string
-}> = defineProps(['project_title', 'tags', 'link']);
+  link?: string,
+  main_image?: string
+}> = defineProps(['project_title', 'short_description', 'tags', 'link', 'main_image']);
 </script>
 
 <template>
-  <div class="container border-gray-200 bg-blue-100">
-    <img src="../assets/i3lab.png" alt="image" class="h-32 w-auto"/>
-    <NuxtLink :to="props.link">
-      <button class="text-black font-bold text-2xl px-1 py-1 hover:bg-blue-700 hover:text-white ">
-        {{ props.project_title }}
-      </button>
+  <div class="container rounded-md dark:bg-white bg-slate-500 mx:auto ">
+
+    <NuxtLink :to=props.link>
+      <div class="hover:animate-pulse">
+        <p class="dark:text-black text-white font-bold text-2xl px-1 py-1 ">
+          {{ props.project_title }}
+        </p>
+        <div class="h-40 bg-cover bg-center" :style="{ backgroundImage: `url('${props.main_image}')`}"/>
+
+        <p class="px-1 py-1 dark:text-black text-white">{{ props.short_description }}</p>
+      </div>
     </NuxtLink>
-    <div class="grid grid-cols-5">
-      <button class="hover:bg-red-700 hover:text-white" v-for="tag in props.tags">
-        {{ tag }}
-      </button>
+
+    <div class="flex flex-row">
+      <NuxtLink :to="'/area/' + tag" v-for="tag in props.tags">
+        <div class="dark:text-black text-white hover:bg-red-700 hover:text-white px-2 py-1 ">
+          {{ tag}}
+        </div>
+      </NuxtLink>
+
     </div>
+
   </div>
 </template>
 

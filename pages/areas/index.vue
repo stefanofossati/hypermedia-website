@@ -22,7 +22,7 @@
         <div class="rounded-full w-4 h-4 bg-orange-500 hover:bg-orange-700 border-solid border-2 border-gray-200 active:bg-orange-700 cursor-pointer"
             onclick="document.getElementById('hc').scrollIntoView();">
         </div>
-    </div>
+    </div> 
 </template>
 
 <style>

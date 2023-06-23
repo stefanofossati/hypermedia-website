@@ -2,15 +2,15 @@
 
 <template>
   <header>
-    <div class="fixed flex h-16 lg:h-32 w-full top-0 dark:bg-gray-900 bg-white items-center justify-between">
-      <NuxtLink to="/" class="w-44 lg:w-64 flex-none cursor-pointer ml-6">
+    <div class="fixed flex h-20 lg:h-20 w-full top-0 dark:bg-gray-900 bg-white items-center justify-between" id="navbar">
+      <NuxtLink to="/" class="w-52 lg:w-52 flex-none cursor-pointer ml-6">
         <img alt="logo" src="../assets/LogoDraft.svg">
       </NuxtLink>
-      <button class="px-4 cursor-pointer lg:hidden mt-4" onclick="show()">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 fill-orange-500 stroke-orange-500">
+      <div class="px-4 cursor-pointer lg:hidden mt-4 mr-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-12 fill-orange-500 stroke-orange-500" id="menu">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
         </svg>
-      </button>
+      </div>
       <div class="w-full hidden lg:block">
         <nav class="text-lg w-full font-bold text-slate-700 dark:text-slate-200">
           <ul class="flex justify-end">
@@ -55,7 +55,7 @@
       </div>
     </div>
 
-    <div class="grid grid cols-4 hidden" id="menu">
+    <div class="grid grid cols-4 hidden" id="items">
       <div class="col-span-1 flex justify-end">
         <nav class="text-right">
           <ul class="text-sm mt-6">
@@ -80,7 +80,7 @@
 /*}*/
 </style>
 
-<script setup lang="ts">
+<script setup lang="js">
 import {useColorMode} from "~/.nuxt/imports";
 
 let theme = useColorMode().value === 'dark'
@@ -94,17 +94,43 @@ function bright() {
   }
 }
 
-const menu = document.getElementById('menu');
+const items = document.getElementById("items");
+const menu = document.getElementById("menu");
 
-function show(){
+menu?.addEventListener("click", ()=>{ 
   console.log('henlo');
-  if(menu?.classList.contains('hidden')){
-    menu?.classList.remove('hidden');
+  if(items?.classList.contains('hidden')){
+    items?.classList.remove('hidden');
   }
   else{
-    menu?.classList.add('hidden');
+    items?.classList.add('hidden');
   }
-}
+})
 
+//make the header disappear when scroll down and appear on scroll up
+var lastScroll = 0;
+window.addEventListener("scroll", function(){
+  var scrollTop = this.window.scrollY || document.documentElement.scrollTop;
+  if(scrollTop > lastScroll){
+    document.getElementById("navbar").classList.add("-translate-y-20");
+  }
+  else{
+    document.getElementById("navbar").classList.remove("-translate-y-20");
+  }
+  lastScroll = scrollTop;
+});
+
+/*
+const idle = setTimeout(hideHeader, 7000);
+window.onmousemove = resetTimer;
+
+function hideHeader(){
+  document.getElementById("navbar").classList.add("-translate-y-20");
+}
+function resetTimer(){
+  idle = setTimeout(hideHeader, 7000);
+  document.getElementById("navbar").classList.remove("-translate-y-20");
+}
+*/
 </script>
 

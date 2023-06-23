@@ -120,17 +120,20 @@ window.addEventListener("scroll", function(){
   lastScroll = scrollTop;
 });
 
-/*
-const idle = setTimeout(hideHeader, 7000);
+//hide header on inactivity
+let time;
+window.onload = resetTimer;
 window.onmousemove = resetTimer;
 
-function hideHeader(){
+function hideNav() {
   document.getElementById("navbar").classList.add("-translate-y-20");
 }
-function resetTimer(){
-  idle = setTimeout(hideHeader, 7000);
+
+function resetTimer() {
   document.getElementById("navbar").classList.remove("-translate-y-20");
-}
-*/
+  clearTimeout(time);
+  time = setTimeout(hideNav, 3000);
+  };
+
 </script>
 

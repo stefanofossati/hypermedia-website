@@ -10,6 +10,13 @@ export interface Person {
     pitch: string;
 }
 
+export interface Area {
+    area_title: string;
+    area_description: string;
+    area_color: string;
+    area_image: string;
+}
+
 export interface Project {
     id: number;
     project_title: string;

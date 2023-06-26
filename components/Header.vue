@@ -2,16 +2,20 @@
 
 <template>
   <header>
-    <div
-        class="fixed flex h-16 lg:h-32 w-full top-0 dark:bg-gray-900 bg-white items-center justify-between">
-      <NuxtLink to="/" class="w-44 lg:w-64 flex-none cursor-pointer">
+    <div class="fixed flex h-20 lg:h-20 w-full top-0 dark:bg-gray-900 bg-white items-center justify-between" id="navbar">
+      <NuxtLink to="/" class="w-52 lg:w-52 flex-none cursor-pointer ml-6">
         <img alt="logo" src="../assets/LogoDraft.svg">
       </NuxtLink>
+      <div class="px-4 cursor-pointer lg:hidden mt-4 mr-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-12 fill-orange-500 stroke-orange-500" id="menu">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+        </svg>
+      </div>
       <div class="w-full hidden lg:block">
         <nav class="text-lg w-full font-bold text-slate-700 dark:text-slate-200">
           <ul class="flex justify-end">
             <li class="mr-10 lg:mr-20">
-              <NuxtLink to="" class="hover:text-orange-500 cursor-pointer">All Areas</NuxtLink>
+              <NuxtLink to="/areas" class="hover:text-orange-500 cursor-pointer">All Areas</NuxtLink>
             </li>
             <li class="mr-10 lg:mr-20">
               <NuxtLink to="/projects" class="hover:text-orange-500 cursor-pointer">All Projects</NuxtLink>
@@ -50,6 +54,20 @@
         </nav>
       </div>
     </div>
+
+    <div class="grid grid cols-4 hidden" id="items">
+      <div class="col-span-1 flex justify-end">
+        <nav class="text-right">
+          <ul class="text-sm mt-6">
+            <li class="text-orange-500 font-bold py-1">
+              <NuxtLink class="px-4 flex justify-end border-r-4 border-primary">
+                <span>All Areas</span>
+              </NuxtLink>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
   </header>
 </template>
 <style>
@@ -62,7 +80,7 @@
 /*}*/
 </style>
 
-<script setup lang="ts">
+<script setup lang="js">
 import {useColorMode} from "~/.nuxt/imports";
 
 let theme = useColorMode().value === 'dark'
@@ -75,5 +93,37 @@ function bright() {
     useColorMode().preference = 'dark';
   }
 }
+
+const items = document.getElementById("items");
+const menu = document.getElementById("menu");
+
+//make the header disappear when scroll down and appear on scroll up
+var lastScroll = 0;
+addEventListener("scroll", function(){
+  var scrollTop = this.window.scrollY || document.documentElement.scrollTop;
+  if(scrollTop > lastScroll){
+    document.getElementById("navbar").classList.add("-translate-y-20");
+  }
+  else{
+    document.getElementById("navbar").classList.remove("-translate-y-20");
+  }
+  lastScroll = scrollTop;
+});
+
+//hide header on inactivity
+let time;
+onload = resetTimer;
+onmousemove = resetTimer;
+
+function hideNav() {
+  document.getElementById("navbar").classList.add("-translate-y-20");
+}
+
+function resetTimer() {
+  document.getElementById("navbar").classList.remove("-translate-y-20");
+  clearTimeout(time);
+  time = setTimeout(hideNav, 3000);
+  };
+
 </script>
 

@@ -13,6 +13,8 @@ export interface Person {
 export interface Area {
     area_title: string;
     area_description: string;
+    area_color: string;
+    area_image: string;
 }
 
 export interface Project {

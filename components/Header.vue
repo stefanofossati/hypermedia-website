@@ -97,19 +97,9 @@ function bright() {
 const items = document.getElementById("items");
 const menu = document.getElementById("menu");
 
-menu?.addEventListener("click", ()=>{ 
-  console.log('henlo');
-  if(items?.classList.contains('hidden')){
-    items?.classList.remove('hidden');
-  }
-  else{
-    items?.classList.add('hidden');
-  }
-})
-
 //make the header disappear when scroll down and appear on scroll up
 var lastScroll = 0;
-window.addEventListener("scroll", function(){
+addEventListener("scroll", function(){
   var scrollTop = this.window.scrollY || document.documentElement.scrollTop;
   if(scrollTop > lastScroll){
     document.getElementById("navbar").classList.add("-translate-y-20");
@@ -122,8 +112,8 @@ window.addEventListener("scroll", function(){
 
 //hide header on inactivity
 let time;
-window.onload = resetTimer;
-window.onmousemove = resetTimer;
+onload = resetTimer;
+onmousemove = resetTimer;
 
 function hideNav() {
   document.getElementById("navbar").classList.add("-translate-y-20");

@@ -3,33 +3,52 @@
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
 
+.page_title {
+    @apply text-3xl sm:text-4xl md:text-6xl font-bold m-10 dark:text-white
+}
+
 /* Style for the Contact Us */
 
-.contact_us_info_box {
-    @apply flex flex-col basis-1/6
-    border-4 border-blue-600 bg-blue-300
-    rounded-lg p-4
-    items-center
+.contact_us_box {
+    @apply flex flex-col border-4 bg-gray-300 rounded-lg p-4 items-center
+    dark:text-white dark:bg-gray-700 dark:border-gray-800
+}
+
+.contact_us_box_title {
+    @apply font-bold text-3xl text-center mb-2
 }
 
 .contact_us_tab_name {
-    @apply border-2 p-1 text-red-900 bg-red-200 border-red-600 rounded-lg md:pl-16 md:pr-16 hover:bg-red-300 active:bg-red-400
+    @apply p-1 text-black bg-gray-300 pl-2 pr-2 sm:pl-6 sm:pr-6 md:pl-16 md:pr-16 lg:pl-28 lg:pr-28 hover:bg-gray-400
+    dark:text-white dark:bg-gray-700 dark:hover:bg-gray-600
 }
 
-.contact_us_form_title {
-    @apply text-2xl text-center text-blue-600
+.contact_us_tab_name_active {
+    @apply p-1 text-white bg-gray-500 pl-2 pr-2 sm:pl-6 sm:pr-6 md:pl-16 md:pr-16 lg:pl-28 lg:pr-28
+    dark:text-white dark:bg-gray-900
+}
+
+.contact_us_form_row {
+    @apply w-full flex flex-col justify-center items-center mt-1
+    dark:text-white
+    sm:flex-row sm:mt-3
+}
+
+.contact_us_form_label {
+    @apply w-full float-left mr-2 sm:w-1/4 sm:ml-3
+}
+
+.contact_us_form_input_col {
+    @apply w-full float-left sm:w-3/4 sm:mr-3
 }
 
 .contact_us_form_input {
-    @apply border-2 border-blue-600 rounded-lg p-1 text-black
-}
-
-.contact_us_form_line {
-    @apply w-full flex flex-row justify-center items-center
+    @apply rounded-md p-1 text-black w-full
 }
 
 .contact_us_form_submit_button {
-    @apply border-2 border-blue-600 rounded-lg p-1 bg-blue-300 text-blue-900 mt-2
+    @apply rounded-sm p-1 bg-gray-400 m-1 mt-3 hover:bg-gray-200
+    dark:bg-gray-800 dark:hover:bg-gray-600
 }
 
 /* Style for the About Us */

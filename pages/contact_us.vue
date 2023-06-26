@@ -1,19 +1,19 @@
 <!-- Contact Us page -->
 <template>
-  <div class="bg-gray-400"> <!-- Page wrapper -->
-    <div class="flex justify-center">
-      <h1 class="text-4xl font-bold p-6">Contact Us</h1>
+  <div class="bg-gray-200 dark:bg-gray-800 flex flex-col items-center"> <!-- Page wrapper -->
+    <div>
+      <h1 class="page_title">Contact Us</h1>
     </div>
-    <div class="w-full"> <!-- Tab -->
+    <div> <!-- Tab -->
       <div class="flex flex-row justify-center mb-6">
-        <button id="info" @click="tab_selection($event)" class="contact_us_tab_name">General Info</button>
+        <button id="info" @click="tab_selection($event)" class="contact_us_tab_name_active">General Info</button>
         <button id="work" @click="tab_selection($event)" class="contact_us_tab_name">Work with Us</button>
         <button id="propose" @click="tab_selection($event)" class="contact_us_tab_name">Propose Project</button>
       </div>
-      <div>
-        <InfoBox id="info_box" class="tabcontent"></InfoBox>
-        <WorkWithUs id="work_with_us" class="tabcontent hidden"></WorkWithUs>
-        <ProposeProject id="propose_project" class="tabcontent hidden"></ProposeProject>
+      <div class="flex flex-row justify-center mb-8">
+        <InfoBox id="info_box" class="w-full"></InfoBox>
+        <WorkWithUs id="work_with_us" class="w-full hidden"></WorkWithUs>
+        <ProposeProject id="propose_project" class="w-full hidden"></ProposeProject>
       </div>
     </div>
   </div>
@@ -24,7 +24,10 @@ function tab_selection(clicked: any) {
   const info_box: HTMLElement | null = document.getElementById("info_box");
   const work_with_us: HTMLElement | null = document.getElementById("work_with_us");
   const propose_project: HTMLElement | null = document.getElementById("propose_project");
-  //console.log("A: " + clicked.currentTarget.id);
+
+  const info_tab: HTMLElement | null = document.getElementById("info");
+  const work_tab: HTMLElement | null = document.getElementById("work");
+  const propose_tab: HTMLElement | null = document.getElementById("propose");
 
   if (clicked.currentTarget.id == "info") {
     info_box!.style.display = "block";
@@ -43,13 +46,12 @@ function tab_selection(clicked: any) {
     //console.log("propose_project clicked");
   }
 
-  var i, tablinks;
-  tablinks = document.getElementsByClassName("contact_us_tab_name");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-    console.log("B: " + tablinks[i].className);
-  }
+  //console.log("A: " + info_tab!.className)
+  info_tab!.className = info_tab!.className.replace("_active", "");
+  work_tab!.className = work_tab!.className.replace("_active", "");
+  propose_tab!.className = propose_tab!.className.replace("_active", "");
 
-  clicked.currentTarget.className += " active";
+  clicked.currentTarget.className += "_active";
+  //console.log("B: " + clicked.currentTarget.className);
 }
 </script>

@@ -54,21 +54,27 @@
 /* Style for the About Us */
 
 .about_us_row {
-    @apply flex flex-row items-center p-2
-}
-
-.about_us_dot {
-    @apply rounded-full h-6 w-6 bg-gray-100 flex-none border-4 border-gray-700
+    @apply flex flex-row items-center m-1 justify-evenly
+    dark:text-white dark:bg-gray-700
 }
 
 .about_us_image {
-    @apply h-14 md:h-28 w-auto rounded-xl border-2 border-gray-700 m-1
+    @apply h-auto rounded-lg border-2 border-gray-700 w-1/6
 }
 
-.about_us_topic {
-    @apply text-2xl font-bold w-96
+.about_us_card_header {
+    @apply bg-blue-500
+}
+
+.about_us_title {
+    @apply font-extrabold text-2xl
+    dark:text-white
+}
+
+.about_us_subtitle {
+    @apply font-bold text-white
 }
 
 .about_us_paragraph {
-    @apply text-lg italic text-justify m-1
+    @apply text-lg italic text-justify w-5/6 mr-4
 }

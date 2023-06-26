@@ -20,3 +20,12 @@ export interface Project {
     budget: number;
     tags: string[];
 }
+
+export interface AboutUs {
+    id: number;
+    title: string;
+    subtitle: string;
+    paragraph: string;
+    image_url: string;
+    color: string;
+}

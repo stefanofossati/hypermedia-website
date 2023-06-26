@@ -6,11 +6,13 @@
                     :id="a.area_title"
                     :area_title="a.area_title"
                     :area_image="a.area_image"
+                    :area_color="a.area_color"
                     :link="'/areas/' + a.area_title"/>
+
     </div>
 
     <!--Navigation dots-->
-    <div id="nav" class="fixed w-screen bottom-12 bg-scroll flex flex-row justify-center space-x-24">
+    <div id="nav" class="fixed h-screen bottom-0 left-3 bg-scroll flex flex-col justify-center space-y-20 ">
       <area-pointer v-for="p in areas"
                     :area_title="p.area_title"
                     v-on:click="getDocument(p.area_title)"/>

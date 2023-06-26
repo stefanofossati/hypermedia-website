@@ -8,20 +8,22 @@ const props: Readonly<{
 </script>
 
 <template>
+  <div>
     <div class="flex py-2">
-        <div class="flex w-1/4 justify-end items-center">
-            <div class="h-16 w-16 dark:border-white border-black rounded-full border-2">
-                <svg viewBox="0 -960 960 960" :class="props.class">
-                    <path :d="props.svg_path"/>
-                </svg>
-            </div>
+      <div class="flex w-1/4 justify-end items-center">
+        <div class="h-16 w-16 dark:border-white border-black rounded-full border-2">
+          <svg viewBox="0 -960 960 960" :class="props.class">
+            <path :d="props.svg_path"/>
+          </svg>
         </div>
-        <div class="flex w-3/4 flex-col px-3">
-            <p class="dark:text-white text-black text-lg">{{props.info_name}}</p>
-            <p class="dark:text-gray-100 text-black-100 text-sm">{{props.info_description}}</p>
-        </div>
-
+      </div>
+      <div class="flex w-3/4 flex-col px-3">
+        <p class="dark:text-white text-black text-lg">{{props.info_name}}</p>
+        <p class="dark:text-gray-100 text-black-100 text-sm">{{props.info_description}}</p>
+      </div>
     </div>
+  </div>
+
 </template>
 
 <style scoped>

@@ -1,11 +1,10 @@
-<!-- Default layout used by all the page -->
 <template>
-  <div>
-    <main class="flex flex-col bg-gray-200 dark:bg-gray-950">
+  <div> <!-- Default layout used by all the page -->
+    <main class="flex flex-col bg-gray-200 dark:bg-gray-950 min-h-screen">
       <div class="h-16 lg:h-32 w-full bg-white"/>
       <Header class="flex-none"/>
-      <slot class="flax-auto"/>
-      <Footer class="flex-none"/>
+      <slot class="flex-auto"/>
+      <Footer class="flex-auto"/>
     </main>
   </div>
 </template>
@@ -28,6 +27,5 @@
 </style>
 
 <script setup lang="ts">
-import Header from "~/components/Header.vue";
-import Footer from "~/components/Footer.vue";
+
 </script>

@@ -63,8 +63,6 @@
 </style>
 
 <script setup lang="ts">
-import {useColorMode} from "~/.nuxt/imports";
-
 let theme = useColorMode().value === 'dark'
 
 function bright() {

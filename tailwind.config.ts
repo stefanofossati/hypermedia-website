@@ -27,4 +27,8 @@ export default <Partial<Config>>{
         `!./**/*.{spec,test}.*`
     ],
     darkMode: 'class',
+    safelist: [
+        'hover:bg-green-500',
+        'hover:bg-blue-500',
+    ]
 }

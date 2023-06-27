@@ -8,7 +8,7 @@
                       :project_title="pj.project_title"
                       :short_description="pj.short_description"
                       :link="'/projects/' + pj.project_title"
-                      :tags="pj.tags"
+                      :tags="pj.areas"
                       :main_image="pj.main_image"/>
     </div>
   </div>

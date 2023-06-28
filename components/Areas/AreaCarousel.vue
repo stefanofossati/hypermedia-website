@@ -1,25 +1,24 @@
 <script setup lang="ts">
 
 const props: Readonly<{
-  area_title?: string,
-  area_image?: string[],
-  id?: string,
-  area_color?: string,
-  area_description?: string;
-}> = defineProps(['area_title', 'area_image', 'area_color', 'area_description', 'id']);
+  project_tile?:string,
+  main_image?:string;
+}> = defineProps(['project_title', 'main_image']);
 
 </script>
 
 <template>
-  <div>
-    <!-- Carousel wrapper -->
-    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-      <!-- Items -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-        <img :src="props.area_image" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+    <!-- Items -->
+    <NuxtLink :to="'/projects/' + props.project_tile">
+      <div class="h-96 relative bg-center bg-cover" style="background-image: url(https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg)">
+        <div class="absolute bottom-0 px-4 py-3 w-full backdrop-blur-lg rounded-lg">
+          <h1 class="text-white font-semibold text-4xl ml-4"> MARIOOOO </h1>
+          <p class="text-gray-200 ml-4">
+            Descrizione vera di quello che devo scrivere.
+          </p>
+        </div>
       </div>
-    </div>
-  </div>
+    </NuxtLink>
 </template>
 
 <style scoped>

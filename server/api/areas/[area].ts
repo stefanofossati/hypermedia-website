@@ -11,7 +11,7 @@ export default async function eventHandler(event: any) {
     // @ts-ignore
     const {data, error}: { data: Area } = await clientDB
         .from('areas')
-        .select("area_title, area_description, area_color, area_image")
+        .select("area_title, area_description, area_color, area_image, projects(project_title, main_image)")
         .eq('area_title', area_title)
         .limit(1)
         .single();

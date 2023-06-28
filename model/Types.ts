@@ -28,6 +28,7 @@ export interface Project {
     budget: number;
     main_image: string;
     gallery_images: ImageGallery[];
+    most_relevant: number;
 }
 
 export interface ImageGallery{

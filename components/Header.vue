@@ -3,7 +3,7 @@
 <template>
   <header>
     <div
-        class="fixed flex h-16 lg:h-32 w-full top-0 dark:bg-gray-900 bg-white items-center justify-between">
+        class="fixed z-50 flex h-16 lg:h-32 w-full top-0 dark:bg-gray-900 bg-white items-center justify-between">
       <NuxtLink to="/" class="w-44 lg:w-64 flex-none cursor-pointer">
         <img alt="logo" src="../assets/LogoDraft.svg">
       </NuxtLink>

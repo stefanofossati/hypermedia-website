@@ -1,15 +1,36 @@
 <template>
   <div class="flex flex-col items-center text-center">
-    <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold m-10 dark:text-white ">
-      All Projects
-    </h1>
-    <div class="grid xl:grid-cols-4 gap-4 lg:grid-cols-3 md:grid-cols-2 col-span-1 place-content-center px-2 py-2">
-      <ProjectPreview v-for="pj in projects"
-                      :project_title="pj.project_title"
-                      :short_description="pj.short_description"
-                      :link="'/projects/' + pj.project_title"
-                      :tags="pj.tags"
-                      :main_image="pj.main_image"/>
+    <div class=" flex flex-row items-center">
+      <div id="id_0"  class="hover:text-gray-500 dark:hover:text-gray-500 text-2xl sm:text-3xl md:text-5xl font-bold m-10 text-gray-800 dark:text-gray-200 " v-on:click="selection($event)">All Projects</div>
+      <div id="id_1" class="hover:text-gray-500 dark:hover:text-gray-500 text-3xl sm:text-4xl md:text-6xl font-bold m-10 text-black dark:text-white " v-on:click="selection($event)">Most Relevant</div>
+      <div id="id_2"  class="hover:text-gray-500 dark:hover:text-gray-500 text-2xl sm:text-43l md:text-5xl font-bold m-10 text-gray-800 dark:text-gray-200 " v-on:click="selection($event)">All Projects by area</div>
+    </div>
+    <div id="most_relevant" >
+      <div class="grid gap-4 lg:grid-cols-2 col-span-1 place-content-center px-2 py-2">
+        <ProjectPreview v-for="most_pj in most_relevant(projects)"
+                        :project_title="most_pj.project_title"
+                        :short_description="most_pj.short_description"
+                        :link="'/projects/' + most_pj.project_title"
+                        :tags="most_pj.areas"
+                        :main_image="most_pj.main_image"/>
+      </div>
+
+    </div>
+    <div id="all_projects" class="px-10 hidden">
+      <div class="grid xl:grid-cols-4 gap-4 lg:grid-cols-3 md:grid-cols-2 col-span-1 place-content-center px-2 py-2">
+        <ProjectPreview v-for="pj in projects"
+                        :project_title="pj.project_title"
+                        :short_description="pj.short_description"
+                        :link="'/projects/' + pj.project_title"
+                        :tags="pj.areas"
+                        :main_image="pj.main_image"/>
+      </div>
+    </div>
+
+    <div id="by_area" class="px-10 hidden">
+      <ProjectsByArea v-for="area in take_areas(projects)"
+                      :area="area"
+                      :projects_area="projects_by_area(projects, area)"/>
     </div>
   </div>
 </template>
@@ -26,6 +47,80 @@ const {data: projects, error}: { data: Project[] } = await useFetch(
     }
 );
 
+
+
+
+
+function most_relevant(projects: Project[]){
+  const most_relevant: Project[] = [];
+  for(let i = 0; i < projects.length; i++){
+    if(projects[i].most_relevant == 1){
+      most_relevant.push(projects[i]);
+    }
+  }
+  return most_relevant;
+}
+
+function take_areas(projects: Project[]){
+  const areas: string[] = [];
+  for(let i = 0; i < projects.length; i++){
+    for(let j = 0; j < projects[i].areas.length; j++){
+      if(!areas.includes(projects[i].areas[j].area_title)){
+        areas.push(projects[i].areas[j].area_title);
+      }
+    }
+  }
+  return areas;
+}
+
+function projects_by_area(projects: Project[], area: string){
+  const projects_area: Project[] = [];
+  for(let i = 0; i < projects.length; i++){
+    for(let j = 0; j < projects[i].areas.length; j++){
+      if(projects[i].areas[j].area_title == area){
+        projects_area.push(projects[i]);
+      }
+    }
+  }
+  return projects_area;
+}
+
+
+function selection(event: any) {
+  const id_click: HTMLElement | null = document.getElementById(event.currentTarget.id)! as HTMLElement;
+  const id_0: HTMLElement | null = document.getElementById("id_0")! as HTMLElement
+  const id_1: HTMLElement | null = document.getElementById("id_1")! as HTMLElement;
+  const id_2: HTMLElement | null = document.getElementById("id_2")! as HTMLElement;
+
+  const all_projects: HTMLElement | null = document.getElementById("all_projects")! as HTMLElement;
+  const most_relevant: HTMLElement | null = document.getElementById("most_relevant")! as HTMLElement;
+  const by_area: HTMLElement | null = document.getElementById("by_area")! as HTMLElement;
+
+
+  if(id_click.innerText === "All Projects") {
+    all_projects.className = 'px-10';
+    most_relevant.className = 'px-10 hidden';
+    by_area.className = 'px-10 hidden';
+    id_0.innerText = "Most Relevant";
+    id_1.innerText = "All Projects";
+    id_2.innerText = "All Projects by area";
+  }else if(id_click.innerText === "Most Relevant") {
+    all_projects.className = 'px-10 hidden';
+    most_relevant.className = 'px-10';
+    by_area.className = 'px-10 hidden';
+    id_0.innerText = "All Projects by area";
+    id_1.innerText = "Most Relevant";
+    id_2.innerText = "All Projects";
+  }else if(id_click.innerText === "All Projects by area") {
+    all_projects.className = 'px-10 hidden';
+    most_relevant.className = 'px-10 hidden';
+    by_area.className = 'px-10';
+    id_0.innerText = "All Projects";
+    id_1.innerText = "All Projects by area";
+    id_2.innerText = "Most Relevant";
+  }
+
+}
 
 </script>
 

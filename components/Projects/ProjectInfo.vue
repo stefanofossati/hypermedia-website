@@ -10,7 +10,7 @@ const props: Readonly<{
 <template>
     <div class="divide-y divide-slate-700 dark:divide-gray-500 border-t-1 justify-center items-center">
         <p class="text-2xl px-4 py-2 dark:text-white text-black">Projects Info</p>
-        <div id="project_infos" class=" project-infos-div divide-y divide-slate-700 dark:divide-gray-500">
+        <div id="project_infos" class="flex flex-col divide-y divide-slate-700 dark:divide-gray-500">
             <ProjectsProjectInfoRow :info_name="'Supervisor'" :info_description="props.info_supervisor" class="dark:text-white text-black fill-current h-16 w-16 mb-10 justify-center "
                                     svg_path="M480-481q-66 0-108-42t-42-108q0-66 42-108t108-42q66 0 108 42t42 108q0 66-42 108t-108 42Zm260 321H220q-24.75 0-42.375-17.625T160-220v-34q0-38 19-65t49-41q67-30 128.5-45T480-420q62 0 123 15.5t127.921 44.694q31.301 14.126 50.19 40.966Q800-292 800-254v34q0 24.75-17.625 42.375T740-160Zm-520-60h520v-34q0-16-9.5-30.5T707-306q-64-31-117-42.5T480-360q-57 0-111 11.5T252-306q-14 7-23 21.5t-9 30.5v34Zm260-321q39 0 64.5-25.5T570-631q0-39-25.5-64.5T480-721q-39 0-64.5 25.5T390-631q0 39 25.5 64.5T480-541Zm0-90Zm0 411Z"/>
             <ProjectsProjectInfoRow :info_name="'Budget'" :info_description="props.info_budget" class="dark:text-white text-black fill-current h-16 w-16 mr-1.5 mb-1.5 justify-center"

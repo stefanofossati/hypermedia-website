@@ -6,7 +6,7 @@
       <div id="id_2"  class="flex-1 w-1/5 text-xl sm:text-2xl md:text-4xl font-bold m-10 text-gray-800 dark:text-gray-200 hover:text-gray-500 dark:hover:text-gray-500 " v-on:click="selection($event)">Projects by area</div>
     </div>
     <div id="most_relevant">
-      <div class="grid gap-4 lg:grid-cols-2 col-span-1 place-content-center px-2 py-2">
+      <div class="flex flex-col place-content-center px-2 py-4 gap-4">
         <ProjectPreview v-for="most_pj in most_relevant(projects)"
                         :project_title="most_pj.project_title"
                         :short_description="most_pj.short_description"

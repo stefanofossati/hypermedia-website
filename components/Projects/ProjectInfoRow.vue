@@ -1,10 +1,14 @@
 <script setup lang="ts">
+import {AreaProjectPreview} from "~/model/Types";
+
 const props: Readonly<{
     info_name?: string,
     info_description?: string,
-    svg_path?: string
-    class?: string
-}> = defineProps(['info_name', 'info_description', 'svg_path', 'class']);
+    svg_path?: string,
+    class?: string,
+    desc_bool?: boolean,
+    button_name: AreaProjectPreview[]
+}> = defineProps(['info_name', 'info_description', 'svg_path', 'class', 'desc_bool', 'button_name']);
 </script>
 
 <template>
@@ -19,7 +23,13 @@ const props: Readonly<{
       </div>
       <div class="flex w-3/4 flex-col px-3">
         <p class="dark:text-white text-black text-lg">{{props.info_name}}</p>
-        <p class="dark:text-gray-100 text-black-100 text-sm">{{props.info_description}}</p>
+        <div v-if="props.desc_bool" class="dark:text-gray-100 text-black-100 text-sm" >{{props.info_description}}</div>
+        <NuxtLink v-else :to="'/areas/' + but.area_title" v-for="but in props.button_name">
+          <div class="flex flex-row"  >
+            <div class="dark:text-white text-black hover:text-white" :class="'hover:bg-'+but.area_color+'-500'">{{but.area_title}}</div>
+          </div>
+        </NuxtLink>
+
       </div>
     </div>
   </div>

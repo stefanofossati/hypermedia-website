@@ -19,7 +19,7 @@
           </svg>
         </button>
         <ProjectsProjectInfo :info_supervisor="pj.supervisor" :info_budget="pj.budget" :info_start_date="pj.start_date"
-                             :info_end_date="pj.end_date"/>
+                             :info_end_date="pj.end_date" :area_infos="pj.areas"/>
       </div>
 
       <div class="lg:col-span-3 lg:box-content lg:sticky lg:inset-y-0 lg:py-1 left-0 px-2 ">
@@ -35,7 +35,7 @@
       <div
           class="lg:col-span-1 lg:sticky lg:inset-y-0 lg:right-0 lg:flex lg:flex-col border-l-2 border-slate-700 dark:border-gray-500 hidden self-center">
         <ProjectsProjectInfo :info_supervisor="pj.supervisor" :info_budget="pj.budget" :info_start_date="pj.start_date"
-                             :info_end_date="pj.end_date"/>
+                             :info_end_date="pj.end_date" :area_infos="pj.areas"/>
       </div>
     </div>
 

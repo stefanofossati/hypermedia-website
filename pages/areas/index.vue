@@ -8,14 +8,12 @@
                     :area_image="a.area_image"
                     :area_color="a.area_color"
                     :link="'/areas/' + a.area_title"/>
-
     </div>
-
     <!--Navigation dots-->
     <div id="nav" class="fixed h-screen bottom-0 left-3 bg-scroll flex flex-col justify-center space-y-20 ">
-      <area-pointer v-for="p in areas"
-                    :area_title="p.area_title"
-                    v-on:click="getDocument(p.area_title)"/>
+      <area-pointer v-for="d in areas"
+                    :area_title="d.area_title"
+                    v-on:click="getDocument(d.area_title)"/>
     </div>
   </div>
 </template>
@@ -37,15 +35,16 @@ const {data: areas, error}: { data: Area[] } = await useFetch(
     }
 );
 
-    onscroll = function() {
-    const elem: HTMLElement | null = document.getElementById("nav")!;
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 270) {    
-        elem.style.display = "none";
-    }
-    else{
+//problem when in another page since elem is null and can not be nullable
+    /*onscroll = function() {
+      let elem: HTMLElement | null;
+      elem = document.getElementById("nav")!;
+      if ((window.innerHeight + window.scrollY) < document.body.offsetHeight - 270 && elem) {
         elem.style.display = "flex";
-    }
-};
+      } else {
+        elem.style.display = "none";
+      }
+    };*/
 
     function getDocument(areaName:string){
       document.getElementById(areaName)?.scrollIntoView();
@@ -53,5 +52,5 @@ const {data: areas, error}: { data: Area[] } = await useFetch(
 
     onload = function(){
       scrollTo(0,0);
-    };
+    }
 </script>

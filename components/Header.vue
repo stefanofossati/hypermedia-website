@@ -94,13 +94,11 @@ function bright() {
   }
 }
 
-const items = document.getElementById("items");
-const menu = document.getElementById("menu");
-
 //make the header disappear when scroll down and appear on scroll up
-var lastScroll = 0;
+let lastScroll = 0;
+
 addEventListener("scroll", function(){
-  var scrollTop = this.window.scrollY || document.documentElement.scrollTop;
+  let scrollTop = this.window.scrollY || document.documentElement.scrollTop;
   if(scrollTop > lastScroll){
     document.getElementById("navbar").classList.add("-translate-y-20");
   }
@@ -109,6 +107,8 @@ addEventListener("scroll", function(){
   }
   lastScroll = scrollTop;
 });
+
+
 
 //hide header on inactivity
 let time;
@@ -123,7 +123,7 @@ function resetTimer() {
   document.getElementById("navbar").classList.remove("-translate-y-20");
   clearTimeout(time);
   time = setTimeout(hideNav, 3000);
-  };
+}
 
 </script>
 

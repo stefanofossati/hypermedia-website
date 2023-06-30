@@ -30,14 +30,14 @@
     <div id="by_area" class="px-10 hidden">
       <ProjectsByArea v-for="area in take_areas(projects)"
                       :area="area"
-                      :projects_area="projects_by_area(projects, area)"/>
+                      :projects_area="projects_by_area(projects, area.area_title)"/>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import {useFetch} from "nuxt/app";
-import {Project} from "~/model/Types";
+import {AreaProjectPreview, Project} from "~/model/Types";
 
 //@ts-ignore
 const {data: projects, error}: { data: Project[] } = await useFetch(
@@ -63,14 +63,16 @@ function most_relevant(projects: Project[]){
 
 function take_areas(projects: Project[]){
   const areas: string[] = [];
+  const areas_info: AreaProjectPreview[] = [];
   for(let i = 0; i < projects.length; i++){
     for(let j = 0; j < projects[i].areas.length; j++){
       if(!areas.includes(projects[i].areas[j].area_title)){
         areas.push(projects[i].areas[j].area_title);
+        areas_info.push(projects[i].areas[j]);
       }
     }
   }
-  return areas;
+  return areas_info;
 }
 
 function projects_by_area(projects: Project[], area: string){

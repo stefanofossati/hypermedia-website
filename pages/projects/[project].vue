@@ -22,12 +22,12 @@
                              :info_end_date="pj.end_date"/>
       </div>
 
-      <div class="lg:col-span-3 lg:box-content lg:sticky lg:inset-y-0 lg:py-1 left-0  ">
+      <div class="lg:col-span-3 lg:box-content lg:sticky lg:inset-y-0 lg:py-1 left-0 px-2 ">
         <h2 class="text-3xl text-black dark:text-white py-1">
           Description
         </h2>
-        <p class="text-1xl text-black dark:text-white ">
-          {{ pj.project_description }}
+        <p class="text-1xl text-black dark:text-white py-2" v-for="desc in pj.project_description">
+          {{ desc }}
         </p>
       </div>
 

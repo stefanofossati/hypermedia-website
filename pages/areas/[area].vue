@@ -35,7 +35,11 @@
         <!-- Carousel wrapper -->
         <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
 
-          <AreaCarousel v-for="pj in areas.projects" :project_title="pj.project_title" :main_image="pj.main_image"/>
+          <ProjectPreview v-for="pj in areas.projects"
+                          :project_title="pj.project_title"
+                          :see_tags="false"
+                          :link="'/projects/' + pj.project_title"
+                          :main_image="pj.main_image"/>
 
           <!-- Buttons -->
           <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
@@ -59,7 +63,6 @@
 <script setup lang="ts">
 import {useRoute, useFetch} from "nuxt/app";
 import {Area} from "~/model/Types";
-import AreaCarousel from "~/components/Areas/AreaCarousel.vue";
 
 const area_title: string = useRoute().params.area as string;
 

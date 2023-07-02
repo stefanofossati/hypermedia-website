@@ -1,21 +1,38 @@
 <template>
-  <div class="flex flex-col items-center text-center">
-    <div class="flex flex-row w-full justify-items-center">
-      <div id="id_0"  class="flex-1 w-1/5 text-xl sm:text-2xl md:text-4xl font-bold m-10 text-gray-800 dark:text-gray-200 hover:text-gray-500 dark:hover:text-gray-500 " v-on:click="selection($event)">All Projects</div>
-      <div id="id_1" class="flex-1 w-4/5 text-3xl sm:text-4xl md:text-6xl font-bold m-10 text-black underline underline-offset-8 dark:text-white dark:hover:text-gray-500  border-l-2 border-r-2 border-slate-500 " v-on:click="selection($event)">Most Relevant</div>
-      <div id="id_2"  class="flex-1 w-1/5 text-xl sm:text-2xl md:text-4xl font-bold m-10 text-gray-800 dark:text-gray-200 hover:text-gray-500 dark:hover:text-gray-500 " v-on:click="selection($event)">Projects by area</div>
-    </div>
-    <div id="most_relevant">
-      <div class="flex flex-col place-content-center px-2 py-4 gap-4">
-        <ProjectPreview v-for="most_pj in most_relevant(projects)"
-                        :project_title="most_pj.project_title"
-                        :short_description="most_pj.short_description"
-                        :link="'/projects/' + most_pj.project_title"
-                        :tags="most_pj.areas"
-                        :main_image="most_pj.main_image"/>
+  <div >
+    <div class="flex flex-row w-full items-center justify-between">
+      <div id="id_0"  class="flex-1" v-on:click="selection($event)">
+        <h1 class="text-xl sm:text-2xl md:text-4xl font-bold m-10
+                   text-gray-800 dark:text-gray-200 hover:text-gray-500 dark:hover:text-gray-500
+                   cursor-pointer text-right">All Projects</h1>
       </div>
-
+      <div id="id_1" class="flex-1 grow"
+           v-on:click="selection($event)">
+        <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold m-10
+                   text-black underline underline-offset-8 dark:text-white dark:hover:text-gray-500 border-l-2 border-r-2 border-slate-500
+                   cursor-pointer text-center">Most Relevant</h1>
+      </div>
+      <div id="id_2"  class="flex-1"
+           v-on:click="selection($event)">
+        <h1 class="text-xl sm:text-2xl md:text-4xl font-bold m-10
+                   text-gray-800 dark:text-gray-200 hover:text-gray-500 dark:hover:text-gray-500
+                   cursor-pointer text-left">Projects by area</h1>
+      </div>
     </div>
+
+    <div id="most_relevant" class="translate-x-1/4">
+      <div class="relative w-1/2 flex flex-col place-content-center px-2 py-4 gap-4">
+        <div class="relative rounded-lg mx:auto" v-for="most_pj in most_relevant(projects)">
+            <ProjectPreview :project_title="most_pj.project_title"
+                            :short_description="most_pj.short_description"
+                            :link="'/projects/' + most_pj.project_title"
+                            :tags="most_pj.areas"
+                            :main_image="most_pj.main_image"
+                            :see_tags="true"/>
+        </div>
+      </div>
+    </div>
+
     <div id="all_projects" class="px-10 hidden">
       <div class="grid xl:grid-cols-4 gap-4 lg:grid-cols-3 md:grid-cols-2 col-span-1 place-content-center px-2 py-2">
         <ProjectPreview v-for="pj in projects"
@@ -46,10 +63,6 @@ const {data: projects, error}: { data: Project[] } = await useFetch(
       method: "GET",
     }
 );
-
-
-
-
 
 function most_relevant(projects: Project[]){
   const most_relevant: Project[] = [];

@@ -18,7 +18,7 @@
               <NuxtLink to="/areas" class="hover:text-orange-500 cursor-pointer">All Areas</NuxtLink>
             </li>
             <li class="mr-10 lg:mr-20">
-              <NuxtLink to="/projects" class="hover:text-orange-500 cursor-pointer">All Projects</NuxtLink>
+              <NuxtLink to="/projects" class="hover:text-orange-500 cursor-pointer">Projects</NuxtLink>
             </li>
             <li class="mr-10 lg:mr-20">
               <NuxtLink to="/team" class="hover:text-orange-500 cursor-pointer">Team</NuxtLink>

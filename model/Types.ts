@@ -14,8 +14,8 @@ export interface Area {
     area_title: string;
     area_description: string;
     area_color: string;
-    area_image: ImageGallery[];
-    id: string;
+    area_image: string[];
+    projects: ProjectAreaPreview[];
 }
 
 export interface Project {
@@ -40,4 +40,9 @@ export interface ImageGallery{
 export interface AreaProjectPreview {
     area_title: string;
     area_color: string;
+}
+
+export interface ProjectAreaPreview{
+    project_title: string;
+    main_image: string;
 }

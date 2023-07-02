@@ -36,7 +36,7 @@ const {data: areas, error}: { data: Area[] } = await useFetch(
 );
 
 //problem when in another page since elem is null and can not be nullable
-    /*onscroll = function() {
+/*onscroll = function() {
       let elem: HTMLElement | null;
       elem = document.getElementById("nav")!;
       if ((window.innerHeight + window.scrollY) < document.body.offsetHeight - 270 && elem) {

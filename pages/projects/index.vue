@@ -1,12 +1,12 @@
 <template>
   <div class="flex flex-col items-center text-center">
-    <div class=" flex flex-row items-center">
-      <div id="id_0"  class="hover:text-gray-500 dark:hover:text-gray-500 text-2xl sm:text-3xl md:text-5xl font-bold m-10 text-gray-800 dark:text-gray-200 " v-on:click="selection($event)">All Projects</div>
-      <div id="id_1" class="hover:text-gray-500 dark:hover:text-gray-500 text-3xl sm:text-4xl md:text-6xl font-bold m-10 text-black dark:text-white " v-on:click="selection($event)">Most Relevant</div>
-      <div id="id_2"  class="hover:text-gray-500 dark:hover:text-gray-500 text-2xl sm:text-43l md:text-5xl font-bold m-10 text-gray-800 dark:text-gray-200 " v-on:click="selection($event)">All Projects by area</div>
+    <div class="flex flex-row w-full justify-items-center">
+      <div id="id_0"  class="flex-1 w-1/5 text-xl sm:text-2xl md:text-4xl font-bold m-10 text-gray-800 dark:text-gray-200 hover:text-gray-500 dark:hover:text-gray-500 " v-on:click="selection($event)">All Projects</div>
+      <div id="id_1" class="flex-1 w-4/5 text-3xl sm:text-4xl md:text-6xl font-bold m-10 text-black underline underline-offset-8 dark:text-white dark:hover:text-gray-500  border-l-2 border-r-2 border-slate-500 " v-on:click="selection($event)">Most Relevant</div>
+      <div id="id_2"  class="flex-1 w-1/5 text-xl sm:text-2xl md:text-4xl font-bold m-10 text-gray-800 dark:text-gray-200 hover:text-gray-500 dark:hover:text-gray-500 " v-on:click="selection($event)">Projects by area</div>
     </div>
-    <div id="most_relevant" >
-      <div class="grid gap-4 lg:grid-cols-2 col-span-1 place-content-center px-2 py-2">
+    <div id="most_relevant">
+      <div class="flex flex-col place-content-center px-2 py-4 gap-4">
         <ProjectPreview v-for="most_pj in most_relevant(projects)"
                         :project_title="most_pj.project_title"
                         :short_description="most_pj.short_description"
@@ -30,14 +30,14 @@
     <div id="by_area" class="px-10 hidden">
       <ProjectsByArea v-for="area in take_areas(projects)"
                       :area="area"
-                      :projects_area="projects_by_area(projects, area)"/>
+                      :projects_area="projects_by_area(projects, area.area_title)"/>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import {useFetch} from "nuxt/app";
-import {Project} from "~/model/Types";
+import {AreaProjectPreview, Project} from "~/model/Types";
 
 //@ts-ignore
 const {data: projects, error}: { data: Project[] } = await useFetch(
@@ -63,14 +63,16 @@ function most_relevant(projects: Project[]){
 
 function take_areas(projects: Project[]){
   const areas: string[] = [];
+  const areas_info: AreaProjectPreview[] = [];
   for(let i = 0; i < projects.length; i++){
     for(let j = 0; j < projects[i].areas.length; j++){
       if(!areas.includes(projects[i].areas[j].area_title)){
         areas.push(projects[i].areas[j].area_title);
+        areas_info.push(projects[i].areas[j]);
       }
     }
   }
-  return areas;
+  return areas_info;
 }
 
 function projects_by_area(projects: Project[], area: string){
@@ -103,20 +105,20 @@ function selection(event: any) {
     by_area.className = 'px-10 hidden';
     id_0.innerText = "Most Relevant";
     id_1.innerText = "All Projects";
-    id_2.innerText = "All Projects by area";
+    id_2.innerText = "Projects by area";
   }else if(id_click.innerText === "Most Relevant") {
     all_projects.className = 'px-10 hidden';
     most_relevant.className = 'px-10';
     by_area.className = 'px-10 hidden';
-    id_0.innerText = "All Projects by area";
+    id_0.innerText = "Projects by area";
     id_1.innerText = "Most Relevant";
     id_2.innerText = "All Projects";
-  }else if(id_click.innerText === "All Projects by area") {
+  }else if(id_click.innerText === "Projects by area") {
     all_projects.className = 'px-10 hidden';
     most_relevant.className = 'px-10 hidden';
     by_area.className = 'px-10';
     id_0.innerText = "All Projects";
-    id_1.innerText = "All Projects by area";
+    id_1.innerText = "Projects by area";
     id_2.innerText = "Most Relevant";
   }
 

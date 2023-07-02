@@ -21,7 +21,7 @@ export interface Area {
 export interface Project {
     project_title: string;
     short_description: string;
-    project_description: string;
+    project_description: string[];
     start_date: Date;
     end_date: Date;
     supervisor: string;

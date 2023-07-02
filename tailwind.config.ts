@@ -33,5 +33,15 @@ export default <Partial<Config>>{
         'hover:bg-red-500',
         'hover:bg-yellow-500',
         'hover:bg-purple-500',
+        'hover:text-green-500',
+        'hover:text-blue-500',
+        'hover:text-red-500',
+        'hover:text-yellow-500',
+        'hover:text-purple-500',
+        'dark:hover:text-green-500',
+        'dark:hover:text-blue-500',
+        'dark:hover:text-red-500',
+        'dark:hover:text-yellow-500',
+        'dark:hover:text-purple-500',
     ]
 }

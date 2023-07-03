@@ -60,7 +60,7 @@
           <img id="big_image" :src="pj.gallery_images[3].url" alt="" class=" h-96 w-full object-cover px-2 ">
         </div>
         <div class="col-span-1 row-span-1"></div>
-        <div v-on:click="go_left(pj.gallery_images.length, pj.gallery_images)" class="col-span-1 row-span-2 hover:animate-pulse">
+        <div v-on:click="go_right(pj.gallery_images.length, pj.gallery_images)" class="col-span-1 row-span-2 hover:animate-pulse">
           <svg viewBox="0 -960 960 960" class="dark:text-white text-black fill-current h-16 w-16 mr-1.5 mb-1.5 justify-center">
             <path d="M400-80 0-480l400-400 56 57-343 343 343 343-56 57Z"/>
           </svg>
@@ -74,7 +74,7 @@
         <div  class="md:col-span-2 md:row-span-2 hidden md:flex">
           <img id="image03" :src="pj.gallery_images[2].url" alt="" class=" h-48 w-60 object-cover ">
         </div>
-        <div v-on:click="go_right(pj.gallery_images.length, pj.gallery_images)" class="col-span-1 row-span-2 hover:animate-pulse">
+        <div v-on:click="go_left(pj.gallery_images.length, pj.gallery_images)" class="col-span-1 row-span-2 hover:animate-pulse">
           <svg viewBox="0 -960 960 960" class="dark:text-white text-black fill-current h-16 w-16 mr-1.5 mb-1.5 justify-center ">
             <path d="m304-82-56-57 343-343-343-343 56-57 400 400L304-82Z"/>
           </svg>

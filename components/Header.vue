@@ -2,7 +2,7 @@
 
 <template>
   <header>
-    <div class="fixed flex h-20 lg:h-20 w-full top-0 dark:bg-gray-900 bg-white items-center justify-between" id="navbar">
+    <div class="fixed flex z-50 h-20 lg:h-20 w-full top-0 dark:bg-gray-900 bg-white items-center justify-between" id="navbar">
       <NuxtLink to="/" class="w-52 lg:w-52 flex-none cursor-pointer ml-6">
         <img alt="logo" src="../assets/LogoDraft.svg">
       </NuxtLink>
@@ -108,8 +108,6 @@ addEventListener("scroll", function(){
   lastScroll = scrollTop;
 });
 
-
-
 //hide header on inactivity
 let time;
 onload = resetTimer;
@@ -117,10 +115,12 @@ onmousemove = resetTimer;
 
 function hideNav() {
   document.getElementById("navbar").classList.add("-translate-y-20");
+  document.getElementById("topBar").classList.add("-translate-y-20");
 }
 
 function resetTimer() {
   document.getElementById("navbar").classList.remove("-translate-y-20");
+  document.getElementById("topBar").classList.remove("-translate-y-20");
   clearTimeout(time);
   time = setTimeout(hideNav, 3000);
 }

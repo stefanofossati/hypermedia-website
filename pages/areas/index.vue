@@ -36,15 +36,15 @@ const {data: areas, error}: { data: Area[] } = await useFetch(
 );
 
 //problem when in another page since elem is null and can not be nullable
-/*onscroll = function() {
+addEventListener("scroll", function(){
       let elem: HTMLElement | null;
       elem = document.getElementById("nav")!;
-      if ((window.innerHeight + window.scrollY) < document.body.offsetHeight - 270 && elem) {
+      if ((window.innerHeight + window.scrollY) < document.body.offsetHeight - 120 && elem != null) {
         elem.style.display = "flex";
       } else {
         elem.style.display = "none";
       }
-    };*/
+    });
 
     function getDocument(areaName:string){
       document.getElementById(areaName)?.scrollIntoView();

@@ -28,7 +28,7 @@ const props: Readonly<{
         </div>
         <div class="absolute bottom-0 px-4 py-3 w-full h-28 overflow-hidden backdrop-blur-lg rounded-b-lg">
           <h1 class="text-black dark:text-white font-semibold text-3xl ml-2 mb-2"> {{props.project_title}} </h1>
-          <p v-if="props.see_tags" class="text-black dark:text-white ml-2">{{props.short_description}}</p>
+          <p class="text-black dark:text-white ml-2">{{props.short_description}}</p>
         </div>
       </div>
     </NuxtLink>

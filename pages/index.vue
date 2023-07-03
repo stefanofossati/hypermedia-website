@@ -16,7 +16,7 @@ function switchDetails(details: HTMLDetailsElement) {
 <template>
   <div> <!-- homepage -->
     <div class="bg-scroll bg-cover bg-center aspect-auto w-screen"
-         style="background-image:url('https://i.pinimg.com/originals/7a/c0/40/7ac0401bf9764abb6612a069b033c7c8.jpg');">
+         style="background-image:url('https://ojnuafuxohzfjdijkfoi.supabase.co/storage/v1/object/public/Images/background.jpg');">
       <div
           class="snap-y snap-mandatory backdrop-blur-sm flex flex-col w-full text-sm sm:text-base md:text-lg lg:text-xl dark:text-white">
         <div class="snap-center flex flex-row w-full justify-start mt-10">
@@ -51,7 +51,7 @@ function switchDetails(details: HTMLDetailsElement) {
         </div>
         <div class="snap-center flex flex-row w-full justify-start">
           <div class="flex flex-row border-r-2 border-black w-1/2 translate-x-0.5 justify-end">
-            <lazy-nuxt-img src="https://www.utax.it/uploads/big/news/124/team-building.jpg" alt="team picture"
+            <lazy-nuxt-img src="https://ojnuafuxohzfjdijkfoi.supabase.co/storage/v1/object/public/Images/team.jpg" alt="team picture"
                            class="drop-shadow-2xl rounded-xl w-5/6 md:w-2/3 mr-2 sm:mr-5 md:mr-10"/>
           </div>
         </div>
@@ -91,8 +91,8 @@ function switchDetails(details: HTMLDetailsElement) {
         <div class="snap-center flex flex-row w-full justify-end">
           <div class="flex flex-row border-l-2 border-black w-1/2">
             <lazy-nuxt-img
-                src="https://www.hotpmo.com/wp-content/uploads/2021/10/dreamstime_xxl_49486769-2690x1310.jpg"
-                alt="team picture"
+                src="https://ojnuafuxohzfjdijkfoi.supabase.co/storage/v1/object/public/Images/network.jpg"
+                alt="team picture in a people network"
                 class="drop-shadow-2xl rounded-xl w-5/6 md:w-2/3 ml-2 sm:ml-5 md:ml-10"/>
           </div>
         </div>

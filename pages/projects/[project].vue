@@ -23,7 +23,7 @@
             <path d="M480-357q-6 0-11-2t-10-7L261-564q-8-8-7.5-21.5T262-607q10-10 21.5-8.5T304-606l176 176 176-176q8-8 21.5-9t21.5 9q10 8 8.5 21t-9.5 22L501-366q-5 5-10 7t-11 2Z"/>
           </svg>
         </button>
-        <ProjectsProjectInfo :info_supervisor="pj.supervisor" :info_budget="pj.budget" :info_start_date="pj.start_date"
+        <ProjectsProjectInfo :info_supervisor="pj.team" :info_budget="pj.budget" :info_start_date="pj.start_date"
                              :info_end_date="pj.end_date" :area_infos="pj.areas"/>
       </div>
 
@@ -39,7 +39,7 @@
       <!-- Project Info Desktop -->
       <div
           class="lg:col-span-1 lg:sticky lg:inset-y-0 lg:right-0 lg:flex lg:flex-col border-l-2 border-slate-700 dark:border-gray-500 hidden self-center">
-        <ProjectsProjectInfo :info_supervisor="pj.supervisor" :info_budget="pj.budget" :info_start_date="pj.start_date"
+        <ProjectsProjectInfo :info_supervisor="pj.team" :info_budget="pj.budget" :info_start_date="pj.start_date"
                              :info_end_date="pj.end_date" :area_infos="pj.areas"/>
       </div>
     </div>
@@ -101,8 +101,8 @@
 </template>
 
 <script setup lang="ts">
-// import {useRoute, useFetch} from "nuxt/app";
-// import {Project} from "~/model/Types";
+import {useRoute, useFetch} from "nuxt/app";
+import {Project, ImageGallery} from "~/model/Types";
 
 const project_title: string = useRoute().params.project as string;
 

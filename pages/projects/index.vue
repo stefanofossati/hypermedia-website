@@ -4,7 +4,7 @@
       <div id="id_0_div" class="flex-1" >
         <h1 id="id_0" v-on:click="selection($event)" class="text-xl sm:text-2xl md:text-4xl font-bold m-10
                    text-gray-800 dark:text-gray-200 hover:text-gray-500 dark:hover:text-gray-500
-                   cursor-pointer text-right">All Projects</h1>
+                   cursor-pointer text-center">All Projects</h1>
       </div>
       <div id="id_1_div"  class="flex-1 grow" >
         <h1 id="id_1" v-on:click="selection($event)" class="text-2xl sm:text-3xl md:text-5xl font-bold m-10
@@ -14,7 +14,7 @@
       <div id="id_2_div" class="flex-1" >
         <h1 id="id_2"  v-on:click="selection($event)" class="text-xl sm:text-2xl md:text-4xl font-bold m-10
                    text-gray-800 dark:text-gray-200 hover:text-gray-500 dark:hover:text-gray-500
-                   cursor-pointer text-left">Projects by area</h1>
+                   cursor-pointer text-center">Projects by area</h1>
       </div>
     </div>
 

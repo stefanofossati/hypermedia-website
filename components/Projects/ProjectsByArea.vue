@@ -10,7 +10,7 @@ const props: Readonly<{
 <template>
   <div>
     <NuxtLink :to="'areas/' + props.area?.area_title">
-      <div class="text-2xl text-black dark:text-white font-bold border-b-2 border-slate-500 h-12" :class="'hover:text-'+props.area?.area_color+'-500 dark:hover:text-'+props.area?.area_color+'-500'">
+      <div class="text-4xl text-black dark:text-white font-bold border-b-2 border-slate-500 h-12 text-center" :class="'hover:text-'+props.area?.area_color+'-500 dark:hover:text-'+props.area?.area_color+'-500'">
         {{ props.area.area_title}}
       </div>
     </NuxtLink>

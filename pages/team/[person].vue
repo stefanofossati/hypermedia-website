@@ -23,7 +23,7 @@ function callTo(phone: string) {
 }
 
 function openMaps(address: string) {
-  window.open("https://www.google.com/maps/search/?api=1&query=" + address);
+  window.open("https://www.google.com/maps/search/?q=" + address);
 }
 </script>
 
@@ -35,7 +35,7 @@ function openMaps(address: string) {
     <div class="flex flex-col items-center text-center" id="page">
       <div class="w-full flex flex-row place-items-center">
         <BackButton route="/team" label="Back to Team" class=""/>
-        <span class="w-full text-3xl sm:text-4xl md:text-6xl font-bold dark:text-white">
+        <span class="w-full text-3xl sm:text-4xl md:text-6xl font-bold dark:text-white mt-4 sm:mt-8 md:mt-12 ">
           {{ person.name }} {{ person.surname }}'s profile
         </span>
       </div>

@@ -173,7 +173,6 @@ function go_right(length:number, images_src:ImageGallery[]){
   big_image.src = images_src[l].url;
   description_big_image.innerHTML = images_src[l].description;
 }
-
 </script>
 
 <style scoped>

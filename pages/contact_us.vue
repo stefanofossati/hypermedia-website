@@ -19,7 +19,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts" >
 function tab_selection(clicked: any) {
   const info_box: HTMLElement | null = document.getElementById("info_box");
   const work_with_us: HTMLElement | null = document.getElementById("work_with_us");

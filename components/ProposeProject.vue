@@ -1,6 +1,6 @@
 <template>
   <div> <!-- Component wrapper -->
-    <form action="" class="contact_us_box"> <!-- Form -->
+    <form name="propose_project_form" method="post" class="contact_us_box"> <!-- Form -->
       <span class="contact_us_box_title">Propose Project!</span>
 
       <!-- surname -->
@@ -69,8 +69,8 @@
 
       <!-- submit button -->
       <div class="flex justify-center">
-        <button type="submit" class="contact_us_form_submit_button">Submit</button>
-        <button type="reset" class="contact_us_form_submit_button">Clear</button>
+        <input type="submit" class="contact_us_form_submit_button" value="Submit">
+        <input type="reset" class="contact_us_form_submit_button" value="Clear">
       </div>
     </form>
   </div>

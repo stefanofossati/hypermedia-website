@@ -52,7 +52,7 @@ function switchDetails(details: HTMLDetailsElement) {
         <div class="snap-center flex flex-row w-full justify-start">
           <div class="flex flex-row border-r-2 border-black w-1/2 translate-x-0.5 justify-end">
             <lazy-nuxt-img src="https://www.utax.it/uploads/big/news/124/team-building.jpg" alt="team picture"
-                           class="drop-shadow-2xl rounded-xl w-3/4 md:w-2/3 mr-2 sm:mr-5 md:mr-10"/>
+                           class="drop-shadow-2xl rounded-xl w-5/6 md:w-2/3 mr-2 sm:mr-5 md:mr-10"/>
           </div>
         </div>
         <div class="snap-center flex flex-row w-full justify-end">
@@ -93,7 +93,7 @@ function switchDetails(details: HTMLDetailsElement) {
             <lazy-nuxt-img
                 src="https://www.hotpmo.com/wp-content/uploads/2021/10/dreamstime_xxl_49486769-2690x1310.jpg"
                 alt="team picture"
-                class="drop-shadow-2xl rounded-xl w-3/4 md:w-2/3 ml-2 sm:ml-5 md:ml-10"/>
+                class="drop-shadow-2xl rounded-xl w-5/6 md:w-2/3 ml-2 sm:ml-5 md:ml-10"/>
           </div>
         </div>
         <div class="snap-center flex flex-row w-full justify-start">

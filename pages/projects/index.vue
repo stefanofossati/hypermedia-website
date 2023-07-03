@@ -1,20 +1,18 @@
 <template>
   <div >
     <div class="flex flex-row w-full items-center justify-between">
-      <div id="id_0"  class="flex-1" v-on:click="selection($event)">
-        <h1 class="text-xl sm:text-2xl md:text-4xl font-bold m-10
+      <div id="id_0_div" class="flex-1" >
+        <h1 id="id_0" v-on:click="selection($event)" class="text-xl sm:text-2xl md:text-4xl font-bold m-10
                    text-gray-800 dark:text-gray-200 hover:text-gray-500 dark:hover:text-gray-500
                    cursor-pointer text-right">All Projects</h1>
       </div>
-      <div id="id_1" class="flex-1 grow"
-           v-on:click="selection($event)">
-        <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold m-10
+      <div id="id_1_div"  class="flex-1 grow" >
+        <h1 id="id_1" v-on:click="selection($event)" class="text-2xl sm:text-3xl md:text-5xl font-bold m-10
                    text-black underline underline-offset-8 dark:text-white dark:hover:text-gray-500 border-l-2 border-r-2 border-slate-500
                    cursor-pointer text-center">Most Relevant</h1>
       </div>
-      <div id="id_2"  class="flex-1"
-           v-on:click="selection($event)">
-        <h1 class="text-xl sm:text-2xl md:text-4xl font-bold m-10
+      <div id="id_2_div" class="flex-1" >
+        <h1 id="id_2"  v-on:click="selection($event)" class="text-xl sm:text-2xl md:text-4xl font-bold m-10
                    text-gray-800 dark:text-gray-200 hover:text-gray-500 dark:hover:text-gray-500
                    cursor-pointer text-left">Projects by area</h1>
       </div>
@@ -108,33 +106,81 @@ function selection(event: any) {
   const id_0: HTMLElement | null = document.getElementById("id_0")! as HTMLElement
   const id_1: HTMLElement | null = document.getElementById("id_1")! as HTMLElement;
   const id_2: HTMLElement | null = document.getElementById("id_2")! as HTMLElement;
+  const ids = [id_0, id_1, id_2];
 
   const all_projects: HTMLElement | null = document.getElementById("all_projects")! as HTMLElement;
   const most_relevant: HTMLElement | null = document.getElementById("most_relevant")! as HTMLElement;
   const by_area: HTMLElement | null = document.getElementById("by_area")! as HTMLElement;
 
+  const class_of_select = ['text-2xl','sm:text-3xl', 'md:text-5xl' , 'underline', 'underline-offset-8'];
+  const class_of_non_select = ['text-xl', 'sm:text-2xl', 'md:text-4xl'];
 
   if(id_click.innerText === "All Projects") {
-    all_projects.className = 'px-10';
-    most_relevant.className = 'px-10 hidden';
-    by_area.className = 'px-10 hidden';
-    id_0.innerText = "Most Relevant";
-    id_1.innerText = "All Projects";
-    id_2.innerText = "Projects by area";
+    all_projects.classList.remove('hidden');
+    most_relevant.classList.add('hidden');
+    by_area.classList.add('hidden');
+    ids.forEach(id => {
+      if(id.id != id_click.id){
+        class_of_select.forEach(class_name => {
+          id.classList.remove(class_name);
+        });
+
+        class_of_non_select.forEach(class_name => {
+          id.classList.add(class_name);
+        });
+      }else{
+        class_of_non_select.forEach(class_name => {
+          id.classList.remove(class_name);
+        });
+        class_of_select.forEach(class_name => {
+          id.classList.add(class_name);
+        });
+      }
+    });
   }else if(id_click.innerText === "Most Relevant") {
-    all_projects.className = 'px-10 hidden';
-    most_relevant.className = 'px-10';
-    by_area.className = 'px-10 hidden';
-    id_0.innerText = "Projects by area";
-    id_1.innerText = "Most Relevant";
-    id_2.innerText = "All Projects";
+    most_relevant.classList.remove('hidden');
+    all_projects.classList.add('hidden');
+    by_area.classList.add('hidden');
+    ids.forEach(id => {
+      if(id.id != id_click.id){
+        class_of_select.forEach(class_name => {
+          id.classList.remove(class_name);
+        });
+
+        class_of_non_select.forEach(class_name => {
+          id.classList.add(class_name);
+        });
+      }else{
+        class_of_non_select.forEach(class_name => {
+          id.classList.remove(class_name);
+        });
+        class_of_select.forEach(class_name => {
+          id.classList.add(class_name);
+        });
+      }
+    });
   }else if(id_click.innerText === "Projects by area") {
-    all_projects.className = 'px-10 hidden';
-    most_relevant.className = 'px-10 hidden';
-    by_area.className = 'px-10';
-    id_0.innerText = "All Projects";
-    id_1.innerText = "Projects by area";
-    id_2.innerText = "Most Relevant";
+    by_area.classList.remove('hidden');
+    all_projects.classList.add('hidden');
+    most_relevant.classList.add('hidden');
+    ids.forEach(id => {
+      if(id.id != id_click.id){
+        class_of_select.forEach(class_name => {
+          id.classList.remove(class_name);
+        });
+
+        class_of_non_select.forEach(class_name => {
+          id.classList.add(class_name);
+        });
+      }else{
+        class_of_non_select.forEach(class_name => {
+          id.classList.remove(class_name);
+        });
+        class_of_select.forEach(class_name => {
+          id.classList.add(class_name);
+        });
+      }
+    });
   }
 
 }

@@ -20,7 +20,7 @@ const props: Readonly<{
                       :short_description="pj.short_description"
                       :link="'/projects/' + pj.project_title"
                       :tags="pj.areas"
-                      :see_tags="true"
+                      :see_tags="false"
                       :main_image="pj.main_image"/>
     </div>
   </div>

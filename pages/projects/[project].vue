@@ -1,11 +1,16 @@
 <template>
-  <div class="divide-y divide-slate-500">
+  <div>
     <!-- Presentation -->
-    <div class="h-96 bg-cover bg-center" :style="{ backgroundImage: `url('${pj.main_image}')`}">
-      <img :src="pj.main_image" alt="i3lab" class="object-cover h-full w-full"/>
-      <h1 class="absolute text-5xl text-black top-40 left-5">
-        {{ pj.project_title }}
-      </h1>
+    <div class="relative h-96 bg-cover bg-center" :style="{ backgroundImage: `url('${pj.main_image}')`}">
+      <div class="absolute top-5 left-5">
+        <BackButton route="/projects" label="Back to Projects" class=""/>
+      </div>
+      <div class="absolute bottom-0 left-0 dark:bg-black bg-white px-6 pt-4">
+        <h1 class="text-5xl text-black dark:text-white font-bold dark:bg-black bg-white ">
+          {{ pj.project_title }}
+        </h1>
+      </div>
+
     </div>
 
     <!-- Descriptions -->
@@ -23,10 +28,10 @@
       </div>
 
       <div class="lg:col-span-3 lg:box-content lg:sticky lg:inset-y-0 lg:py-1 left-0 px-2 ">
-        <h2 class="text-3xl text-black dark:text-white py-1">
-          Description
-        </h2>
-        <p class="text-1xl text-black dark:text-white py-2" v-for="desc in pj.project_description">
+<!--        <h2 class="text-3xl text-black dark:text-white py-1">-->
+<!--          Description-->
+<!--        </h2>-->
+        <p class="text-xl text-black dark:text-white py-2" v-for="desc in pj.project_description">
           {{ desc }}
         </p>
       </div>

@@ -12,6 +12,7 @@ export interface Person {
 }
 
 export interface Area {
+    area: string,
     area_title: string;
     area_description: string[];
     area_color: string;

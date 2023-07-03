@@ -1,12 +1,13 @@
 <script setup lang="ts">
 
 const props: Readonly<{
+  area?: string,
   area_title?: string,
   area_image?: string,
   link?: string,
   area_color?: string,
   id?: string;
-}> = defineProps(['area_title', 'area_image', 'link', 'area_color', 'id']);
+}> = defineProps(['area', 'area_title', 'area_image', 'link', 'area_color', 'id']);
 
 </script>
 

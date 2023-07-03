@@ -3,15 +3,22 @@
     <!--Automatic Carousel of images-->
     <div id="carousel" class="relative w-full ">
       <!-- Carousel -->
-      <div class="relative h-52 overflow-hidden md:h-96">
+      <div class="relative h-36 overflow-hidden md:h-96">
         <!-- Items -->
-        <div class="transition-all delay-150 duration-2000 ease-in-out" id="0">
+        <div class="transition-all ease-in-out" id="0">
           <img :src="areas.area_image[0]"
-               class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+               class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+               alt=" first Image relative to the area selected">
         </div>
-        <div class="hidden transition-all delay-150 duration-2000 ease-in-out" id="1">
+        <div class="hidden transition-all ease-in-out" id="1">
           <img :src="areas.area_image[1]"
-               class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+               class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+               alt="second Image relative to the area selected">
+        </div>
+        <div class="hidden transition-all ease-in-out" id="2">
+          <img :src="areas.area_image[2]"
+               class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+               alt="third Image relative to the area selected">
         </div>
       </div>
     </div>
@@ -75,16 +82,27 @@ const {data: areas, error}: { data: Area } = await useFetch(
 let currentImage = 0;
 const seconds = 5;
 
-const timeoutId = setTimeout(() =>{
+setTimeout(() =>{
   changeImage();
 }, seconds * 1000);
 function changeImage(){
-  document.getElementById((currentImage).toString())?.classList.add("hidden");
-  document.getElementById((currentImage == 1 ? currentImage = 0 : currentImage = currentImage + 1).toString())?.classList.remove("hidden");
 
-  const imageTimeout = setTimeout(() =>{
+  document.getElementById(currentImage.toString())?.classList.add("hidden");
+  if(currentImage == 2 ){
+    currentImage = 0;
+  }else{
+    currentImage += 1;
+  }
+  console.log(currentImage);
+  document.getElementById(currentImage.toString())?.classList.remove("hidden");
+
+  // document.getElementById((currentImage).toString())?.classList.add("hidden");
+  // document.getElementById((currentImage == 2 ? currentImage = 0 : currentImage = currentImage + 1).toString())?.classList.remove("hidden");
+
+  setTimeout(() =>{
     changeImage();
   }, seconds * 1000);
+
 }
 
 function carouselNext(){

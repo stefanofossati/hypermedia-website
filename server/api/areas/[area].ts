@@ -6,13 +6,13 @@ import {Area} from "~/model/Types";
 
 export default async function eventHandler(event: any) {
     const clientDB: SupabaseClient<any, "public", any> = serverSupabaseClient(event);
-    const area_title: string = event.context.params.area;
+    const area: string = event.context.params.area;
 
     // @ts-ignore
     const {data, error}: { data: Area } = await clientDB
         .from('areas')
-        .select("area_title, area_description, area_color, area_image, projects(project_title, main_image)")
-        .eq('area_title', area_title)
+        .select("area, area_title, area_description, area_color, area_image, projects(project_title, main_image, short_description)")
+        .eq('area', area)
         .limit(1)
         .single();
     if (error) {

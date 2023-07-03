@@ -11,8 +11,9 @@ export interface Person {
 }
 
 export interface Area {
+    area: string,
     area_title: string;
-    area_description: string;
+    area_description: string[];
     area_color: string;
     area_image: string[];
     projects: ProjectAreaPreview[];
@@ -45,4 +46,5 @@ export interface AreaProjectPreview {
 export interface ProjectAreaPreview{
     project_title: string;
     main_image: string;
+    short_description: string;
 }

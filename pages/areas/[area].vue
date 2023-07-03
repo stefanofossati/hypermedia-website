@@ -1,26 +1,33 @@
 <template>
   <div>
     <!--Automatic Carousel of images-->
-    <div id="carousel" class="relative w-full">
+    <div id="carousel" class="relative w-full ">
       <!-- Carousel -->
-      <div class="relative h-52 overflow-hidden md:h-96">
+      <div class="relative h-36 overflow-hidden md:h-96">
         <!-- Items -->
-        <div class="transition-all delay-150 duration-2000 ease-in-out" id="0">
+        <div class="transition-all ease-in-out" id="0">
           <img :src="areas.area_image[0]"
-               class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+               class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+               alt=" first Image relative to the area selected">
         </div>
-        <div class="hidden transition-all delay-150 duration-2000 ease-in-out" id="1">
+        <div class="hidden transition-all ease-in-out" id="1">
           <img :src="areas.area_image[1]"
-               class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+               class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+               alt="second Image relative to the area selected">
+        </div>
+        <div class="hidden transition-all ease-in-out" id="2">
+          <img :src="areas.area_image[2]"
+               class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+               alt="third Image relative to the area selected">
         </div>
       </div>
     </div>
 
     <!--Area name and description-->
     <div>
-      <div class="text-5xl text-center font-bold text-black dark:text-white mt-12">{{areas.area_title.toUpperCase()}}</div>
-      <p class="text-xl text-center text-black dark:text-white mt-4">
-        {{areas.area_description}}
+      <div class="text-5xl text-left font-bold text-black dark:text-white my-8 ml-6">{{areas.area_title.toUpperCase()}}</div>
+      <p class="text-xl text-left text-black dark:text-white mx-6 py-2" v-for="ad in areas.area_description">
+        {{ad}}
       </p>
     </div>
 
@@ -34,6 +41,7 @@
           <ProjectPreview v-for="pj in areas.projects"
                           :project_title="pj.project_title"
                           :see_tags="false"
+                          :short_description="pj.short_description"
                           :link="'/projects/' + pj.project_title"
                           :main_image="pj.main_image"/>
 
@@ -74,16 +82,27 @@ const {data: areas, error}: { data: Area } = await useFetch(
 let currentImage = 0;
 const seconds = 5;
 
-const timeoutId = setTimeout(() =>{
+setTimeout(() =>{
   changeImage();
 }, seconds * 1000);
 function changeImage(){
-  document.getElementById((currentImage).toString())?.classList.add("hidden");
-  document.getElementById((currentImage == 1 ? currentImage = 0 : currentImage = currentImage + 1).toString())?.classList.remove("hidden");
 
-  const imageTimeout = setTimeout(() =>{
+  document.getElementById(currentImage.toString())?.classList.add("hidden");
+  if(currentImage == 2 ){
+    currentImage = 0;
+  }else{
+    currentImage += 1;
+  }
+  console.log(currentImage);
+  document.getElementById(currentImage.toString())?.classList.remove("hidden");
+
+  // document.getElementById((currentImage).toString())?.classList.add("hidden");
+  // document.getElementById((currentImage == 2 ? currentImage = 0 : currentImage = currentImage + 1).toString())?.classList.remove("hidden");
+
+  setTimeout(() =>{
     changeImage();
   }, seconds * 1000);
+
 }
 
 function carouselNext(){
@@ -93,7 +112,6 @@ function carouselNext(){
 function carouselPrev(){
 
 }
-
 
 </script>
 

@@ -5,9 +5,9 @@
       <AreasSection v-for="a in areas"
                     :id="a.area_title"
                     :area_title="a.area_title"
-                    :area_image="a.area_image"
+                    :area_image="a.area_image[0]"
                     :area_color="a.area_color"
-                    :link="'/areas/' + a.area_title"/>
+                    :link="'/areas/' + a.area"/>
     </div>
     <!--Navigation dots-->
     <div id="nav" class="fixed h-screen bottom-0 left-3 bg-scroll flex flex-col justify-center space-y-20 ">
@@ -36,15 +36,17 @@ const {data: areas, error}: { data: Area[] } = await useFetch(
 );
 
 //problem when in another page since elem is null and can not be nullable
-/*onscroll = function() {
+addEventListener("scroll", function(){
       let elem: HTMLElement | null;
       elem = document.getElementById("nav")!;
-      if ((window.innerHeight + window.scrollY) < document.body.offsetHeight - 270 && elem) {
-        elem.style.display = "flex";
-      } else {
-        elem.style.display = "none";
-      }
-    };*/
+      if(elem != null){
+        if ((window.innerHeight + window.scrollY) < document.body.offsetHeight - 180) {
+          elem.classList.remove("hidden");
+        } else {
+          elem.classList.add("hidden");
+        }
+    }
+});
 
     function getDocument(areaName:string){
       document.getElementById(areaName)?.scrollIntoView();

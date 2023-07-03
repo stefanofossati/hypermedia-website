@@ -37,17 +37,4 @@ html{
 import Header from "~/components/Header.vue";
 import Footer from "~/components/Footer.vue";
 
-//make the header disappear when scroll down and appear on scroll up
-//duplication of code since here there is a 80px height that would cause a white pad on the screen
-var lastScroll = 0;
-window.addEventListener("scroll", function(){
-  var scrollTop = this.window.scrollY || document.documentElement.scrollTop;
-  if(scrollTop > lastScroll){
-    document.getElementById("topBar")?.classList.add("-translate-y-20");
-  }
-  else{
-    document.getElementById("topBar")?.classList.remove("-translate-y-20");
-  }
-  lastScroll = scrollTop;
-}) 
 </script>

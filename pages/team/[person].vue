@@ -9,36 +9,29 @@ const {data: person, error}: { data: Person } = await useFetch(
     }
 );
 
-function showDialog() {
-  const dialog = document.getElementById("try") as HTMLDialogElement;
+function showDialog(name: string) {
+  const dialog = document.getElementById(name) as HTMLDialogElement;
   dialog.showModal();
-}
-
-function closeDialog() {
-  const dialog = document.getElementById("favDialog") as HTMLDialogElement;
-  dialog.close();
 }
 
 function emailTo(email: string) {
   window.open("mailto:" + email)!.close();
 }
+
+function callTo(phone: string) {
+  window.open("tel:" + phone)!.close();
+}
+
+function openMaps(address: string) {
+  window.open("https://www.google.com/maps/search/?api=1&query=" + address);
+}
 </script>
 
 <template>
   <div> <!-- page with Pippo's profile pc and general infos -->
-    <!--dialog id="favDialog" class="text-sm sm:text-lg md:text-xl dark:bg-gray-300 rounded-xl">
-      <form method="dialog">
-        <div class="flex flex-col object-center text-center">
-          <span class="m-2"> Are you sure to send an email?</span>
-          <div class="flex flex-row justify-evenly text-white dark:text-gray-400 m-1">
-            <button class="bg-gray-600 hover:bg-gray-900 rounded-xl p-1.5" v-on:click="closeDialog()">Cancel</button>
-            <button class="bg-gray-600 hover:bg-gray-900 rounded-xl p-1.5" v-on:click="emailTo(person.email)">Send
-            </button>
-          </div>
-        </div>
-      </form>
-    </dialog-->
-    <Dialog dialogName="try" question="Are you sure to send an email?" :method="emailTo" :args="[person.email]"/>
+    <Dialog dialogName="email" question="Are you sure to send an email?" :method="emailTo" :args="[person.email]"/>
+    <Dialog dialogName="phone" question="Are you sure to call?" :method="callTo" :args="[person.phone]"/>
+    <Dialog dialogName="maps" question="Are you sure to open maps?" :method="openMaps" :args="[person.address]"/>
     <div class="flex flex-col items-center text-center" id="page">
       <div class="w-full flex flex-row place-items-center">
         <BackButton route="/team" label="Back to Team" class=""/>
@@ -66,9 +59,9 @@ function emailTo(email: string) {
             <span>{{ person.surname }}</span>
             <span>{{ person.role }}</span>
             <span>{{ person.age }}</span>
-            <span>{{ person.address }}</span>
-            <button v-on:click="showDialog()" class="underline">{{ person.email }}</button>
-            <span>{{ person.phone }}</span>
+            <button v-on:click="showDialog('maps')" class="underline">{{ person.address }}</button>
+            <button v-on:click="showDialog('email')" class="underline">{{ person.email }}</button>
+            <button v-on:click="showDialog('phone')" class="underline">{{ person.phone }}</button>
           </div>
         </div>
       </div>

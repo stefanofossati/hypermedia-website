@@ -25,8 +25,8 @@
 
     <!--Area name and description-->
     <div>
-      <div class="text-5xl text-left font-bold text-black dark:text-white my-8 ml-6">{{areas.area_title.toUpperCase()}}</div>
-      <p class="text-xl text-left text-black dark:text-white mx-6 py-2" v-for="ad in areas.area_description">
+      <div class="text-3xl lg:text-5xl text-left font-bold text-black dark:text-white my-8 ml-6">{{areas.area_title.toUpperCase()}}</div>
+      <p class="text-xl lg:text-2xl text-left text-black dark:text-white mx-6 py-2" v-for="ad in areas.area_description">
         {{ad}}
       </p>
     </div>

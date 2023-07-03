@@ -2,29 +2,27 @@
 
 <template>
   <header>
-    <div class="fixed flex z-50 h-20 lg:h-20 w-full top-0 dark:bg-gray-900 bg-white items-center justify-between" id="navbar">
-      <NuxtLink to="/" class="w-52 lg:w-52 flex-none cursor-pointer ml-6">
-        <img alt="logo" src="../assets/LogoDraft.svg">
+    <div class="fixed flex z-50 h-20 lg:h-28 w-full top-0 dark:bg-gray-900 bg-white items-center justify-between" id="navbar">
+      <NuxtLink to="/" class="w-32 lg:w-48 flex-none cursor-pointer ml-12">
+        <img alt="logo" src="../assets/LogoDraft.png">
       </NuxtLink>
-      <div class="px-4 cursor-pointer lg:hidden mt-4 mr-4">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-12 fill-orange-500 stroke-orange-500" id="menu">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
-        </svg>
+      <div class="relative px-4 cursor-pointer lg:hidden items-center mr-6" v-on:click="showMenu">
+        <img src="../assets/burger-menu.png" class="w-12 w-12 relative" id="burgir" alt="">
       </div>
       <div class="w-full hidden lg:block">
         <nav class="text-lg w-full font-bold text-slate-700 dark:text-slate-200">
           <ul class="flex justify-end">
-            <li class="mr-10 lg:mr-20">
-              <NuxtLink to="/areas" class="hover:text-orange-500 cursor-pointer">All Areas</NuxtLink>
+            <li class="mr-8 lg:mr-16">
+              <NuxtLink to="/areas" class="lg:text-2xl hover:text-orange-500 cursor-pointer">All Areas</NuxtLink>
             </li>
-            <li class="mr-10 lg:mr-20">
-              <NuxtLink to="/projects" class="hover:text-orange-500 cursor-pointer">Projects</NuxtLink>
+            <li class="mr-8 lg:mr-16">
+              <NuxtLink to="/projects" class="lg:text-2xl hover:text-orange-500 cursor-pointer">Projects</NuxtLink>
             </li>
-            <li class="mr-10 lg:mr-20">
-              <NuxtLink to="/team" class="hover:text-orange-500 cursor-pointer">Team</NuxtLink>
+            <li class="mr-8 lg:mr-16">
+              <NuxtLink to="/team" class="lg:text-2xl hover:text-orange-500 cursor-pointer">Team</NuxtLink>
             </li>
-            <li class="mr-10 lg:mr-20">
-              <NuxtLink to="" class="hover:text-orange-500 cursor-pointer">About Us</NuxtLink>
+            <li class="mr-8 lg:mr-16">
+              <NuxtLink to="" class="lg:text-2xl hover:text-orange-500 cursor-pointer">About Us</NuxtLink>
             </li>
             <li class="inline-flex items-center">
               <div>
@@ -55,13 +53,28 @@
       </div>
     </div>
 
-    <div class="grid grid cols-4 hidden" id="items">
-      <div class="col-span-1 flex justify-end">
+    <div class="w-44 sm:w-72 float-right grid grid cols-4 hidden lg:hidden" id="items">
+      <div class="flex flex:col justify-end items-center dark:bg-gray-900 bg-white">
         <nav class="text-right">
-          <ul class="text-sm mt-6">
-            <li class="text-orange-500 font-bold py-1">
-              <NuxtLink class="px-4 flex justify-end border-r-4 border-primary">
+          <ul class="mr-3">
+            <li class="text-white-500 font-bold py-1">
+              <NuxtLink class="text-lg sm:text-2xl px-4 flex justify-end border-r-4 border-primary">
                 <span>All Areas</span>
+              </NuxtLink>
+            </li>
+            <li class="text-white-500 font-bold py-1">
+              <NuxtLink class="text-lg sm:text-2xl px-4 flex justify-end border-r-4 border-primary">
+                <span>Projects</span>
+              </NuxtLink>
+            </li>
+            <li class="text-white-500 font-bold py-1">
+              <NuxtLink class="text-lg sm:text-2xl px-4 flex justify-end border-r-4 border-primary">
+                <span>Team</span>
+              </NuxtLink>
+            </li>
+            <li class="text-white-500 font-bold py-1">
+              <NuxtLink class="text-lg sm:text-2xl px-4 flex justify-end border-r-4 border-primary">
+                <span>Contact Us</span>
               </NuxtLink>
             </li>
           </ul>
@@ -96,34 +109,45 @@ function bright() {
 
 //make the header disappear when scroll down and appear on scroll up
 let lastScroll = 0;
-
 addEventListener("scroll", function(){
   let scrollTop = this.window.scrollY || document.documentElement.scrollTop;
   if(scrollTop > lastScroll){
-    document.getElementById("navbar").classList.add("-translate-y-20");
+    document.getElementById("navbar").classList.add("-translate-y-28");
   }
   else{
-    document.getElementById("navbar").classList.remove("-translate-y-20");
+    document.getElementById("navbar").classList.remove("-translate-y-28");
   }
   lastScroll = scrollTop;
 });
 
+
 //hide header on inactivity
-let time;
-onload = resetTimer;
-onmousemove = resetTimer;
+// let time;
+// onload = resetTimer;
+// onmousemove = resetTimer;
+//
+// function hideNav() {
+//   document.getElementById("navbar").classList.add("-translate-y-28");
+//   document.getElementById("topBar").classList.add("-translate-y-28");
+// }
+//
+// function resetTimer() {
+//   document.getElementById("navbar").classList.remove("-translate-y-28");
+//   document.getElementById("topBar").classList.remove("-translate-y-28");
+//   clearTimeout(time);
+//   time = setTimeout(hideNav, 3000);
+// }
 
-function hideNav() {
-  document.getElementById("navbar").classList.add("-translate-y-20");
-  document.getElementById("topBar").classList.add("-translate-y-20");
+
+//shows the menu
+function showMenu(){
+  if(document.getElementById("items").classList.contains("hidden")){
+    document.getElementById("burgir").classList.add("rotate-90");
+    document.getElementById("items").classList.remove("hidden");
+  }else{
+    document.getElementById("burgir").classList.remove("rotate-90");
+    document.getElementById("items").classList.add("hidden");
+  }
 }
-
-function resetTimer() {
-  document.getElementById("navbar").classList.remove("-translate-y-20");
-  document.getElementById("topBar").classList.remove("-translate-y-20");
-  clearTimeout(time);
-  time = setTimeout(hideNav, 3000);
-}
-
 </script>
 

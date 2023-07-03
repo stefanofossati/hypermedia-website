@@ -2,12 +2,13 @@ export interface Person {
     id: number;
     name: string;
     surname: string;
+    role: string;
     age: number;
     address: string;
     phone: string;
     email: string;
     img: string;
-    pitch: string;
+    pitch: string[];
 }
 
 export interface Area {

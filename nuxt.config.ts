@@ -10,6 +10,7 @@ const config: NuxtConfig = {
         '@nuxtjs/supabase',
         '@nuxtjs/tailwindcss',
         '@nuxtjs/color-mode',
+        '@nuxt/image',
     ],
     colorMode: {classSuffix: ''},
 }

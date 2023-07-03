@@ -15,6 +15,7 @@
     "nuxt": "^3.4.2"
   },
   "devDependencies": {
+    "@nuxt/image": "^1.0.0-rc.1",
     "@nuxt/types": "^2.16.3",
     "@nuxt/typescript-build": "^3.0.1",
     "@nuxtjs/color-mode": "^3.2.0",

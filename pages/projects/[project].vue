@@ -5,11 +5,13 @@
       <div class="absolute top-5 left-5">
         <BackButton route="/projects" label="Back to Projects" class=""/>
       </div>
+      <!--
       <div class="absolute bottom-0 left-0 dark:bg-black bg-white px-6 pt-4">
         <h1 class="text-5xl text-black dark:text-white font-bold dark:bg-black bg-white ">
           {{ pj.project_title }}
         </h1>
       </div>
+      -->
 
     </div>
 
@@ -28,9 +30,9 @@
       </div>
 
       <div class="lg:col-span-3 lg:box-content lg:sticky lg:inset-y-0 lg:py-1 left-0 px-2 ">
-<!--        <h2 class="text-3xl text-black dark:text-white py-1">-->
-<!--          Description-->
-<!--        </h2>-->
+        <h1 class="lg:text-5xl text-3xl font-bold text-black dark:text-white py-1">
+          {{ pj.project_title }}
+        </h1>
         <p class="text-xl text-black dark:text-white py-2" v-for="desc in pj.project_description">
           {{ desc }}
         </p>
@@ -44,14 +46,14 @@
       </div>
     </div>
 
-    <!-- Images -->
+    <!-- Image Gallery -->
     <div class="py-4">
-      <div class="md:hidden text-black dark:text-white text-3xl justify-self-start px-3">
+      <div class="md:hidden text-black dark:text-white text-3xl text-center px-3 py-2">
         Project Gallery
       </div>
       <div class="grid xl:grid-cols-12 lg:grid-cols-10 md:grid-cols-8 grid-cols-6 gap 3 justify-items-center place-items-center">
         <div class="xl:col-span-7 lg:col-span-5 md:col-span-3 col-span-1 row-span-1">
-          <div class="md:flex hidden text-black dark:text-white text-3xl justify-self-start px-3">
+          <div class="md:flex hidden text-black dark:text-white text-3xl px-3">
             Project Gallery
           </div>
         </div>

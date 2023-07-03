@@ -54,12 +54,14 @@
 /* Style for the About Us */
 
 .about_us_row {
-    @apply flex flex-row items-center m-1 justify-evenly
+    @apply flex flex-col items-center justify-evenly md:flex-row
     dark:text-white dark:bg-gray-700
 }
 
 .about_us_image {
-    @apply h-auto rounded-lg border-2 border-gray-700 w-1/6
+    @apply h-auto rounded-lg border-2 border-gray-700 mt-4
+    max-w-xs sm:max-w-sm md:w-1/4
+    dark:border-gray-200
 }
 
 .about_us_card_header {
@@ -76,5 +78,5 @@
 }
 
 .about_us_paragraph {
-    @apply text-lg italic text-justify w-5/6 mr-4
+    @apply text-lg italic text-justify w-5/6 mt-2 md:mr-4
 }

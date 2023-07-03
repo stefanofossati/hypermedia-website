@@ -28,4 +28,5 @@ export interface AboutUs {
     paragraph: string;
     image_url: string;
     color: string;
+    icon: string;
 }

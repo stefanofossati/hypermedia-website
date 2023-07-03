@@ -1,7 +1,7 @@
 <template>
   <div>
     <!--Automatic Carousel of images-->
-    <div id="carousel" class="relative w-full">
+    <div id="carousel" class="relative w-full ">
       <!-- Carousel -->
       <div class="relative h-52 overflow-hidden md:h-96">
         <!-- Items -->
@@ -18,9 +18,9 @@
 
     <!--Area name and description-->
     <div>
-      <div class="text-5xl text-center font-bold text-black dark:text-white mt-12">{{areas.area_title.toUpperCase()}}</div>
-      <p class="text-xl text-center text-black dark:text-white mt-4">
-        {{areas.area_description}}
+      <div class="text-5xl text-left font-bold text-black dark:text-white my-8 ml-6">{{areas.area_title.toUpperCase()}}</div>
+      <p class="text-xl text-left text-black dark:text-white mx-6 py-2" v-for="ad in areas.area_description">
+        {{ad}}
       </p>
     </div>
 
@@ -34,6 +34,7 @@
           <ProjectPreview v-for="pj in areas.projects"
                           :project_title="pj.project_title"
                           :see_tags="false"
+                          :short_description="pj.short_description"
                           :link="'/projects/' + pj.project_title"
                           :main_image="pj.main_image"/>
 
@@ -93,7 +94,6 @@ function carouselNext(){
 function carouselPrev(){
 
 }
-
 
 </script>
 

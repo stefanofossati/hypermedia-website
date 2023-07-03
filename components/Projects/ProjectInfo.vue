@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import {AreaProjectPreview, ProjectSupervisor} from "~/model/Types";
 
 const props: Readonly<{
     info_supervisor?: ProjectSupervisor,

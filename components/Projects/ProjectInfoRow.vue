@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import {AreaProjectPreview} from "~/model/Types";
 
 const props: Readonly<{
     info_name?: string,

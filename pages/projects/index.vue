@@ -53,8 +53,6 @@
 </template>
 
 <script setup lang="ts">
-import {useFetch} from "nuxt/app";
-import {AreaProjectPreview, Project} from "~/model/Types";
 
 //@ts-ignore
 const {data: projects, error}: { data: Project[] } = await useFetch(

@@ -101,9 +101,6 @@
 </template>
 
 <script setup lang="ts">
-import {useRoute, useFetch} from "nuxt/app";
-import {Project, ImageGallery} from "~/model/Types";
-
 const project_title: string = useRoute().params.project as string;
 
 //@ts-ignore

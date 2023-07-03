@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import {AreaProjectPreview, Project} from "~/model/Types";
 
 const props: Readonly<{
   projects_area?: Project[],

@@ -12,7 +12,7 @@ export default async function eventHandler(event: any) {
     // @ts-ignore
     const {data, error}: { data: Person } = await clientDB
         .from('team')
-        .select('name, surname, age, address, phone, img, email, pitch')
+        .select('name, surname, role, age, address, phone, img, email, pitch')
         .eq('name', nameSurname[0])
         .eq('surname', nameSurname[1])
         .limit(1)

@@ -10,7 +10,8 @@ export default async function eventHandler(event: any): Promise<Person[]> {
     // @ts-ignore
     const {data, error}: { data: Person[] } = await clientDB
         .from('team')
-        .select('name, surname, img');
+        .select('name, surname, img, role')
+        .order('id', {ascending: true});
 
     if (data) {
         return data;

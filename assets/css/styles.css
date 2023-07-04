@@ -46,6 +46,18 @@
     @apply rounded-md p-1 text-black w-full
 }
 
+.contact_us_form_input_green {
+    @apply rounded-md p-1 text-black w-full bg-green-100 border-2 border-green-500
+}
+
+.contact_us_form_input_red {
+    @apply rounded-md p-1 text-black w-full bg-red-100 border-2 border-red-500
+}
+
+.contact_us_form_error_message {
+    @apply text-red-500 text-sm mt-1
+}
+
 .contact_us_form_submit_button {
     @apply rounded-sm p-1 bg-gray-400 m-1 mt-3 hover:bg-gray-200
     dark:bg-gray-800 dark:hover:bg-gray-600

@@ -9,7 +9,7 @@
           <label for="sname">Surname</label>
         </div>
         <div class="contact_us_form_input_col">
-          <input class="contact_us_form_input" type="text" id="sname" name="lastname" placeholder="Your surname.." required>
+          <input class="contact_us_form_input" type="text" id="sname_wwu" name="lastname" placeholder="Your surname.." required>
         </div>
       </div>
 
@@ -19,7 +19,7 @@
           <label for="fname">Name</label>
         </div>
         <div class="contact_us_form_input_col">
-          <input class="contact_us_form_input" type="text" id="fname" name="firstname" placeholder="Your first name.." required>
+          <input class="contact_us_form_input" type="text" id="fname_wwu" name="firstname" placeholder="Your first name.." required>
         </div>
       </div>
 
@@ -29,7 +29,7 @@
           <label for="email">Email</label>
         </div>
         <div class="contact_us_form_input_col">
-          <input class="contact_us_form_input" type="email" id="email" name="email" placeholder="Your email.." required>
+          <input class="contact_us_form_input" type="email" id="email_wwu" name="email" placeholder="Your email.." required>
         </div>
       </div>
 
@@ -39,7 +39,7 @@
           <label for="phone">Phone Number</label>
         </div>
         <div class="contact_us_form_input_col">
-          <input class="contact_us_form_input" type="tel" id="phone" name="phone" placeholder="Your phone number..">
+          <input class="contact_us_form_input" type="tel" id="phone_wwu" name="phone" placeholder="Your phone number..">
         </div>
       </div>
 
@@ -49,7 +49,7 @@
           <label for="cv_file">CV File</label>
         </div>
         <div class="contact_us_form_input_col">
-          <input type="file" id="myFile" name="filename">
+          <input type="file" id="myFile_wwu" name="filename">
         </div>
       </div>
 
@@ -59,7 +59,7 @@
           <label for="brief_intro">Brief Introduction</label>
         </div>
         <div class="contact_us_form_input_col">
-          <textarea class="contact_us_form_input" id="brief_intro" name="brief_intro" placeholder="Write something about yourself.." style="height:200px" required></textarea>
+          <textarea class="contact_us_form_input" id="brief_intro_wwu" name="brief_intro" placeholder="Write something about yourself.." style="height:200px" required></textarea>
         </div>
       </div>
 

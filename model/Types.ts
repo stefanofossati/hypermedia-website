@@ -40,6 +40,7 @@ export interface ImageGallery{
 }
 
 export interface AreaProjectPreview {
+    area: string;
     area_title: string;
     area_color: string;
 }

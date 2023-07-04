@@ -19,13 +19,12 @@ const email = "info@startmeup.com"
 <template>
   <div> <!-- Component wrapper -->
     <Dialog dialogName="maps" question="Are you sure to open maps?" :method="openMaps" :args="[address]"/>
-    <Dialog dialogName="email" question="Are you sure to send an email?" :method="emailTo" :args="[email]"/>
     <div class="contact_us_box"> <!-- Info Box -->
       <span class="contact_us_box_title">General Info</span>
       <span>Address: <button v-on:click="showDialog('maps')" class="underline">{{ address }}</button></span>
       <span>Main Phone: +1 123-456-7890</span>
       <span>Secondary Phone: +1 987-654-3210</span>
-      <span>Address: <button v-on:click="showDialog('email')" class="underline">{{ email }}</button></span>
+      <span>Address: {{ email }}</span>
     </div>
   </div>
 </template>

@@ -19,7 +19,7 @@
   </div>
 </template>
 
-<script setup lang="ts" >
+<script setup lang="ts">
 function tab_selection(clicked: any) {
   const info_box: HTMLElement | null = document.getElementById("info_box");
   const work_with_us: HTMLElement | null = document.getElementById("work_with_us");
@@ -33,25 +33,20 @@ function tab_selection(clicked: any) {
     info_box!.style.display = "block";
     work_with_us!.style.display = "none";
     propose_project!.style.display = "none";
-    //console.log("info clicked");
   } else if (clicked.currentTarget.id == "work") {
     info_box!.style.display = "none";
     work_with_us!.style.display = "block";
     propose_project!.style.display = "none";
-    //console.log("work_with_us clicked");
   } else if (clicked.currentTarget.id == "propose") {
     info_box!.style.display = "none";
     work_with_us!.style.display = "none";
     propose_project!.style.display = "block";
-    //console.log("propose_project clicked");
   }
 
-  //console.log("A: " + info_tab!.className)
   info_tab!.className = info_tab!.className.replace("_active", "");
   work_tab!.className = work_tab!.className.replace("_active", "");
   propose_tab!.className = propose_tab!.className.replace("_active", "");
 
   clicked.currentTarget.className += "_active";
-  //console.log("B: " + clicked.currentTarget.className);
 }
 </script>

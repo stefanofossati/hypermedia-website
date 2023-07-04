@@ -29,4 +29,5 @@ export interface AboutUs {
     image_url: string;
     color: string;
     icon: string;
+    alternative_text: string;
 }

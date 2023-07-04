@@ -6,14 +6,15 @@ const props: Readonly<{
   image_url?: string,
   color?: string,
   icon?: string,
-}> = defineProps(['title', 'subtitle', 'paragraph', 'image_url', 'color', 'icon']);
+  alternative_text?: string,
+}> = defineProps(['title', 'subtitle', 'paragraph', 'image_url', 'color', 'icon', 'alternative_text']);
 </script>
 
 <template>
   <v-timeline-item dot-color="#A9A9A9"
                    fill-dot
                    size="large"
-                   icon="mdi-email-outline"
+
                    :icon="'mdi-'+props.icon"> <!-- Single row wrapper -->
     <v-card class="mr-5">
 
@@ -28,7 +29,7 @@ const props: Readonly<{
 
       <v-card-text class="about_us_row">
           <span class="about_us_paragraph">{{ props.paragraph }}</span>
-        <img :src="props.image_url" class="about_us_image">
+        <img :src="props.image_url" class="about_us_image" :alt="props.alternative_text">,
       </v-card-text>
 
 

@@ -6,7 +6,7 @@
       <div class="md:flex md:justify-between">
         <div class="mb-6 md:mb-0">
           <NuxtLink to="" class="flex items-center">
-            <img src="../assets/LogoDraft.svg" class="h-28 mr-3" alt="FlowBite Logo"/>
+            <img src="../assets/LogoDraft.png" class="h-28 mr-3" alt="FlowBite Logo"/>
           </NuxtLink>
         </div>
         <div class="grid grid-cols-1 gap-8 mr-8 mt-12 sm:gap-6 sm:grid-cols-2 sm:ml-12">

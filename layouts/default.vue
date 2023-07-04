@@ -2,7 +2,7 @@
 <template>
   <div>
     <main class="flex flex-col bg-gray-200 dark:bg-gray-950">
-      <div class="h-20 lg:h-20 w-full bg-white" id="topBar"/>
+      <div class="h-20 lg:h-28 w-full bg-white" id="topBar"/>
       <Header class="flex-none"/>
       <slot class="flax-auto"/>
       <Footer class="flex-none"/>

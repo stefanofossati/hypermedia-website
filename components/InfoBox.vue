@@ -4,10 +4,6 @@ function showDialog(name: string) {
   dialog.showModal();
 }
 
-function emailTo(email: string) {
-  window.open("mailto:" + email)!.close();
-}
-
 function openMaps(address: string) {
   window.open("https://www.google.com/maps/search/?q=" + address);
 }
@@ -21,9 +17,10 @@ const email = "info@startmeup.com"
     <Dialog dialogName="maps" question="Are you sure to open maps?" :method="openMaps" :args="[address]"/>
     <div class="contact_us_box"> <!-- Info Box -->
       <span class="contact_us_box_title">General Info</span>
-      <span>Address: <button v-on:click="showDialog('maps')" class="underline">{{ address }}</button></span>
-      <span>Main Phone: +1 123-456-7890</span>
-      <span>Secondary Phone: +1 987-654-3210</span>
+      <!-- <span>Address: <button v-on:click="showDialog('maps')" class="underline break-normal whitespace-normal ">{{ address }}</button></span> -->
+      <span class="mb-2"> Address: {{ address }}</span>
+      <span class="mb-2">Main Phone: +1 123-456-7890</span>
+      <span class="mb-2">Secondary Phone: +1 987-654-3210</span>
       <span>Address: {{ email }}</span>
     </div>
   </div>

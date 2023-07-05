@@ -29,7 +29,7 @@ const props: Readonly<{
 
       <v-card-text class="about_us_row">
           <span class="about_us_paragraph">{{ props.paragraph }}</span>
-        <img :src="props.image_url" class="about_us_image" :alt="props.alternative_text">,
+        <img :src="props.image_url" class="about_us_image" :alt="props.alternative_text">
       </v-card-text>
 
 

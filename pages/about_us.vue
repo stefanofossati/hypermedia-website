@@ -11,7 +11,6 @@
       <v-timeline side="end" class="mb-6" line-thickness=3 line-color="#C0C0C0">
         <AboutUs v-for="row in about_us" :title="row.title" :subtitle="row.subtitle" :paragraph="row.paragraph" :image_url="row.image_url" :color="row.color" :icon="row.icon" ></AboutUs>
       </v-timeline>
-
     </div>
 
   </div>

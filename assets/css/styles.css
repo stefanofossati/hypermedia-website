@@ -90,5 +90,5 @@
 }
 
 .about_us_paragraph {
-    @apply text-lg italic text-justify w-5/6 mt-2 md:mr-4
+    @apply text-lg italic text-justify md:w-5/6 mt-2 md:mr-4
 }

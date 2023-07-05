@@ -1565,7 +1565,6 @@ video {
 
 .about_us_paragraph {
   margin-top: 0.5rem;
-  width: 83.333333%;
   text-align: justify;
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -1575,6 +1574,7 @@ video {
 @media (min-width: 768px) {
   .about_us_paragraph {
     margin-right: 1rem;
+    width: 83.333333%;
   }
 }
 

@@ -111,13 +111,27 @@ async function checkAndSendForm(form_id_str: string) {
         if ((form_id_str == "pp" && testProjNameBox(form_id_str)) || form_id_str == "wwu") {
             // @ts-ignore
             const {data: response, error}: { data: boolean } = await useFetch(
-                "api/about_us/form",
+                "/api/about_us/form",
                 {
-                    method: "GET",
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        name: "form" + form_id_str
+                    }),
                 }
             );
             console.log(response);
-            //alert("Ваша заявка успешно отправлена!");
+
+            if (response) {
+                clearForm(form_id_str);
+                showFormSentDialogBox();
+                return true;
+            }
+            console.log(error);
+            alert("Ops, something went wrong. Please try again later.")
+            return false;
         }
     }
 }
@@ -164,6 +178,26 @@ function clearForm(form_id_str: string) {
         brief_intro_elem.value = "";
         brief_intro_elem.className = "contact_us_form_input";
     }
+}
+
+function showFormSentDialogBox() {
+    const dialog_box : HTMLElement | null = (<HTMLInputElement>document.getElementById('form_sent_dialog_box')) as HTMLElement;
+    const info_box: HTMLElement | null = document.getElementById("info_box") as HTMLElement;
+    const work_with_us: HTMLElement | null = document.getElementById("work_with_us") as HTMLElement;
+    const propose_project: HTMLElement | null = document.getElementById("propose_project") as HTMLElement;
+
+    dialog_box.style.display = "block";
+    info_box.style.display = "none";
+    work_with_us.style.display = "none";
+    propose_project.style.display = "none";
+
+    const info_tab: HTMLElement | null = document.getElementById("info");
+    const work_tab: HTMLElement | null = document.getElementById("work");
+    const propose_tab: HTMLElement | null = document.getElementById("propose");
+
+    info_tab!.className = info_tab!.className.replace("_active", "");
+    work_tab!.className = work_tab!.className.replace("_active", "");
+    propose_tab!.className = propose_tab!.className.replace("_active", "");
 }
 
 // export functions

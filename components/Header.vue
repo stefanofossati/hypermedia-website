@@ -58,22 +58,26 @@
         <nav class="text-right">
           <ul class="mr-3">
             <li class="text-white-500 font-bold py-1">
-              <NuxtLink class="text-lg sm:text-2xl px-4 flex justify-end border-r-4 border-primary">
+              <NuxtLink to="/areas" class="text-lg sm:text-2xl px-4 flex justify-end hover:text-orange-500
+                                            border-r-4 border-orange-500 border-primary" v-on:click="showMenu">
                 <span>All Areas</span>
               </NuxtLink>
             </li>
             <li class="text-white-500 font-bold py-1">
-              <NuxtLink class="text-lg sm:text-2xl px-4 flex justify-end border-r-4 border-primary">
+              <NuxtLink to="/projects" class="text-lg sm:text-2xl px-4 flex justify-end hover:text-orange-500
+                                               border-r-4 border-orange-500 border-primary" v-on:click="showMenu">
                 <span>Projects</span>
               </NuxtLink>
             </li>
             <li class="text-white-500 font-bold py-1">
-              <NuxtLink class="text-lg sm:text-2xl px-4 flex justify-end border-r-4 border-primary">
+              <NuxtLink to="/team" class="text-lg sm:text-2xl px-4 flex justify-end hover:text-orange-500
+                                           border-r-4 border-orange-500 border-primary" v-on:click="showMenu">
                 <span>Team</span>
               </NuxtLink>
             </li>
             <li class="text-white-500 font-bold py-1">
-              <NuxtLink class="text-lg sm:text-2xl px-4 flex justify-end border-r-4 border-primary">
+              <NuxtLink to="" class="text-lg sm:text-2xl px-4 flex justify-end hover:text-orange-500
+                                      border-r-4 border-orange-500 border-primary" v-on:click="showMenu">
                 <span>Contact Us</span>
               </NuxtLink>
             </li>
@@ -120,23 +124,22 @@ addEventListener("scroll", function(){
   lastScroll = scrollTop;
 });
 
-
 //hide header on inactivity
-// let time;
-// onload = resetTimer;
-// onmousemove = resetTimer;
-//
-// function hideNav() {
-//   document.getElementById("navbar").classList.add("-translate-y-28");
-//   document.getElementById("topBar").classList.add("-translate-y-28");
-// }
-//
-// function resetTimer() {
-//   document.getElementById("navbar").classList.remove("-translate-y-28");
-//   document.getElementById("topBar").classList.remove("-translate-y-28");
-//   clearTimeout(time);
-//   time = setTimeout(hideNav, 3000);
-// }
+let time;
+onload = resetTimer;
+onmousemove = resetTimer;
+
+function hideNav() {
+  document.getElementById("navbar").classList.add("-translate-y-28");
+  document.getElementById("topBar").classList.add("-translate-y-28");
+}
+
+function resetTimer() {
+  document.getElementById("navbar").classList.remove("-translate-y-28");
+  document.getElementById("topBar").classList.remove("-translate-y-28");
+  clearTimeout(time);
+  time = setTimeout(hideNav, 3000);
+}
 
 
 //shows the menu

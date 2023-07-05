@@ -1,9 +1,9 @@
 <template>
   <div>
     <!--Automatic Carousel of images-->
-    <div id="carousel" class="relative w-full ">
+    <div id="carousel" class="relative w-full">
       <!-- Carousel -->
-      <div class="relative h-36 overflow-hidden md:h-96">
+      <div class="relative h-64 overflow-hidden md:h-96">
         <!-- Items -->
         <div class="transition-all ease-in-out" id="0">
           <img :src="areas.area_image[0]"
@@ -36,23 +36,27 @@
       <div class="text-4xl text-center font-bold text-black dark:text-white mt-20 mb-8">RELATED PROJECTS</div>
       <div class="relative w-1/2 left-1/2 -translate-x-1/2 mb-20">
         <!-- Carousel wrapper -->
-        <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-
-          <ProjectPreview v-for="pj in areas.projects"
-                          :project_title="pj.project_title"
-                          :see_tags="false"
-                          :short_description="pj.short_description"
-                          :link="'/projects/' + pj.project_title"
-                          :main_image="pj.main_image"/>
+        <div class="relative h-52 overflow-hidden rounded-lg md:h-96">
+          <!-- Items -->
+          <div class="">
+            <ProjectPreview v-for="pj in areas.projects"
+                            :project_title="pj.project_title"
+                            :see_tags="false"
+                            :short_description="pj.short_description"
+                            :link="'/projects/' + pj.project_title"
+                            :main_image="pj.main_image"/>
+          </div>
 
           <!-- Buttons -->
-          <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" onclick="carouselPrev" >
+          <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                 v-on:click="carouselPrev(areas.projects.length, areas)" >
             <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-700/80 group-hover:bg-white/50 dark:group-hover:bg-white/80 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                 <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
                 <span class="sr-only">Previous</span>
             </span>
           </button>
-          <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" onclick="carouselNext" >
+          <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                  v-on:click="carouselNext(areas.projects.length, areas)">
             <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-700/80 group-hover:bg-white/50 dark:group-hover:bg-white/80 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                 <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                 <span class="sr-only">Next</span>
@@ -66,7 +70,7 @@
 
 <script setup lang="ts">
 import {useRoute, useFetch} from "nuxt/app";
-import {Area} from "~/model/Types";
+import {Area, ProjectAreaPreview} from "~/model/Types";
 
 const area_title: string = useRoute().params.area as string;
 
@@ -93,7 +97,6 @@ function changeImage(){
   }else{
     currentImage += 1;
   }
-  console.log(currentImage);
   document.getElementById(currentImage.toString())?.classList.remove("hidden");
 
   // document.getElementById((currentImage).toString())?.classList.add("hidden");
@@ -105,12 +108,34 @@ function changeImage(){
 
 }
 
-function carouselNext(){
+var currentProject = 0;
 
+function carouselNext(n : number, a : Area){
+  document.getElementById(a.projects[currentProject].project_title)?.classList.add("hidden");
+  currentProject = (currentProject + 1) % n;
+  document.getElementById(a.projects[currentProject].project_title)?.classList.remove("hidden");
 }
 
-function carouselPrev(){
 
+function carouselPrev(n : number, a : Area){
+  if(currentProject == 0){
+    setAllHidden(n , a);
+  }
+  document.getElementById(a.projects[currentProject].project_title)?.classList.add("hidden");
+  if(currentProject % n == 0){
+    currentProject = (currentProject + n - 1) % n;
+  }else{
+    currentProject = (currentProject - 1) % n;
+  }
+  console.log(currentProject);
+  document.getElementById(a.projects[currentProject].project_title)?.classList.remove("hidden");
+}
+
+//function needed only the first time PrevButton is pressed in an Area
+function setAllHidden(n : number, a : Area){
+  for(let i=0; i < n; i++){
+    document.getElementById(a.projects[i].project_title)?.classList.add("hidden");
+  }
 }
 
 </script>

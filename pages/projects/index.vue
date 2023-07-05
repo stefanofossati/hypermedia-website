@@ -31,7 +31,7 @@
       </div>
     </div>
 
-    <div id="all_projects" class="px-10 hidden">
+    <div id="all_projects" class="px-10 py-8 hidden">
       <div class="grid xl:grid-cols-4 gap-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 place-content-center px-2 py-2">
         <ProjectPreview v-for="pj in projects"
                         :project_title="pj.project_title"

@@ -59,7 +59,7 @@
         </div>
 
         <div class="col-span-4 row-span-4 self-center">
-          <img id="big_image" :src="pj.gallery_images[3].url" alt="" class=" h-96 w-full object-cover px-2 ">
+          <img id="big_image" :src="pj.gallery_images[3].url" :alt="pj.gallery_images[3].description" class=" h-96 w-full object-cover px-2 ">
         </div>
         <div class="col-span-1 row-span-1"></div>
         <div v-on:click="go_right(pj.gallery_images.length, pj.gallery_images)" class="col-span-1 row-span-2 hover:animate-pulse">
@@ -68,13 +68,13 @@
           </svg>
         </div>
         <div  class="xl:col-span-2 xl:row-span-2 hidden xl:flex" >
-          <img id="image01" :src="pj.gallery_images[0].url" alt="" class=" h-48 w-60 object-cover" >
+          <img id="image01" :src="pj.gallery_images[0].url" :alt="pj.gallery_images[0].description" class=" h-48 w-60 object-cover" >
         </div>
         <div  class="lg:col-span-2 lg:row-span-2 hidden lg:flex"  >
-          <img id="image02" :src="pj.gallery_images[1].url" alt=""  class=" h-48 w-60 object-cover ">
+          <img id="image02" :src="pj.gallery_images[1].url" :alt="pj.gallery_images[1].description"  class=" h-48 w-60 object-cover ">
         </div>
         <div  class="md:col-span-2 md:row-span-2 hidden md:flex">
-          <img id="image03" :src="pj.gallery_images[2].url" alt="" class=" h-48 w-60 object-cover ">
+          <img id="image03" :src="pj.gallery_images[2].url" :alt="pj.gallery_images[2].description" class=" h-48 w-60 object-cover ">
         </div>
         <div v-on:click="go_left(pj.gallery_images.length, pj.gallery_images)" class="col-span-1 row-span-2 hover:animate-pulse">
           <svg viewBox="0 -960 960 960" class="dark:text-white text-black fill-current h-16 w-16 mr-1.5 mb-1.5 justify-center ">
@@ -136,16 +136,20 @@ function go_left(length: number, images_src: ImageGallery[]) {
 
   i = (i+1) % (length);
   image_01.src = images_src[i].url;
+  image_01.alt = images_src[i].description;
 
 
   let j = (i+1) % (length);
   image_02.src = images_src[j].url;
+  image_02.alt = images_src[j].description;
 
   let k = (i+2) % (length);
   image_03.src = images_src[k].url;
+  image_03.alt = images_src[k].description;
 
   let l = (i+3) % (length);
   big_image.src = images_src[l].url;
+  big_image.alt = images_src[l].description;
   description_big_image.innerHTML = images_src[l].description;
 
 }
@@ -159,18 +163,21 @@ function go_right(length:number, images_src:ImageGallery[]){
 
   i = (i-1+length) % (length);
   image_01.src = images_src[i].url;
+  image_01.alt = images_src[i].description;
 
   let j = (i+1) % (length);
 
   image_02.src = images_src[j].url;
+  image_02.alt = images_src[j].description;
 
   let k = (i+2) % (length);
   image_03.src = images_src[k].url;
+  image_03.alt = images_src[k].description;
 
 
   let l = (i+3) % (length);
-
   big_image.src = images_src[l].url;
+  big_image.alt = images_src[l].description;
   description_big_image.innerHTML = images_src[l].description;
 }
 </script>

@@ -23,7 +23,7 @@ const props: Readonly<{
       <div class="flex w-3/4 flex-col px-3">
         <p class="dark:text-white text-black text-lg">{{props.info_name}}</p>
         <div v-if="props.desc_bool" class="dark:text-gray-100 text-black-100 text-sm" >{{props.info_description}}</div>
-        <NuxtLink v-else :to="'/areas/' + but.area" v-for="but in props.button_name">
+        <NuxtLink v-else :to="'/areas/' + but.area" v-for="but in props.button_name" :alt="'Link to' + but.area_title ">
           <div class="flex flex-row"  >
             <div class="dark:text-white text-black hover:text-white rounded-lg px-1" :class="'bg-'+ but.area_color +'-500 '+'hover:bg-'+but.area_color+'-800'">{{but.area_title}}</div>
           </div>

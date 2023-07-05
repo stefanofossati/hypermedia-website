@@ -1,25 +1,25 @@
 <template>
-  <div >
+  <div>
     <div class="flex flex-row w-full items-center justify-between border-slate-500 border-b-2">
       <div id="id_0_div" class="flex-1" >
-        <h1 id="id_0" v-on:click="selection($event)" class="text-xl sm:text-2xl md:text-4xl font-bold m-10
+        <h1 id="id_0" v-on:click="selection($event)" class="text-xl sm:text-2xl md:text-4xl font-bold sm:m-10 m-3
                    text-gray-800 dark:text-gray-200 hover:text-gray-500 dark:hover:text-gray-500
                    cursor-pointer text-center">All Projects</h1>
       </div>
       <div id="id_1_div"  class="flex-1 grow" >
-        <h1 id="id_1" v-on:click="selection($event)" class="text-2xl sm:text-3xl md:text-5xl font-bold m-10
+        <h1 id="id_1" v-on:click="selection($event)" class="text-2xl sm:text-3xl md:text-5xl font-bold sm:m-10 m-3
                    text-black underline underline-offset-8 dark:text-white dark:hover:text-gray-500 border-l-2 border-r-2 border-slate-500
                    cursor-pointer text-center">Most Relevant</h1>
       </div>
       <div id="id_2_div" class="flex-1" >
-        <h1 id="id_2"  v-on:click="selection($event)" class="text-xl sm:text-2xl md:text-4xl font-bold m-10
+        <h1 id="id_2"  v-on:click="selection($event)" class="text-xl sm:text-2xl md:text-4xl font-bold sm:m-10 m-3
                    text-gray-800 dark:text-gray-200 hover:text-gray-500 dark:hover:text-gray-500
                    cursor-pointer text-center">Projects by area</h1>
       </div>
     </div>
 
-    <div id="most_relevant" class="translate-x-1/4">
-      <div class="relative w-1/2 flex flex-col place-content-center px-2 py-4 gap-4">
+    <div id="most_relevant" class="px-10 md:translate-x-1/4">
+      <div class="relative md:w-1/2 flex flex-col place-content-center px-2 py-4 gap-4">
         <div class="relative rounded-lg mx:auto" v-for="most_pj in most_relevant(projects)">
             <ProjectPreview :project_title="most_pj.project_title"
                             :short_description="most_pj.short_description"
@@ -32,8 +32,7 @@
     </div>
 
     <div id="all_projects" class="px-10 hidden">
-      <div class="grid xl:grid-cols-4 gap-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1
-                  place-content-center px-2 py-2">
+      <div class="grid xl:grid-cols-4 gap-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 place-content-center px-2 py-2">
         <ProjectPreview v-for="pj in projects"
                         :project_title="pj.project_title"
                         :short_description="pj.short_description"

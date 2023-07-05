@@ -13,7 +13,7 @@ const props: Readonly<{
         {{ props.area.area_title}}
       </div>
     </NuxtLink>
-    <div class ="grid xl:grid-cols-4 gap-4 lg:grid-cols-3 md:grid-cols-2 col-span-1 place-content-center px-2 py-4">
+    <div class ="grid xl:grid-cols-4 gap-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 place-content-center px-2 py-4">
       <ProjectPreview v-for="pj in props.projects_area"
                       :project_title="pj.project_title"
                       :short_description="pj.short_description"

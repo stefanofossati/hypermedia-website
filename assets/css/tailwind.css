@@ -1516,7 +1516,8 @@ video {
 .about_us_image {
   margin-top: 1rem;
   height: auto;
-  max-width: 20rem;
+  width: -moz-fit-content;
+  width: fit-content;
   border-radius: 0.5rem;
   border-width: 2px;
   --tw-border-opacity: 1;

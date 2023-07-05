@@ -17,7 +17,7 @@ const props: Readonly<{
 <template>
   <div>
     <NuxtLink :to="'/projects/' + props.project_title">
-      <div class="h-52 md:h-96 relative bg-center bg-cover rounded-lg" :style="'background-image: url(' + props.main_image + ')'">
+      <div class="h-52 md:h-96 relative bg-center bg-cover rounded-lg" :style="'background-image: url(' + props.main_image + ')'" :id="props.project_title">
         <div v-if="props.see_tags" class="absolute top-0 right-0 flex flex-col">
           <NuxtLink :to="'/areas/' + tag.area_title" v-for="tag in props.tags" >
             <div class="dark:text-black text-white dark:hover:text-white px-2 py-1 rounded-lg"
@@ -33,7 +33,6 @@ const props: Readonly<{
       </div>
     </NuxtLink>
   </div>
-  <!-- Items -->
 </template>
 
 <style scoped>

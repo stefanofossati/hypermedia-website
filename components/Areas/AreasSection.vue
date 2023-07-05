@@ -13,8 +13,8 @@ const props: Readonly<{
 
 <template>
   <div>
-    <section :id="props.id" class="w-screen h-screen snap-start relative">
-      <img :src="props.area_image" class="object-cover w-screen h-full" alt=""/>
+    <section :id="props.id" class="sm:w-screen sm:h-screen snap-start relative">
+      <img :src="props.area_image" class="object-cover w-screen sm:h-full" alt=""/>
       <NuxtLink :to="props.link" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer text-center">
         <h1 class="text-6xl font-bold font-serif italic antialiased" :class="'text-'+ props.area_color +'-500'"> {{props.area_title}} </h1>
       </NuxtLink>

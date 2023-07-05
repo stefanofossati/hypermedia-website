@@ -10,7 +10,7 @@
                     :link="'/areas/' + a.area"/>
     </div>
     <!--Navigation dots-->
-    <div id="nav" class="fixed h-screen bottom-0 left-3 bg-scroll flex flex-col justify-center space-y-20 ">
+    <div id="nav" class="fixed sm:h-screen sm:bottom-0 sm:left-3 sm:bg-scroll sm:flex sm:flex-col sm:justify-center sm:space-y-16 ">
       <area-pointer v-for="d in areas"
                     :area_title="d.area_title"
                     v-on:click="getDocument(d.area_title)"/>
@@ -35,7 +35,6 @@ const {data: areas, error}: { data: Area[] } = await useFetch(
     }
 );
 
-//problem when in another page since elem is null and can not be nullable
 addEventListener("scroll", function(){
       let elem: HTMLElement | null;
       elem = document.getElementById("nav")!;
@@ -46,13 +45,9 @@ addEventListener("scroll", function(){
           elem.classList.add("hidden");
         }
     }
-});
+})
 
-    function getDocument(areaName:string){
-      document.getElementById(areaName)?.scrollIntoView();
-    }
-
-    onload = function(){
-      scrollTo(0,0);
-    }
+function getDocument(areaName:string){
+  document.getElementById(areaName)?.scrollIntoView();
+}
 </script>

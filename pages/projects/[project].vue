@@ -25,7 +25,7 @@
       <!-- Project Info Mobile -->
       <div class="lg:hidden flex-col py-1 px-1 relative">
         <button @click="hide_function" class="absolute top-0 right-0">
-          <svg id="button_info" viewBox="0 -960 960 960" class="dark:text-white text-black fill-current h-16 w-16">
+          <svg id="button_info" viewBox="0 -960 960 960" class="dark:text-white text-black fill-current h-16 w-16 rotate-180">
             <path d="M480-357q-6 0-11-2t-10-7L261-564q-8-8-7.5-21.5T262-607q10-10 21.5-8.5T304-606l176 176 176-176q8-8 21.5-9t21.5 9q10 8 8.5 21t-9.5 22L501-366q-5 5-10 7t-11 2Z"/>
           </svg>
         </button>
@@ -37,9 +37,21 @@
         <h1 class="lg:text-5xl text-3xl font-bold text-black dark:text-white py-1">
           {{ pj.project_title }}
         </h1>
-        <p class="text-xl text-black dark:text-white py-2" v-for="desc in pj.project_description">
-          {{ desc }}
-        </p>
+        <div v-for="(desc, index) in pj.project_description">
+          <p v-if="index < 3" class="text-xl text-black dark:text-white py-2" >
+            {{ desc }}
+          </p>
+          <p v-else class="text-xl text-black dark:text-white py-2 lg:flex hidden" :id="'more_text_' + index">
+            {{ desc }}
+          </p>
+        </div>
+        <div class="flex flex-row visible lg:hidden justify-center align-center hover:text-black dark:hover:text-white" v-on:click="show_more(pj.project_description)">
+          <h3 id="more_text_div" class="text-gray-700 dark:text-gray-400  text-2xl align-center">Show More</h3>
+          <svg id="more_text_button" viewBox="0 -960 960 960" class="dark:text-gray-400 text-gray-700 fill-current h-10 w-10">
+            <path d="M480-357q-6 0-11-2t-10-7L261-564q-8-8-7.5-21.5T262-607q10-10 21.5-8.5T304-606l176 176 176-176q8-8 21.5-9t21.5 9q10 8 8.5 21t-9.5 22L501-366q-5 5-10 7t-11 2Z"/>
+          </svg>
+        </div>
+
       </div>
 
       <!-- Project Info Desktop -->
@@ -97,7 +109,8 @@
           </div>
         </div>
       </div>
-      <div class="md:hidden flex flex-row justify-center text-black dark:text-white border-t-2 border-slate-500 py-2 w-full">
+      <!-- Description with mobile -->
+      <div id="description_mobile_image" class="md:hidden flex flex-row justify-center text-black dark:text-white border-t-2 border-slate-500 py-2 w-full">
         {{ pj.gallery_images[(i+3) % (pj.gallery_images.length)].description }}
       </div>
 
@@ -123,12 +136,35 @@ let i: number = 0;
 function hide_function() {
   const div_project: HTMLElement | null = document.getElementById("project_infos")!;
   const button_info: HTMLElement | null = document.getElementById("button_info")!;
-  if (div_project.style.display !== "none") {
-    div_project.style.display = "none";
-    button_info.style.transform = "rotate(0deg)";
+  if (div_project.classList.contains("hidden")) {
+    div_project.classList.replace("hidden", "visible");
+    button_info.classList.add("rotate-180");
   } else {
-    div_project.style.display = "block";
-    button_info.style.transform = "rotate(180deg)";
+    div_project.classList.replace("visible", "hidden");
+    button_info.classList.remove( "rotate-180");
+  }
+}
+
+function show_more(descriptions: string[]) {
+  const hide_desc: HTMLElement[] = [];
+  for(i=3; i<descriptions.length; i++) {
+    hide_desc[i] = document.getElementById("more_text_" + i)!;
+  }
+  const more_text_button: HTMLElement | null = document.getElementById("more_text_button")!;
+  const more_text_div: HTMLElement | null = document.getElementById("more_text_div")!;
+
+  if(hide_desc[3].classList.contains("hidden")) {
+    hide_desc.forEach((element) => {
+      element.classList.replace("hidden", "visible");
+    });
+    more_text_button.classList.add("rotate-180");
+    more_text_div.innerText = "Show less";
+  } else {
+    hide_desc.forEach((element) => {
+      element.classList.replace("visible", "hidden");
+    });
+    more_text_button.classList.remove("rotate-180");
+    more_text_div.innerText = "Show more";
   }
 }
 
@@ -138,6 +174,7 @@ function go_left(length: number, images_src: ImageGallery[]) {
   const image_02: HTMLImageElement | null = document.getElementById("image02")! as HTMLImageElement;
   const image_03: HTMLImageElement | null = document.getElementById("image03")! as HTMLImageElement;
   const description_big_image: HTMLElement | null = document.getElementById("description_big_image")!;
+  const description_mobile_image: HTMLElement | null = document.getElementById("description_mobile_image")!;
 
   i = (i+1) % (length);
   image_01.src = images_src[i].url;
@@ -156,6 +193,7 @@ function go_left(length: number, images_src: ImageGallery[]) {
   big_image.src = images_src[l].url;
   big_image.alt = images_src[l].description;
   description_big_image.innerHTML = images_src[l].description;
+  description_mobile_image.innerHTML = images_src[l].description;
 
 }
 
@@ -165,6 +203,7 @@ function go_right(length:number, images_src:ImageGallery[]){
   const image_02: HTMLImageElement | null = document.getElementById("image02")! as HTMLImageElement;
   const image_03: HTMLImageElement | null = document.getElementById("image03")! as HTMLImageElement;
   const description_big_image: HTMLElement | null = document.getElementById("description_big_image")!;
+  const description_mobile_image: HTMLElement | null = document.getElementById("description_mobile_image")!;
 
   i = (i-1+length) % (length);
   image_01.src = images_src[i].url;
@@ -184,6 +223,7 @@ function go_right(length:number, images_src:ImageGallery[]){
   big_image.src = images_src[l].url;
   big_image.alt = images_src[l].description;
   description_big_image.innerHTML = images_src[l].description;
+  description_mobile_image.innerHTML = images_src[l].description;
 }
 </script>
 

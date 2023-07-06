@@ -12,8 +12,8 @@ const props: Readonly<{
 
 <template>
     <div class="divide-y divide-slate-700 dark:divide-gray-500 border-t-1 justify-center items-center">
-        <p class="text-2xl px-4 py-2 dark:text-white text-black">Projects Info</p>
-        <div id="project_infos" class="flex flex-col divide-y divide-slate-700 dark:divide-gray-500">
+        <p class="text-3xl px-4 py-2 dark:text-white text-black">Projects Info</p>
+        <div id="project_infos" class="flex flex-col divide-y divide-slate-700 dark:divide-gray-500 visible">
             <NuxtLink :to="'/team/' + props.info_supervisor?.name + '_' + props.info_supervisor?.surname">
               <ProjectsProjectInfoRow :info_name="'Supervisor'" :info_description="props.info_supervisor?.name + ' ' + props.info_supervisor?.surname" class="dark:text-white text-black fill-current h-16 w-16 mb-10 justify-center "
                                       :desc_bool="true"

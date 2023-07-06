@@ -4,7 +4,7 @@
     "css": "tailwindcss -i ./assets/css/styles.css -o ./assets/css/tailwind.css --watch",
     "development": "nuxt dev",
     "dev": "concurrently \"tailwindcss -i ./assets/css/styles.css -o ./assets/css/tailwind.css --watch\" \"nuxt dev\"",
-    "build": "nuxt build",
+    "build": "tailwindcss -i ./assets/css/styles.css -o ./assets/css/tailwind.css && nuxt build",
     "generate": "nuxt generate",
     "start": "nuxt start"
   },

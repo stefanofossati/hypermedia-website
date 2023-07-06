@@ -130,6 +130,7 @@ addEventListener("scroll", function(){
   lastScroll = scrollTop;
 });
 
+
 //hide header on inactivity
 let time;
 onload = resetTimer;

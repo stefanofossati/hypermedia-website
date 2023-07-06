@@ -12,6 +12,8 @@ const {data: person, error}: { data: Person } = await useFetch(
 function showDialog(name: string) {
   const dialog = document.getElementById(name) as HTMLDialogElement;
   dialog.showModal();
+  dialog.classList.remove("translate-y-96");
+  dialog.classList.remove("opacity-0");
 }
 
 function emailTo(email: string) {
@@ -29,9 +31,11 @@ function openMaps(address: string) {
 
 <template>
   <div> <!-- page with Pippo's profile pc and general infos -->
-    <Dialog dialogName="email" question="Are you sure to send an email?" :method="emailTo" :args="[person.email]"/>
-    <Dialog dialogName="phone" question="Are you sure to call?" :method="callTo" :args="[person.phone]"/>
-    <Dialog dialogName="maps" question="Are you sure to open maps?" :method="openMaps" :args="[person.address]"/>
+    <Dialog dialogName="email" question="Are you sure to send an email?" ok="Send" :method="emailTo"
+            :args="[person.email]"/>
+    <Dialog dialogName="phone" question="Are you sure to call?" ok="Call" :method="callTo" :args="[person.phone]"/>
+    <Dialog dialogName="maps" question="Are you sure to open maps?" ok="Open" :method="openMaps"
+            :args="[person.address]"/>
     <div class="flex flex-col items-center text-center" id="page">
       <div class="w-full flex flex-row place-items-center">
         <BackButton route="/team" label="Back to Team" class=""/>

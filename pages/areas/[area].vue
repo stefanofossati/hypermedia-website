@@ -1,5 +1,9 @@
 <template>
   <div>
+    <Head>
+      <Title>Areas</Title>
+      <Meta name="description" content="Areas page" />
+    </Head>
     <!--Automatic Carousel of images-->
     <div id="carousel" class="relative w-full">
       <!-- Carousel -->

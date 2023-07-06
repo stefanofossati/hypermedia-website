@@ -4,6 +4,9 @@
 
 <template>
   <div> <!-- homepage -->
+    <Head>
+      <Title>StartMeUp</Title>
+    </Head>
     <div class="bg-scroll bg-cover bg-center aspect-auto w-screen"
          style="background-image:url('https://ojnuafuxohzfjdijkfoi.supabase.co/storage/v1/object/public/Images/background.jpg');">
       <div

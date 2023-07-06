@@ -1,5 +1,8 @@
 <!-- Contact Us page -->
 <template>
+  <Head>
+    <Title>Contact Us</Title>
+  </Head>
   <div class="bg-gray-200 dark:bg-gray-800 flex flex-col items-center"> <!-- Page wrapper -->
     <div>
       <h1 class="page_title">Contact Us</h1>

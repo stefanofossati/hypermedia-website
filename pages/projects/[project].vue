@@ -1,5 +1,9 @@
 <template>
   <div>
+    <Head>
+      <Title>{{ pj.project_title }}</Title>
+      <Meta name="description" :content="pj.short_description" />
+    </Head>
     <!-- Presentation -->
     <div class="relative h-96 bg-cover bg-center" :style="{ backgroundImage: `url('${pj.main_image}')`}">
       <div class="absolute top-5 left-5">
@@ -112,6 +116,7 @@ const {data: pj, error}: { data: Project } = await useFetch(
       method: "GET",
     }
 );
+
 
 let i: number = 0;
 

@@ -13,7 +13,7 @@
         <nav class="text-lg w-full font-bold text-slate-700 dark:text-slate-200">
           <ul class="flex justify-end">
             <li class="mr-8 lg:mr-16">
-              <NuxtLink to="/areas" class="lg:text-2xl hover:text-orange-500 cursor-pointer">All Areas</NuxtLink>
+              <NuxtLink to="/areas" class="lg:text-2xl hover:text-orange-500 cursor-pointer">Areas</NuxtLink>
             </li>
             <li class="mr-8 lg:mr-16">
               <NuxtLink to="/projects" class="lg:text-2xl hover:text-orange-500 cursor-pointer">Projects</NuxtLink>
@@ -22,7 +22,7 @@
               <NuxtLink to="/team" class="lg:text-2xl hover:text-orange-500 cursor-pointer">Team</NuxtLink>
             </li>
             <li class="mr-8 lg:mr-16">
-              <NuxtLink to="" class="lg:text-2xl hover:text-orange-500 cursor-pointer">About Us</NuxtLink>
+              <NuxtLink to="/about_us" class="lg:text-2xl hover:text-orange-500 cursor-pointer">About Us</NuxtLink>
             </li>
             <li class="inline-flex items-center">
               <div>
@@ -60,7 +60,7 @@
             <li class="text-white-500 font-bold py-1">
               <NuxtLink to="/areas" class="text-lg sm:text-2xl px-4 flex justify-end hover:text-orange-500
                                             border-r-4 border-orange-500 border-primary" v-on:click="showMenu">
-                <span>All Areas</span>
+                <span>Areas</span>
               </NuxtLink>
             </li>
             <li class="text-white-500 font-bold py-1">
@@ -76,7 +76,7 @@
               </NuxtLink>
             </li>
             <li class="text-white-500 font-bold py-1">
-              <NuxtLink to="" class="text-lg sm:text-2xl px-4 flex justify-end hover:text-orange-500
+              <NuxtLink to="/about_us" class="text-lg sm:text-2xl px-4 flex justify-end hover:text-orange-500
                                       border-r-4 border-orange-500 border-primary" v-on:click="showMenu">
                 <span>Contact Us</span>
               </NuxtLink>
@@ -97,8 +97,8 @@
 /*}*/
 </style>
 
-<script setup lang="js">
-import {useColorMode} from "~/.nuxt/imports";
+<script setup lang="ts">
+//import {useColorMode} from "~/.nuxt/imports";
 
 let theme = useColorMode().value === 'dark'
 
@@ -110,36 +110,36 @@ function bright() {
     useColorMode().preference = 'dark';
   }
 }
-
-//make the header disappear when scroll down and appear on scroll up
-let lastScroll = 0;
-addEventListener("scroll", function(){
-  let scrollTop = this.window.scrollY || document.documentElement.scrollTop;
-  if(scrollTop > lastScroll){
-    document.getElementById("navbar").classList.add("-translate-y-28");
-  }
-  else{
-    document.getElementById("navbar").classList.remove("-translate-y-28");
-  }
-  lastScroll = scrollTop;
-});
-
-//hide header on inactivity
-let time;
-onload = resetTimer;
-onmousemove = resetTimer;
-
-function hideNav() {
-  document.getElementById("navbar").classList.add("-translate-y-28");
-  document.getElementById("topBar").classList.add("-translate-y-28");
-}
-
-function resetTimer() {
-  document.getElementById("navbar").classList.remove("-translate-y-28");
-  document.getElementById("topBar").classList.remove("-translate-y-28");
-  clearTimeout(time);
-  time = setTimeout(hideNav, 3000);
-}
+//
+// //make the header disappear when scroll down and appear on scroll up
+// let lastScroll = 0;
+// addEventListener("scroll", function(){
+//   let scrollTop = this.window.scrollY || document.documentElement.scrollTop;
+//   if(scrollTop > lastScroll){
+//     document.getElementById("navbar").classList.add("-translate-y-28");
+//   }
+//   else{
+//     document.getElementById("navbar").classList.remove("-translate-y-28");
+//   }
+//   lastScroll = scrollTop;
+// });
+//
+// //hide header on inactivity
+// let time;
+// onload = resetTimer;
+// onmousemove = resetTimer;
+//
+// function hideNav() {
+//   document.getElementById("navbar").classList.add("-translate-y-28");
+//   document.getElementById("topBar").classList.add("-translate-y-28");
+// }
+//
+// function resetTimer() {
+//   document.getElementById("navbar").classList.remove("-translate-y-28");
+//   document.getElementById("topBar").classList.remove("-translate-y-28");
+//   clearTimeout(time);
+//   time = setTimeout(hideNav, 3000);
+// }
 
 
 //shows the menu

@@ -75,7 +75,7 @@
         </div>
 
         <div class="col-span-4 row-span-4 self-center">
-          <img id="big_image" :src="pj.gallery_images[3].url" :alt="pj.gallery_images[3].description" class=" h-96 w-full object-cover px-2 ">
+          <img id="big_image" :src="pj.gallery_images[3].url" :alt="pj.gallery_images[3].description" class=" md:h-96 h-56 w-full object-cover px-2 ">
         </div>
         <div class="col-span-1 row-span-1"></div>
         <div v-on:click="go_right(pj.gallery_images.length, pj.gallery_images)" class="col-span-1 row-span-2 hover:animate-pulse">

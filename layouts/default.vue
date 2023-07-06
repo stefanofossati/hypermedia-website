@@ -2,7 +2,7 @@
 <template>
   <div>
     <main class="flex flex-col bg-gray-200 dark:bg-gray-950">
-      <div class="h-20 lg:h-28 w-full bg-white" id="topBar"/>
+      <div class="h-20 lg:h-28 w-full dark:bg-gray-950" id="topBar"/>
       <Header class="flex-none"/>
       <slot class="flax-auto"/>
       <Footer class="flex-none"/>
@@ -27,14 +27,13 @@
 }
 
 html{
-        scroll-snap-type: y mandatory;
-        overflow-y: scroll;
-        scroll-behavior: smooth;
-    }
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
 </style>
 
 <script setup lang="ts">
 import Header from "~/components/Header.vue";
 import Footer from "~/components/Footer.vue";
-
 </script>

@@ -6,9 +6,43 @@
       <NuxtLink to="/" class="w-32 lg:w-48 flex-none cursor-pointer ml-12">
         <img alt="logo" src="../assets/LogoDraft.png">
       </NuxtLink>
-      <div class="relative px-4 cursor-pointer lg:hidden items-center mr-6" v-on:click="showMenu">
-        <img src="../assets/burger-menu.png" class="w-12 w-12 relative" id="burgir" alt="">
+      <div class="relative px-4 cursor-pointer lg:hidden items-center mr-6" v-on:click="manageMenu">
+        <img src="../assets/burger-menu.png" class="w-12 relative" id="burgir" alt="">
       </div>
+
+      <div class="absolute right-0 w-44 sm:w-72 -z-10 float-right grid cols-4 hidden" id="items">
+        <div class="flex flex:col justify-end items-center dark:bg-gray-900 bg-white mt-56">
+          <nav class="text-right">
+            <ul class="mr-3">
+              <li class="text-white-500 font-bold py-1">
+                <NuxtLink to="/areas" class="text-lg sm:text-2xl px-4 flex justify-end text-black dark:text-white
+                                            hover:text-orange-500 border-r-4 border-orange-500 border-primary" v-on:click="manageMenu">
+                  <span>Areas</span>
+                </NuxtLink>
+              </li>
+              <li class="text-white-500 font-bold py-1">
+                <NuxtLink to="/projects" class="text-lg sm:text-2xl px-4 flex justify-end text-black dark:text-white
+                                               hover:text-orange-500 border-r-4 border-orange-500 border-primary" v-on:click="manageMenu">
+                  <span>Projects</span>
+                </NuxtLink>
+              </li>
+              <li class="text-white-500 font-bold py-1">
+                <NuxtLink to="/team" class="text-lg sm:text-2xl px-4 flex justify-end text-black dark:text-white
+                                            hover:text-orange-500 border-r-4 border-orange-500 border-primary" v-on:click="manageMenu">
+                  <span>Team</span>
+                </NuxtLink>
+              </li>
+              <li class="text-white-500 font-bold py-1">
+                <NuxtLink to="/about_us" class="text-lg sm:text-2xl px-4 flex justify-end text-black dark:text-white
+                                      hover:text-orange-500 border-r-4 border-orange-500 border-primary" v-on:click="manageMenu">
+                  <span>Contact Us</span>
+                </NuxtLink>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
       <div class="w-full hidden lg:block">
         <nav class="text-lg w-full font-bold text-slate-700 dark:text-slate-200">
           <ul class="flex justify-end">
@@ -53,38 +87,6 @@
       </div>
     </div>
 
-    <div class="w-44 sm:w-72 float-right grid grid cols-4 hidden lg:hidden" id="items">
-      <div class="flex flex:col justify-end items-center dark:bg-gray-900 bg-white">
-        <nav class="text-right">
-          <ul class="mr-3">
-            <li class="text-white-500 font-bold py-1">
-              <NuxtLink to="/areas" class="text-lg sm:text-2xl px-4 flex justify-end hover:text-orange-500
-                                            border-r-4 border-orange-500 border-primary" v-on:click="showMenu">
-                <span>Areas</span>
-              </NuxtLink>
-            </li>
-            <li class="text-white-500 font-bold py-1">
-              <NuxtLink to="/projects" class="text-lg sm:text-2xl px-4 flex justify-end hover:text-orange-500
-                                               border-r-4 border-orange-500 border-primary" v-on:click="showMenu">
-                <span>Projects</span>
-              </NuxtLink>
-            </li>
-            <li class="text-white-500 font-bold py-1">
-              <NuxtLink to="/team" class="text-lg sm:text-2xl px-4 flex justify-end hover:text-orange-500
-                                           border-r-4 border-orange-500 border-primary" v-on:click="showMenu">
-                <span>Team</span>
-              </NuxtLink>
-            </li>
-            <li class="text-white-500 font-bold py-1">
-              <NuxtLink to="/about_us" class="text-lg sm:text-2xl px-4 flex justify-end hover:text-orange-500
-                                      border-r-4 border-orange-500 border-primary" v-on:click="showMenu">
-                <span>Contact Us</span>
-              </NuxtLink>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
   </header>
 </template>
 <style>
@@ -110,19 +112,24 @@ function bright() {
     useColorMode().preference = 'dark';
   }
 }
-//
-// //make the header disappear when scroll down and appear on scroll up
+
+//make the header disappear when scroll down and appear on scroll up
 // let lastScroll = 0;
 // addEventListener("scroll", function(){
 //   let scrollTop = this.window.scrollY || document.documentElement.scrollTop;
 //   if(scrollTop > lastScroll){
 //     document.getElementById("navbar").classList.add("-translate-y-28");
+//     if(!document.getElementById("items").classList.contains("hidden")) {
+//       document.getElementById("burgir").classList.remove("rotate-90");
+//       document.getElementById("items").classList.add("hidden");
+//     }
 //   }
 //   else{
 //     document.getElementById("navbar").classList.remove("-translate-y-28");
 //   }
 //   lastScroll = scrollTop;
 // });
+//
 //
 // //hide header on inactivity
 // let time;
@@ -132,18 +139,22 @@ function bright() {
 // function hideNav() {
 //   document.getElementById("navbar").classList.add("-translate-y-28");
 //   document.getElementById("topBar").classList.add("-translate-y-28");
+//   if(!document.getElementById("items").classList.contains("hidden")) {
+//     document.getElementById("burgir").classList.remove("rotate-90");
+//     document.getElementById("items").classList.add("hidden");
+//   }
 // }
 //
 // function resetTimer() {
 //   document.getElementById("navbar").classList.remove("-translate-y-28");
 //   document.getElementById("topBar").classList.remove("-translate-y-28");
 //   clearTimeout(time);
-//   time = setTimeout(hideNav, 3000);
+//   time = setTimeout(hideNav, 4000);
 // }
 
 
 //shows the menu
-function showMenu(){
+function manageMenu(){
   if(document.getElementById("items").classList.contains("hidden")){
     document.getElementById("burgir").classList.add("rotate-90");
     document.getElementById("items").classList.remove("hidden");
@@ -152,5 +163,6 @@ function showMenu(){
     document.getElementById("items").classList.add("hidden");
   }
 }
+
 </script>
 

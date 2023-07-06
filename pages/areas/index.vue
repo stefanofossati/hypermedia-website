@@ -22,10 +22,6 @@
 </style>
 
 <script setup lang="ts">
-import {useFetch} from "nuxt/app";
-import {Area} from "~/model/Types";
-import AreasSection from "~/components/Areas/AreasSection.vue";
-import AreaPointer from "~/components/Areas/AreaPointer.vue";
 
 //@ts-ignore
 const {data: areas, error}: { data: Area[] } = await useFetch(

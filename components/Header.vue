@@ -10,7 +10,7 @@
         <img src="../assets/burger-menu.png" class="w-12 relative" id="burgir" alt="">
       </div>
 
-      <div class="absolute right-0 w-44 sm:w-72 z-50 float-right grid cols-4 hidden" id="items">
+      <div class="absolute right-0 w-44 sm:w-72 -z-10 float-right grid cols-4 hidden" id="items">
         <div class="flex flex:col justify-end items-center dark:bg-gray-900 bg-white mt-56">
           <nav class="text-right">
             <ul class="mr-3">

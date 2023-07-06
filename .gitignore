@@ -22,5 +22,5 @@ dist
 .vs
 
 # Tailwind css
-assets/css/tailwind.css
+
 ...

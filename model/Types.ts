@@ -56,3 +56,14 @@ export interface ProjectSupervisor{
     name: string;
     surname: string;
 }
+
+export interface AboutUs {
+    id: number;
+    title: string;
+    subtitle: string;
+    paragraph: string;
+    image_url: string;
+    color: string;
+    icon: string;
+    alternative_text: string;
+}

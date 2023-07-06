@@ -20,7 +20,7 @@ function closeDialog(dialogName: string) {
           <span class="m-2"> {{ question }}</span>
           <div class="flex flex-row justify-evenly text-white dark:text-gray-400 m-1">
             <button class="bg-gray-600 hover:bg-gray-900 rounded-xl p-1.5" v-on:click="closeDialog(dialogName)">Cancel</button>
-            <button class="bg-gray-600 hover:bg-gray-900 rounded-xl p-1.5" v-on:click="method(...args)">Send
+            <button class="bg-gray-600 hover:bg-gray-900 rounded-xl p-1.5" v-on:click="method(...args)">OK
             </button>
           </div>
         </div>

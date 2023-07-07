@@ -9,7 +9,7 @@
           <img alt="logo" src="../assets/LogoDraft.png">
         </NuxtLink>
         <div class="relative px-4 cursor-pointer lg:hidden items-center mr-6" v-on:click="manageMenu">
-          <img src="../assets/burger-menu.png" class="w-12 relative" id="burgir" alt="">
+          <img src="../assets/burger-menu.png" class="w-12 relative transition-all duration-200 ease-linear" id="burgir" alt="">
         </div>
 
       <div class="absolute right-0 w-44 sm:w-72 -z-10 float-right grid cols-4 hidden" id="items">

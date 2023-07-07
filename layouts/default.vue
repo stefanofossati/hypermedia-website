@@ -17,12 +17,12 @@
 }
 
 .page-enter-from {
-  transform: translate(100%, 0);
+  opacity: 0;
   scale: 0.8;
 }
 
 .page-leave-to {
-  transform: translate(-100%, 0);
+  opacity: 0;
   scale: 0.8;
 }
 

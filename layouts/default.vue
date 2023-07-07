@@ -26,11 +26,6 @@
   scale: 0.8;
 }
 
-html{
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-}
 </style>
 
 <script setup lang="ts">

@@ -16,25 +16,29 @@
             <ul class="mr-3">
               <li class="text-white-500 font-bold py-1">
                 <NuxtLink to="/areas" class="text-lg sm:text-2xl px-4 flex justify-end text-black dark:text-white
-                                            hover:text-orange-500 border-r-4 border-orange-500 border-primary" v-on:click="manageMenu">
+                                            hover:text-orange-500 border-r-4 border-orange-500 border-primary" id="areas"
+                          v-on:click="manageMenu">
                   <span>All Areas</span>
                 </NuxtLink>
               </li>
               <li class="text-white-500 font-bold py-1">
                 <NuxtLink to="/projects" class="text-lg sm:text-2xl px-4 flex justify-end text-black dark:text-white
-                                               hover:text-orange-500 border-r-4 border-orange-500 border-primary" v-on:click="manageMenu">
+                                               hover:text-orange-500 border-r-4 border-orange-500 border-primary" id="projects"
+                          v-on:click="manageMenu">
                   <span>Projects</span>
                 </NuxtLink>
               </li>
               <li class="text-white-500 font-bold py-1">
                 <NuxtLink to="/team" class="text-lg sm:text-2xl px-4 flex justify-end text-black dark:text-white
-                                            hover:text-orange-500 border-r-4 border-orange-500 border-primary" v-on:click="manageMenu">
+                                            hover:text-orange-500 border-r-4 border-orange-500 border-primary" id="team"
+                          v-on:click="manageMenu">
                   <span>Team</span>
                 </NuxtLink>
               </li>
               <li class="text-white-500 font-bold py-1">
                 <NuxtLink to="" class="text-lg sm:text-2xl px-4 flex justify-end text-black dark:text-white
-                                      hover:text-orange-500 border-r-4 border-orange-500 border-primary" v-on:click="manageMenu">
+                                      hover:text-orange-500 border-r-4 border-orange-500 border-primary" id="contact"
+                          v-on:click="manageMenu">
                   <span>Contact Us</span>
                 </NuxtLink>
               </li>
@@ -43,20 +47,21 @@
         </div>
       </div>
 
+      <!-- Main menu -->
       <div class="w-full hidden lg:block">
         <nav class="text-lg w-full font-bold text-slate-700 dark:text-slate-200">
           <ul class="flex justify-end">
             <li class="mr-8 lg:mr-16">
-              <NuxtLink to="/areas" class="lg:text-2xl hover:text-orange-500 cursor-pointer">All Areas</NuxtLink>
+              <NuxtLink to="/areas" class="lg:text-2xl hover:text-orange-500 cursor-pointer" id="areas">All Areas</NuxtLink>
             </li>
             <li class="mr-8 lg:mr-16">
-              <NuxtLink to="/projects" class="lg:text-2xl hover:text-orange-500 cursor-pointer">Projects</NuxtLink>
+              <NuxtLink to="/projects" class="lg:text-2xl hover:text-orange-500 cursor-pointer" id="projects">Projects</NuxtLink>
             </li>
             <li class="mr-8 lg:mr-16">
-              <NuxtLink to="/team" class="lg:text-2xl hover:text-orange-500 cursor-pointer">Team</NuxtLink>
+              <NuxtLink to="/team" class="lg:text-2xl hover:text-orange-500 cursor-pointer" id="team">Team</NuxtLink>
             </li>
             <li class="mr-8 lg:mr-16">
-              <NuxtLink to="" class="lg:text-2xl hover:text-orange-500 cursor-pointer">About Us</NuxtLink>
+              <NuxtLink to="/contact_us" class="lg:text-2xl hover:text-orange-500 cursor-pointer" id="contact">About Us</NuxtLink>
             </li>
             <li class="inline-flex items-center">
               <div>

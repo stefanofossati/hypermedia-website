@@ -3,18 +3,18 @@
 <template>
   <footer class="bg-white dark:bg-gray-900">
     <div class="mx-auto w-full max-w-screen-xl p-2 py-6 lg:py-8">
-      <div class="md:flex md:justify-between">
-        <div class="mb-6 md:mb-0">
-          <NuxtLink to="" class="flex items-center">
+      <div class="sm:flex sm:justify-between">
+        <div class="mb-6 md:mb-0 flex flex-row justify-center">
+          <NuxtLink to="" class="">
             <img src="../assets/LogoDraft.png" class="h-28 mr-3" alt="FlowBite Logo"/>
           </NuxtLink>
         </div>
-        <div class="grid grid-cols-1 gap-8 mr-8 mt-12 sm:gap-6 sm:grid-cols-2 sm:ml-12">
+        <div class="flex flex-row justify-evenly gap-8 mr-8 mt-12 sm:gap-6 sm:grid sm:grid-cols-2 sm:ml-12">
           <div>
             <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Areas</h2>
             <ul class="text-gray-600 dark:text-gray-400 font-medium">
               <li class="mb-4">
-                <NuxtLink to="" class="hover:underline">All areas</NuxtLink>
+                <NuxtLink to="/areas" class="hover:underline">All areas</NuxtLink>
               </li>
             </ul>
           </div>

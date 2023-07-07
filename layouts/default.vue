@@ -18,12 +18,12 @@
 
 .page-enter-from {
   opacity: 0;
-  scale: 0.9;
+  scale: 0.8;
 }
 
 .page-leave-to {
   opacity: 0;
-  scale: 0.9;
+  scale: 0.8;
 }
 </style>
 

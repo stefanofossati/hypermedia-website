@@ -5,7 +5,7 @@
       <Title>{{ areas.area_title }}</Title>
     </Head>
     <div>
-      <div class="flex flex-col items-center justify-evenly snap-mandatory snap-y">
+      <div class="flex flex-col items-center justify-evenly snap-mandatory snap-y scroll-smooth">
         <AreasSection v-for="a in areas"
                       :id="a.area_title"
                       :area_title="a.area_title"

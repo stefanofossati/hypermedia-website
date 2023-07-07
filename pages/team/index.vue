@@ -10,6 +10,9 @@ const {data: team}: { data: Person[] } = await useFetch(
 
 <template>
   <div> <!-- page with team's profile pictures and names -->
+    <Head>
+      <Title>Team</Title>
+    </Head>
     <div class="flex flex-col items-center text-center">
       <span class="text-3xl sm:text-4xl md:text-6xl font-bold m-10 dark:text-white">Team</span>
       <div

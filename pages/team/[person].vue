@@ -1,4 +1,5 @@
 <script setup lang="ts">
+//@ts-ignore
 const nameSurname: string[] = (useRoute().params.person as string).split("_");
 
 //@ts-ignore

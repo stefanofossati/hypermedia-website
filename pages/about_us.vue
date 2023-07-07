@@ -23,10 +23,6 @@
 </template>
 
 <script setup lang="ts">
-import AboutUsRow from "~/components/AboutUs.vue";
-import {useFetch} from "nuxt/app";
-import {Project} from "~/model/Types";
-
 //@ts-ignore
 const {data: about_us, error}: { data: AboutUs[] } = await useFetch(
     '/api/about_us',

@@ -29,9 +29,12 @@
 
     <!--Area name and description-->
     <div>
-      <div class="text-3xl lg:text-5xl text-left font-bold text-black dark:text-white my-8 ml-6">{{areas.area_title.toUpperCase()}}</div>
-      <p class="text-xl lg:text-2xl text-left text-black dark:text-white mx-6 py-2" v-for="ad in areas.area_description">
-        {{ad}}
+      <div class="text-3xl lg:text-5xl text-left font-bold text-black dark:text-white my-8 ml-6">
+        {{ areas.area_title.toUpperCase() }}
+      </div>
+      <p class="text-xl lg:text-2xl text-left text-black dark:text-white mx-6 py-2"
+         v-for="ad in areas.area_description">
+        {{ ad }}
       </p>
     </div>
 
@@ -63,7 +66,8 @@
                 <span class="sr-only">Previous</span>
             </span>
           </button>
-          <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          <button type="button"
+                  class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
                   v-on:click="carouselNext(areas.projects.length, areas)">
             <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10
                           bg-gray-500 dark:bg-gray-900 group-hover:bg-gray-700 dark:group-hover:bg-gray-500
@@ -98,21 +102,22 @@ const {data: areas, error}: { data: Area } = await useFetch(
 let currentImage = 0;
 const seconds = 5;
 
-setTimeout(() =>{
+setTimeout(() => {
   changeImage();
 }, seconds * 1000);
-function changeImage(){
+
+function changeImage() {
 
   document.getElementById(currentImage.toString())?.classList.add("hidden");
-  if(currentImage == 2 ){
+  if (currentImage == 2) {
     currentImage = 0;
-  }else{
+  } else {
     currentImage += 1;
   }
   document.getElementById(currentImage.toString())?.classList.remove("hidden");
 
 
-  setTimeout(() =>{
+  setTimeout(() => {
     changeImage();
   }, seconds * 1000);
 
@@ -120,29 +125,29 @@ function changeImage(){
 
 var currentProject = 0;
 
-function carouselNext(n : number, a : Area){
+function carouselNext(n: number, a: Area) {
   document.getElementById(a.projects[currentProject].project_title)?.classList.add("hidden");
   currentProject = (currentProject + 1) % n;
   document.getElementById(a.projects[currentProject].project_title)?.classList.remove("hidden");
 }
 
 
-function carouselPrev(n : number, a : Area){
-  if(currentProject == 0){
-    setAllHidden(n , a);
+function carouselPrev(n: number, a: Area) {
+  if (currentProject == 0) {
+    setAllHidden(n, a);
   }
   document.getElementById(a.projects[currentProject].project_title)?.classList.add("hidden");
-  if(currentProject % n == 0){
+  if (currentProject % n == 0) {
     currentProject = (currentProject + n - 1) % n;
-  }else{
+  } else {
     currentProject = (currentProject - 1) % n;
   }
   document.getElementById(a.projects[currentProject].project_title)?.classList.remove("hidden");
 }
 
 //function needed only the first time PrevButton is pressed in an Area
-function setAllHidden(n : number, a : Area){
-  for(let i=0; i < n; i++){
+function setAllHidden(n: number, a: Area) {
+  for (let i = 0; i < n; i++) {
     document.getElementById(a.projects[i].project_title)?.classList.add("hidden");
   }
 }
@@ -150,4 +155,5 @@ function setAllHidden(n : number, a : Area){
 </script>
 
 <style scoped>
+
 </style>

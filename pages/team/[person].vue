@@ -105,11 +105,8 @@ function openMaps(address: string) {
       </div>
     </div>
   </div>
-
-
 </template>
 
-
-<style>
+<style scoped>
 
 </style>

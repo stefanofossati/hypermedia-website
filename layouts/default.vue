@@ -1,6 +1,5 @@
-<!-- Default layout used by all the page -->
 <template>
-  <div>
+  <div> <!-- Default layout used by all the page -->
     <main class="flex flex-col bg-gray-200 dark:bg-gray-950">
       <div class="h-20 lg:h-28 w-full dark:bg-gray-950" id="topBar"/>
       <Header class="flex-none"/>
@@ -28,6 +27,5 @@
 </style>
 
 <script setup lang="ts">
-import Header from "~/components/Header.vue";
-import Footer from "~/components/Footer.vue";
+
 </script>

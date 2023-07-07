@@ -3,9 +3,6 @@
 const props: Readonly<{
   area_title?: string,
 }> = defineProps(['area_title']);
-
-
-
 </script>
 
 <template>

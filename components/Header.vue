@@ -1,6 +1,17 @@
 <!-- Header of the page -->
 
 <template>
+  <div>
+    <header>
+      <div class="fixed flex z-50 h-20 lg:h-28 w-full top-0 dark:bg-gray-900 bg-white items-center justify-between"
+           id="navbar">
+        <nuxt-link to="/" class="w-32 lg:w-48 flex-none cursor-pointer ml-12">
+          <img alt="logo" src="../assets/LogoDraft.png">
+        </nuxt-link>
+        <div class="relative px-4 cursor-pointer lg:hidden items-center mr-6" v-on:click="manageMenu">
+          <img src="../assets/burger-menu.png" class="w-12 relative transition-all duration-200 ease-linear" id="burgir"
+               alt="">
+        </div>
   <header>
     <div class="fixed flex z-50 h-24 lg:h-28 w-full top-0 dark:bg-gray-900 bg-white items-center justify-between" id="navbar">
       <NuxtLink to="/" class="w-32 lg:w-48 flex-none cursor-pointer ml-12">
@@ -155,7 +166,7 @@ function bright() {
 }
 
 //shows the menu
-function manageMenu(){
+function manageMenu() {
   if(document.getElementById("items").classList.contains("hidden")){
       document.getElementById("burgir").classList.add("rotate-90");
       document.getElementById("items").classList.remove("hidden");

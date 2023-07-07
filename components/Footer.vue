@@ -1,6 +1,37 @@
 <!--Footer of the page-->
 
 <template>
+  <div>
+    <footer class="bg-white dark:bg-gray-900">
+      <div class="mx-auto w-full max-w-screen-xl p-2 py-6 lg:py-8">
+        <div class="sm:flex sm:justify-between">
+          <div class="mb-6 md:mb-0 flex flex-row justify-center">
+            <NuxtLink to="" class="">
+              <img src="../assets/LogoDraft.png" class="h-28 mr-3" alt="FlowBite Logo"/>
+            </NuxtLink>
+          </div>
+          <div class="flex flex-row justify-evenly gap-8 mr-8 mt-12 sm:gap-6 sm:grid sm:grid-cols-2 sm:ml-12">
+            <div>
+              <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Areas</h2>
+              <ul class="text-gray-600 dark:text-gray-400 font-medium">
+                <li class="mb-4">
+                  <NuxtLink to="/areas" class="hover:underline">All areas</NuxtLink>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Teamwork</h2>
+              <ul class="text-gray-600 dark:text-gray-400 font-medium">
+                <li class="mb-4">
+                  <NuxtLink to="" class="hover:underline">Work With Us</NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink to="" class="hover:underline">Propose a Project</NuxtLink>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
   <footer class="bg-white dark:bg-gray-900">
     <div class="mx-auto w-full max-w-screen-xl p-2 py-6 lg:py-8">
       <div class="sm:flex sm:justify-between">
@@ -40,7 +71,7 @@
         </div>
       </div>
 
-      <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"/>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"/>
 
       <div class="flex flex-col items-center sm:flex-row sm:items-center sm:justify-between">
             <span class="text-sm text-gray-500 sm:text-center sm:ml-8 cursor-crosshair">HyperTugi Group™
@@ -94,12 +125,9 @@
 * {
   font-family: 'Roboto', sans-serif;
 }
-
-/*.router-link-exact-active {*/
-/*    color: red;*/
-/*}*/
 </style>
 
 <script setup lang="ts">
+
 </script>
 

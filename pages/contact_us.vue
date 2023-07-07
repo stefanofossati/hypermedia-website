@@ -5,7 +5,7 @@
       <Title>Contact Us</Title>
     </Head>
 
-    <div class="bg-gray-200 dark:bg-gray-800 flex flex-col items-center"> <!-- Page wrapper -->
+    <div class="flex flex-col items-center lg:my-14"> <!-- Page wrapper -->
       <div>
         <h1 class="page_title">Contact Us</h1>
       </div>
@@ -27,7 +27,6 @@
 </template>
 
 <script setup lang="ts">
-// import typescript code from /composables/form_script.ts
 import {tab_selection} from '~/composables/form_script.ts'
 
 </script>

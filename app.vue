@@ -1,10 +1,10 @@
 <script setup lang="ts">
-const barHeight: number = 10;
+
 </script>
 
 <template>
   <NuxtLayout>
-    <NuxtLoadingIndicator :height="barHeight"/>
+    <NuxtLoadingIndicator/>
     <NuxtPage/>
   </NuxtLayout>
 </template>

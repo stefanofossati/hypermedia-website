@@ -22,8 +22,8 @@
       </div>
     </div>
 
-    <div id="most_relevant" class="px-10 md:translate-x-1/4">
-      <div class="relative md:w-1/2 flex flex-col place-content-center px-2 py-4 gap-4">
+    <div id="most_relevant" class="px-10 w-full flex flex-row justify-center">
+      <div class="relative w-full md:w-1/2 flex flex-col place-content-center px-2 py-4 gap-4 ">
         <div class="relative rounded-lg mx:auto" v-for="most_pj in most_relevant(projects)">
             <ProjectPreview :project_title="most_pj.project_title"
                             :short_description="most_pj.short_description"
@@ -114,7 +114,7 @@ function selection(event: any) {
   const by_area: HTMLElement | null = document.getElementById("by_area")! as HTMLElement;
 
   const class_of_select = ['text-2xl','sm:text-3xl', 'md:text-5xl' , 'underline', 'underline-offset-8'];
-  const class_of_non_select = ['text-xl', 'sm:text-2xl', 'md:text-4xl'];
+  const class_of_non_select = ['text-xl', 'sm:text-2xl', 'md:text-4xl', 'hover:text-gray-500', 'dark:hover:text-gray-500'];
 
   if(id_click.innerText === "All Projects") {
     all_projects.classList.remove('hidden');

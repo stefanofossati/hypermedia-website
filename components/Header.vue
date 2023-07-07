@@ -163,7 +163,6 @@ function bright() {
 
 
 //shows the menu
-/*
 function manageMenu(){
   if(document.getElementById("items").classList.contains("hidden")){
     document.getElementById("burgir").classList.add("rotate-90");
@@ -173,7 +172,6 @@ function manageMenu(){
     document.getElementById("items").classList.add("hidden");
   }
 }
- */
 
 </script>
 

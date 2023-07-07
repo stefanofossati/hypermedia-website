@@ -10,6 +10,14 @@ const {data: person, error}: { data: Person } = await useFetch(
     }
 );
 
+//@ts-ignore
+const {data: projects, error: errorProj}: { data: Project[], error: any } = await useFetch(
+    "/api/team/" + nameSurname[0] + "_" + nameSurname[1] + "/projects",
+    {
+      method: "GET",
+    }
+);
+
 function showDialog(name: string) {
   const dialog = document.getElementById(name) as HTMLDialogElement;
   dialog.showModal();
@@ -28,6 +36,7 @@ function callTo(phone: string) {
 function openMaps(address: string) {
   window.open("https://www.google.com/maps/search/?q=" + address);
 }
+
 </script>
 
 <template>
@@ -75,6 +84,24 @@ function openMaps(address: string) {
         <ul class="list-disc">
           <li v-for="sentence in person.pitch" class="my-1">{{ sentence }}</li>
         </ul>
+      </div>
+      <div class="flex flex-row w-full items-center justify-between mb-10" v-if="projects.length == 2">
+        <div v-for="project in projects" class="w-full mx-2 sm:mx-5 md:mx-10 lg:mx-14">
+          <ProjectPreview :project_title="project.project_title"
+                          :main_image="project.main_image"
+                          :short_description="project.short_description"
+                          :see_tags="false"
+                          :link="`/projects/${project.project_title}`"/>
+        </div>
+      </div>
+      <div class="flex flex-row w-full items-center justify-center mb-10" v-if="projects.length == 1">
+        <div v-for="project in projects" class="w-1/2 mx-10">
+          <ProjectPreview :project_title="project.project_title"
+                          :main_image="project.main_image"
+                          :short_description="project.short_description"
+                          :see_tags="false"
+                          :link="`/projects/${project.project_title}`"/>
+        </div>
       </div>
     </div>
   </div>

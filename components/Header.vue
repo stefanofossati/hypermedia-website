@@ -83,20 +83,20 @@
       <!-- Main menu -->
       <div class="w-full hidden lg:block">
         <nav class="text-lg w-full font-bold text-slate-700 dark:text-slate-200">
-          <ul class="flex justify-end">
-            <li class="mr-8 lg:mr-16" title="All Areas section">
+          <ul class="flex justify-end mr-3">
+            <li class="mx-4 lg:mx-8" title="All Areas section">
               <NuxtLink to="/areas" class="lg:text-2xl hover:text-orange-500 cursor-pointer" id="areas">All Areas</NuxtLink>
             </li>
-            <li class="mr-8 lg:mr-16" title="Projects section">
+            <li class="mx-4 lg:mx-8" title="Projects section">
               <NuxtLink to="/projects" class="lg:text-2xl hover:text-orange-500 cursor-pointer" id="projects">Projects</NuxtLink>
             </li>
-            <li class="mr-8 lg:mr-16" title="Team section">
+            <li class="mx-4 lg:mx-8" title="Team section">
               <NuxtLink to="/team" class="lg:text-2xl hover:text-orange-500 cursor-pointer" id="team">Team</NuxtLink>
             </li>
-            <li class="mr-8 lg:mr-16" title="About Us section">
+            <li class="mx-4 lg:mx-8" title="About Us section">
               <NuxtLink to="/about_us" class="lg:text-2xl hover:text-orange-500 cursor-pointer" id="contact">About Us</NuxtLink>
             </li>
-            <li class="mr-8 lg:mr-16" title="Contact Us section">
+            <li class="mx-4 lg:mx-8" title="Contact Us section">
               <NuxtLink to="/contact_us" class="lg:text-2xl hover:text-orange-500 cursor-pointer" id="contact">Contact Us</NuxtLink>
             </li>
             <li class="inline-flex items-center" title="Light or Dark mode button">

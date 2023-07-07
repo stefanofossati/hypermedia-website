@@ -26,7 +26,7 @@ export interface Project {
     project_description: string[];
     start_date: Date;
     end_date: Date;
-    supervisor: string;
+    team: ProjectSupervisor;
     areas: AreaProjectPreview[];
     budget: number;
     main_image: string;
@@ -40,6 +40,7 @@ export interface ImageGallery{
 }
 
 export interface AreaProjectPreview {
+    area: string;
     area_title: string;
     area_color: string;
 }
@@ -48,4 +49,21 @@ export interface ProjectAreaPreview{
     project_title: string;
     main_image: string;
     short_description: string;
+}
+
+export interface ProjectSupervisor{
+    id: number;
+    name: string;
+    surname: string;
+}
+
+export interface AboutUs {
+    id: number;
+    title: string;
+    subtitle: string;
+    paragraph: string;
+    image_url: string;
+    color: string;
+    icon: string;
+    alternative_text: string;
 }

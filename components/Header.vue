@@ -5,9 +5,9 @@
     <header>
       <div class="fixed flex z-50 h-20 lg:h-28 w-full top-0 dark:bg-gray-900 bg-white items-center justify-between"
            id="navbar">
-        <NuxtLink to="/" class="w-32 lg:w-48 flex-none cursor-pointer ml-12">
+        <nuxt-link to="/" class="w-32 lg:w-48 flex-none cursor-pointer ml-12">
           <img alt="logo" src="../assets/LogoDraft.png">
-        </NuxtLink>
+        </nuxt-link>
         <div class="relative px-4 cursor-pointer lg:hidden items-center mr-6" v-on:click="manageMenu">
           <img src="../assets/burger-menu.png" class="w-12 relative transition-all duration-200 ease-linear" id="burgir" alt="">
         </div>
@@ -17,32 +17,32 @@
           <nav class="text-right">
             <ul class="mr-3">
               <li class="text-white-500 font-bold py-1">
-                <NuxtLink to="/areas" class="text-lg sm:text-2xl px-4 flex justify-end text-black dark:text-white
+                <nuxt-link to="/areas" class="text-lg sm:text-2xl px-4 flex justify-end text-black dark:text-white
                                             hover:text-orange-500 border-r-4 border-orange-500 border-primary" id="areas"
                           v-on:click="manageMenu">
                   <span>All Areas</span>
-                </NuxtLink>
+                </nuxt-link>
               </li>
               <li class="text-white-500 font-bold py-1">
-                <NuxtLink to="/projects" class="text-lg sm:text-2xl px-4 flex justify-end text-black dark:text-white
+                <nuxt-link to="/projects" class="text-lg sm:text-2xl px-4 flex justify-end text-black dark:text-white
                                                hover:text-orange-500 border-r-4 border-orange-500 border-primary" id="projects"
                           v-on:click="manageMenu">
                   <span>Projects</span>
-                </NuxtLink>
+                </nuxt-link>
               </li>
               <li class="text-white-500 font-bold py-1">
-                <NuxtLink to="/team" class="text-lg sm:text-2xl px-4 flex justify-end text-black dark:text-white
+                <nuxt-link to="/team" class="text-lg sm:text-2xl px-4 flex justify-end text-black dark:text-white
                                             hover:text-orange-500 border-r-4 border-orange-500 border-primary" id="team"
                           v-on:click="manageMenu">
                   <span>Team</span>
-                </NuxtLink>
+                </nuxt-link>
               </li>
               <li class="text-white-500 font-bold py-1">
-                <NuxtLink to="" class="text-lg sm:text-2xl px-4 flex justify-end text-black dark:text-white
+                <nuxt-link to="" class="text-lg sm:text-2xl px-4 flex justify-end text-black dark:text-white
                                       hover:text-orange-500 border-r-4 border-orange-500 border-primary" id="contact"
                           v-on:click="manageMenu">
                   <span>Contact Us</span>
-                </NuxtLink>
+                </nuxt-link>
               </li>
             </ul>
           </nav>
@@ -97,14 +97,17 @@
     </header>
   </div>
 </template>
+
 <style>
 * {
   font-family: 'Roboto', sans-serif;
 }
+</style>
 
-/*.router-link-exact-active {*/
-/*    color: red;*/
-/*}*/
+<style scoped>
+.router-link-active {
+  @apply text-orange-500 underline;
+}
 </style>
 
 <script setup lang="js">

@@ -39,6 +39,6 @@ const {data: team}: { data: Person[] } = await useFetch(
   </div>
 </template>
 
-<style>
+<style scoped>
 
 </style>

@@ -18,6 +18,10 @@
     @apply font-bold text-3xl text-center mb-2
 }
 
+.contact_us_info_line {
+    @apply underline hover:cursor-pointer
+}
+
 .contact_us_tab_name {
     @apply p-1 text-black bg-gray-300 pl-2 pr-2 sm:pl-6 sm:pr-6 md:pl-16 md:pr-16 lg:pl-28 lg:pr-28 hover:bg-gray-400
     dark:text-white dark:bg-gray-700 dark:hover:bg-gray-600

@@ -3,7 +3,6 @@ const props: Readonly<{
   route?: string,
   label?: string
 }> = defineProps(['route', 'label']);
-
 </script>
 
 <template>

@@ -2,21 +2,21 @@
   <div>
     <Head>
       <Title>Projects</Title>
-      <Meta name="description" content="projects page" />
+      <Meta name="description" content="projects page"/>
     </Head>
     <div class="flex flex-row w-full items-center justify-between border-slate-500 border-b-2">
-      <div id="id_0_div" class="flex-1" >
+      <div id="id_0_div" class="flex-1">
         <h1 id="id_0" v-on:click="selection($event)" class="text-xl sm:text-2xl md:text-4xl font-bold sm:m-10 m-3
                    text-gray-800 dark:text-gray-200 hover:text-gray-500 dark:hover:text-gray-500
                    cursor-pointer text-center">All Projects</h1>
       </div>
-      <div id="id_1_div"  class="flex-1 grow" >
+      <div id="id_1_div" class="flex-1 grow">
         <h1 id="id_1" v-on:click="selection($event)" class="text-2xl sm:text-3xl md:text-5xl font-bold sm:m-10 m-3
                    text-black underline underline-offset-8 dark:text-white dark:hover:text-gray-500 border-l-2 border-r-2 border-slate-500
                    cursor-pointer text-center">Most Relevant</h1>
       </div>
-      <div id="id_2_div" class="flex-1" >
-        <h1 id="id_2"  v-on:click="selection($event)" class="text-xl sm:text-2xl md:text-4xl font-bold sm:m-10 m-3
+      <div id="id_2_div" class="flex-1">
+        <h1 id="id_2" v-on:click="selection($event)" class="text-xl sm:text-2xl md:text-4xl font-bold sm:m-10 m-3
                    text-gray-800 dark:text-gray-200 hover:text-gray-500 dark:hover:text-gray-500
                    cursor-pointer text-center">Projects by area</h1>
       </div>
@@ -25,12 +25,12 @@
     <div id="most_relevant" class="px-10 w-full flex flex-row justify-center">
       <div class="relative w-full md:w-1/2 flex flex-col place-content-center px-2 py-4 gap-4 ">
         <div class="relative rounded-lg mx:auto" v-for="most_pj in most_relevant(projects)">
-            <ProjectPreview :project_title="most_pj.project_title"
-                            :short_description="most_pj.short_description"
-                            :link="'/projects/' + most_pj.project_title"
-                            :tags="most_pj.areas"
-                            :main_image="most_pj.main_image"
-                            :see_tags="true"/>
+          <ProjectPreview :project_title="most_pj.project_title"
+                          :short_description="most_pj.short_description"
+                          :link="'/projects/' + most_pj.project_title"
+                          :tags="most_pj.areas"
+                          :main_image="most_pj.main_image"
+                          :see_tags="true"/>
         </div>
       </div>
     </div>
@@ -56,7 +56,6 @@
 </template>
 
 <script setup lang="ts">
-
 //@ts-ignore
 const {data: projects, error}: { data: Project[] } = await useFetch(
     '/api/projects',
@@ -65,22 +64,22 @@ const {data: projects, error}: { data: Project[] } = await useFetch(
     }
 );
 
-function most_relevant(projects: Project[]){
+function most_relevant(projects: Project[]) {
   const most_relevant: Project[] = [];
-  for(let i = 0; i < projects.length; i++){
-    if(projects[i].most_relevant == 1){
+  for (let i = 0; i < projects.length; i++) {
+    if (projects[i].most_relevant == 1) {
       most_relevant.push(projects[i]);
     }
   }
   return most_relevant;
 }
 
-function take_areas(projects: Project[]){
+function take_areas(projects: Project[]) {
   const areas: string[] = [];
   const areas_info: AreaProjectPreview[] = [];
-  for(let i = 0; i < projects.length; i++){
-    for(let j = 0; j < projects[i].areas.length; j++){
-      if(!areas.includes(projects[i].areas[j].area_title)){
+  for (let i = 0; i < projects.length; i++) {
+    for (let j = 0; j < projects[i].areas.length; j++) {
+      if (!areas.includes(projects[i].areas[j].area_title)) {
         areas.push(projects[i].areas[j].area_title);
         areas_info.push(projects[i].areas[j]);
       }
@@ -89,11 +88,11 @@ function take_areas(projects: Project[]){
   return areas_info;
 }
 
-function projects_by_area(projects: Project[], area: string){
+function projects_by_area(projects: Project[], area: string) {
   const projects_area: Project[] = [];
-  for(let i = 0; i < projects.length; i++){
-    for(let j = 0; j < projects[i].areas.length; j++){
-      if(projects[i].areas[j].area_title == area){
+  for (let i = 0; i < projects.length; i++) {
+    for (let j = 0; j < projects[i].areas.length; j++) {
+      if (projects[i].areas[j].area_title == area) {
         projects_area.push(projects[i]);
       }
     }
@@ -113,15 +112,15 @@ function selection(event: any) {
   const most_relevant: HTMLElement | null = document.getElementById("most_relevant")! as HTMLElement;
   const by_area: HTMLElement | null = document.getElementById("by_area")! as HTMLElement;
 
-  const class_of_select = ['text-2xl','sm:text-3xl', 'md:text-5xl' , 'underline', 'underline-offset-8'];
+  const class_of_select = ['text-2xl', 'sm:text-3xl', 'md:text-5xl', 'underline', 'underline-offset-8'];
   const class_of_non_select = ['text-xl', 'sm:text-2xl', 'md:text-4xl', 'hover:text-gray-500', 'dark:hover:text-gray-500'];
 
-  if(id_click.innerText === "All Projects") {
+  if (id_click.innerText === "All Projects") {
     all_projects.classList.remove('hidden');
     most_relevant.classList.add('hidden');
     by_area.classList.add('hidden');
     ids.forEach(id => {
-      if(id.id != id_click.id){
+      if (id.id != id_click.id) {
         class_of_select.forEach(class_name => {
           id.classList.remove(class_name);
         });
@@ -129,7 +128,7 @@ function selection(event: any) {
         class_of_non_select.forEach(class_name => {
           id.classList.add(class_name);
         });
-      }else{
+      } else {
         class_of_non_select.forEach(class_name => {
           id.classList.remove(class_name);
         });
@@ -138,12 +137,12 @@ function selection(event: any) {
         });
       }
     });
-  }else if(id_click.innerText === "Most Relevant") {
+  } else if (id_click.innerText === "Most Relevant") {
     most_relevant.classList.remove('hidden');
     all_projects.classList.add('hidden');
     by_area.classList.add('hidden');
     ids.forEach(id => {
-      if(id.id != id_click.id){
+      if (id.id != id_click.id) {
         class_of_select.forEach(class_name => {
           id.classList.remove(class_name);
         });
@@ -151,7 +150,7 @@ function selection(event: any) {
         class_of_non_select.forEach(class_name => {
           id.classList.add(class_name);
         });
-      }else{
+      } else {
         class_of_non_select.forEach(class_name => {
           id.classList.remove(class_name);
         });
@@ -160,12 +159,12 @@ function selection(event: any) {
         });
       }
     });
-  }else if(id_click.innerText === "Projects by area") {
+  } else if (id_click.innerText === "Projects by area") {
     by_area.classList.remove('hidden');
     all_projects.classList.add('hidden');
     most_relevant.classList.add('hidden');
     ids.forEach(id => {
-      if(id.id != id_click.id){
+      if (id.id != id_click.id) {
         class_of_select.forEach(class_name => {
           id.classList.remove(class_name);
         });
@@ -173,7 +172,7 @@ function selection(event: any) {
         class_of_non_select.forEach(class_name => {
           id.classList.add(class_name);
         });
-      }else{
+      } else {
         class_of_non_select.forEach(class_name => {
           id.classList.remove(class_name);
         });
@@ -185,7 +184,6 @@ function selection(event: any) {
   }
 
 }
-
 </script>
 
 <style scoped>

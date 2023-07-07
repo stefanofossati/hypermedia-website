@@ -91,7 +91,6 @@
 </template>
 
 <script setup lang="ts">
-// import typescript code from /composables/form_script.ts
 import {
   checkAndSendForm,
   clearForm,
@@ -101,7 +100,6 @@ import {
   testPhoneBox,
   testProjNameBox
 } from "~/composables/form_script.ts";
-
 </script>
 
 <style scoped>

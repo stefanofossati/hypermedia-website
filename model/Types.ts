@@ -11,13 +11,59 @@ export interface Person {
     pitch: string[];
 }
 
+export interface Area {
+    area: string,
+    area_title: string;
+    area_description: string[];
+    area_color: string;
+    area_image: string[];
+    projects: ProjectAreaPreview[];
+}
+
 export interface Project {
-    id: number;
     project_title: string;
-    project_description: string;
+    short_description: string;
+    project_description: string[];
     start_date: Date;
     end_date: Date;
-    supervisor: string;
+    team: ProjectSupervisor;
+    areas: AreaProjectPreview[];
     budget: number;
-    tags: string[];
+    main_image: string;
+    gallery_images: ImageGallery[];
+    most_relevant: number;
+}
+
+export interface ImageGallery{
+    description: string;
+    url: string;
+}
+
+export interface AreaProjectPreview {
+    area: string;
+    area_title: string;
+    area_color: string;
+}
+
+export interface ProjectAreaPreview{
+    project_title: string;
+    main_image: string;
+    short_description: string;
+}
+
+export interface ProjectSupervisor{
+    id: number;
+    name: string;
+    surname: string;
+}
+
+export interface AboutUs {
+    id: number;
+    title: string;
+    subtitle: string;
+    paragraph: string;
+    image_url: string;
+    color: string;
+    icon: string;
+    alternative_text: string;
 }

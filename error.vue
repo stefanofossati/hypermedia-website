@@ -1,26 +1,24 @@
 <template>
+  <Head>
+    <Title>Error</Title>
+  </Head>
     <NuxtLayout>
-        <main id="main_error">
-            <h1>Oops, something went wrong with your request</h1>
+        <main id="main_error" class="flex flex-col w-fit self-center h-full py-10">
+            <h1 class="text-2xl  text-black dark:text-white py-20">Oops, something went wrong with this page</h1>
 
             <NuxtLink to = "/">
-                <button type="button"
-                class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
-                data-te-ripple-init
-                data-te-ripple-color="light">
-                    Go back to the home page
-                </button>
+              <div class="flex flex-row py-15 bg-black hover:bg-slate-800 dark:bg-white dark:hover:bg-gray-500 px-4 rounded-lg justify-center">
+                <svg viewBox="0 -960 960 960" class="dark:text-black text-white fill-current h-12 w-12">
+                  <path d="M220-180h150v-250h220v250h150v-390L480-765 220-570v390Zm-60 60v-480l320-240 320 240v480H530v-250H430v250H160Zm320-353Z"/>
+                </svg>
+                <h1 class="text-xl self-center text-center">
+                  Go back to the home page
+                </h1>
+              </div>
             </NuxtLink>
         </main>
     </NuxtLayout>
 </template>
 
 <style>
-  #main_error{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
 </style>

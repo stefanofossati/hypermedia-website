@@ -32,6 +32,9 @@ function openMaps(address: string) {
 
 <template>
   <div> <!-- page with Pippo's profile pc and general infos -->
+    <Head>
+      <Title>{{ person.name }} {{person.surname}}</Title>
+    </Head>
     <Dialog dialogName="email" question="Are you sure to send an email?" ok="Send" :method="emailTo"
             :args="[person.email]"/>
     <Dialog dialogName="phone" question="Are you sure to call?" ok="Call" :method="callTo" :args="[person.phone]"/>

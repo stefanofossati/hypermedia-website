@@ -2,17 +2,17 @@ import {SupabaseClient} from "@supabase/supabase-js";
 // @ts-ignore
 import {serverSupabaseClient} from '#supabase/server';
 import {createError} from "nuxt/app";
-import {Project} from "~/model/Types";
+import {Area} from "~/model/Types";
 
 export default async function eventHandler(event: any) {
     const clientDB: SupabaseClient<any, "public", any> = serverSupabaseClient(event);
-    const project_title: string = event.context.params.project;
+    const area: string = event.context.params.area;
 
     // @ts-ignore
-    const {data, error}: { data: Project } = await clientDB
-        .from('projects')
-        .select("project_title, short_description, project_description, start_date, end_date, team(id, name, surname), budget, main_image, gallery_images, areas(area, area_title, area_color)")
-        .eq('project_title', project_title)
+    const {data, error}: { data: Area } = await clientDB
+        .from('areas')
+        .select("area, area_title, area_description, area_color, area_image, projects(project_title, main_image, short_description)")
+        .eq('area', area)
         .limit(1)
         .single();
     if (error) {

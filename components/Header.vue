@@ -1,14 +1,16 @@
 <!-- Header of the page -->
 
 <template>
-  <header>
-    <div class="fixed flex z-50 h-20 lg:h-28 w-full top-0 dark:bg-gray-900 bg-white items-center justify-between" id="navbar">
-      <NuxtLink to="/" class="w-32 lg:w-48 flex-none cursor-pointer ml-12">
-        <img alt="logo" src="../assets/LogoDraft.png">
-      </NuxtLink>
-      <div class="relative px-4 cursor-pointer lg:hidden items-center mr-6" v-on:click="manageMenu">
-        <img src="../assets/burger-menu.png" class="w-12 relative" id="burgir" alt="">
-      </div>
+  <div>
+    <header>
+      <div class="fixed flex z-50 h-20 lg:h-28 w-full top-0 dark:bg-gray-900 bg-white items-center justify-between"
+           id="navbar">
+        <NuxtLink to="/" class="w-32 lg:w-48 flex-none cursor-pointer ml-12">
+          <img alt="logo" src="../assets/LogoDraft.png">
+        </NuxtLink>
+        <div class="relative px-4 cursor-pointer lg:hidden items-center mr-6" v-on:click="manageMenu">
+          <img src="../assets/burger-menu.png" class="w-12 relative" id="burgir" alt="">
+        </div>
 
       <div class="absolute right-0 w-44 sm:w-72 -z-10 float-right grid cols-4 hidden" id="items">
         <div class="flex flex:col justify-end items-center dark:bg-gray-900 bg-white mt-56">
@@ -92,7 +94,8 @@
       </div>
     </div>
 
-  </header>
+    </header>
+  </div>
 </template>
 <style>
 * {
@@ -119,53 +122,53 @@ function bright() {
 }
 
 //make the header disappear when scroll down and appear on scroll up
-let lastScroll = 0;
-addEventListener("scroll", function(){
-  let scrollTop = this.window.scrollY || document.documentElement.scrollTop;
-  if(scrollTop > lastScroll){
-      document.getElementById("navbar").classList.add("-translate-y-28");
-      if(!document.getElementById("items").classList.contains("hidden")) {
-        document.getElementById("burgir").classList.remove("rotate-90");
-        document.getElementById("items").classList.add("hidden");
-      }
-  }
-  else{
-      document.getElementById("navbar").classList.remove("-translate-y-28");
-  }
-  lastScroll = scrollTop;
-});
-
-
-//hide header on inactivity
-let time;
-onload = resetTimer;
-onmousemove = resetTimer;
-
-function hideNav() {
-    document.getElementById("navbar").classList.add("-translate-y-28");
-    document.getElementById("topBar").classList.add("-translate-y-28");
-    if(!document.getElementById("items").classList.contains("hidden")) {
-      document.getElementById("burgir").classList.remove("rotate-90");
-      document.getElementById("items").classList.add("hidden");
-    }
-}
-
-function resetTimer() {
-    document.getElementById("navbar").classList.remove("-translate-y-28");
-    document.getElementById("topBar").classList.remove("-translate-y-28");
-    clearTimeout(time);
-    time = setTimeout(hideNav, 4000);
-}
+// let lastScroll = 0;
+// addEventListener("scroll", function(){
+//   let scrollTop = this.window.scrollY || document.documentElement.scrollTop;
+//   if(scrollTop > lastScroll){
+//     document.getElementById("navbar").classList.add("-translate-y-28");
+//     if(!document.getElementById("items").classList.contains("hidden")) {
+//       document.getElementById("burgir").classList.remove("rotate-90");
+//       document.getElementById("items").classList.add("hidden");
+//     }
+//   }
+//   else{
+//     document.getElementById("navbar").classList.remove("-translate-y-28");
+//   }
+//   lastScroll = scrollTop;
+// });
+//
+//
+// //hide header on inactivity
+// let time;
+// onload = resetTimer;
+// onmousemove = resetTimer;
+//
+// function hideNav() {
+//   document.getElementById("navbar").classList.add("-translate-y-28");
+//   document.getElementById("topBar").classList.add("-translate-y-28");
+//   if(!document.getElementById("items").classList.contains("hidden")) {
+//     document.getElementById("burgir").classList.remove("rotate-90");
+//     document.getElementById("items").classList.add("hidden");
+//   }
+// }
+//
+// function resetTimer() {
+//   document.getElementById("navbar").classList.remove("-translate-y-28");
+//   document.getElementById("topBar").classList.remove("-translate-y-28");
+//   clearTimeout(time);
+//   time = setTimeout(hideNav, 4000);
+// }
 
 
 //shows the menu
 function manageMenu(){
   if(document.getElementById("items").classList.contains("hidden")){
-      document.getElementById("burgir").classList.add("rotate-90");
-      document.getElementById("items").classList.remove("hidden");
+    document.getElementById("burgir").classList.add("rotate-90");
+    document.getElementById("items").classList.remove("hidden");
   }else{
-      document.getElementById("burgir").classList.remove("rotate-90");
-      document.getElementById("items").classList.add("hidden");
+    document.getElementById("burgir").classList.remove("rotate-90");
+    document.getElementById("items").classList.add("hidden");
   }
 }
 

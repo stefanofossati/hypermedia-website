@@ -1,4 +1,5 @@
 <script setup lang="ts">
+//@ts-ignore
 const nameSurname: string[] = (useRoute().params.person as string).split("_");
 
 //@ts-ignore
@@ -12,6 +13,8 @@ const {data: person, error}: { data: Person } = await useFetch(
 function showDialog(name: string) {
   const dialog = document.getElementById(name) as HTMLDialogElement;
   dialog.showModal();
+  dialog.classList.remove("translate-y-96");
+  dialog.classList.remove("opacity-0");
 }
 
 function emailTo(email: string) {
@@ -29,9 +32,14 @@ function openMaps(address: string) {
 
 <template>
   <div> <!-- page with Pippo's profile pc and general infos -->
-    <Dialog dialogName="email" question="Are you sure to send an email?" :method="emailTo" :args="[person.email]"/>
-    <Dialog dialogName="phone" question="Are you sure to call?" :method="callTo" :args="[person.phone]"/>
-    <Dialog dialogName="maps" question="Are you sure to open maps?" :method="openMaps" :args="[person.address]"/>
+    <Head>
+      <Title>{{ person.name }} {{person.surname}}</Title>
+    </Head>
+    <Dialog dialogName="email" question="Are you sure to send an email?" ok="Send" :method="emailTo"
+            :args="[person.email]"/>
+    <Dialog dialogName="phone" question="Are you sure to call?" ok="Call" :method="callTo" :args="[person.phone]"/>
+    <Dialog dialogName="maps" question="Are you sure to open maps?" ok="Open" :method="openMaps"
+            :args="[person.address]"/>
     <div class="flex flex-col items-center text-center" id="page">
       <div class="w-full flex flex-row place-items-center">
         <BackButton route="/team" label="Back to Team" class=""/>
@@ -43,8 +51,7 @@ function openMaps(address: string) {
         <lazy-nuxt-img :src="person.img" :alt="`${person.name} ${person.surname}'s profile pic`"
                        class="object-scale-down border-4 dark:border-gray-600 rounded-full shadow-2xl h-52 w-52 sm:h-72 sm:w-72 md:h-96 md:w-96 mb-10 lg:mb-0 aspect-square"/>
         <div class="flex flex-row justify-center items-stretch bg-white dark:bg-gray-900 rounded-3xl">
-          <div
-              class="flex flex-col items-stretch justify-between border-black dark:border-white border-r p-2 sm:p-5 text-sm sm:text-lg md:text-xl font-bold dark:text-white">
+          <div class="person-info border-black dark:border-white border-r font-bold dark:text-white">
             <span>Name</span>
             <span>Surname</span>
             <span>Role</span>
@@ -53,8 +60,7 @@ function openMaps(address: string) {
             <span>Email</span>
             <span>Phone</span>
           </div>
-          <div
-              class="flex flex-col items-stretch justify-between p-2 sm:p-5 text-sm sm:text-lg md:text-xl dark:text-gray-400">
+          <div class="person-info dark:text-gray-400">
             <span>{{ person.name }}</span>
             <span>{{ person.surname }}</span>
             <span>{{ person.role }}</span>

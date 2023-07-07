@@ -11,7 +11,8 @@
                       :area_title="a.area_title"
                       :area_image="a.area_image[0]"
                       :area_color="a.area_color"
-                      :link="'/areas/' + a.area"/>
+                      :link="'/areas/' + a.area"
+                      class="snap-center"/>
       </div>
       <!--Navigation dots-->
       <div id="nav"

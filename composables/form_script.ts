@@ -1,24 +1,16 @@
 import {useFetch} from "nuxt/app";
 
-function testSurnameBox(form_id_str: string) {
-    const surname_elem = (<HTMLInputElement>document.getElementById('sname_' + form_id_str));
-    const surname_err_msg_elem = (<HTMLInputElement>document.getElementById('sname_' + form_id_str + '_err_msg'));
-    const surname = surname_elem.value;
+let email_address: string = "pippo@sempre.it";
+let showDialog: boolean = false;
 
-    if (checkName(surname)) {
-        surname_elem.className = "contact_us_form_input_green";
-        surname_err_msg_elem.className = "hidden";
-        return true;
-    } else {
-        surname_elem.className = "contact_us_form_input_red"
-        surname_err_msg_elem.className = "contact_us_form_error_message";
-        return false;
-    }
+export function getEmailAddress() {
+    return email_address;
 }
 
-function testNameBox(form_id_str: string) {
-    const name_elem = (<HTMLInputElement>document.getElementById('fname_' + form_id_str));
-    const name_err_msg_elem = (<HTMLInputElement>document.getElementById('fname_' + form_id_str + '_err_msg'));
+// unified test for First Name and Surname fields
+function testSurnameOrFirstNameBox(s_or_f: string, form_id_str: string) {
+    const name_elem = (<HTMLInputElement>document.getElementById(s_or_f + 'name_' + form_id_str));
+    const name_err_msg_elem = (<HTMLInputElement>document.getElementById(s_or_f + 'name_' + form_id_str + '_err_msg'));
     const name = name_elem.value;
 
     if (checkName(name)) {
@@ -32,6 +24,23 @@ function testNameBox(form_id_str: string) {
     }
 }
 
+/// @param form_id_str - id of the form, "pp" or "wwu"
+/// @returns true if Surname field is valid, false otherwise
+/// Function changes the style of the field and the error message
+function testSurnameBox(form_id_str: string) {
+    return testSurnameOrFirstNameBox('s', form_id_str);
+}
+
+/// @param form_id_str - id of the form, "pp" or "wwu"
+/// @returns true if First Name field is valid, false otherwise
+/// Function changes the style of the field and the error message
+function testNameBox(form_id_str: string) {
+    return testSurnameOrFirstNameBox('f', form_id_str);
+}
+
+/// @param form_id_str - id of the form, "pp" or "wwu"
+/// @returns true if Email field is valid, false otherwise
+/// Function changes the style of the field and the error message
 function testEmailBox(form_id_str: string) {
     const email_elem = (<HTMLInputElement>document.getElementById('email_' + form_id_str));
     const email_err_msg_elem = (<HTMLInputElement>document.getElementById('email_' + form_id_str + '_err_msg'));
@@ -48,6 +57,9 @@ function testEmailBox(form_id_str: string) {
     }
 }
 
+/// @param form_id_str - id of the form, "pp" or "wwu"
+/// @returns true if Phone field is valid, false otherwise
+/// Function changes the style of the field and the error message
 function testPhoneBox(form_id_str: string) {
     const phone_elem = (<HTMLInputElement>document.getElementById('phone_' + form_id_str));
     const phone_err_msg_elem = (<HTMLInputElement>document.getElementById('phone_' + form_id_str + '_err_msg'));
@@ -69,6 +81,9 @@ function testPhoneBox(form_id_str: string) {
     }
 }
 
+/// @param form_id_str - id of the form, "pp" or "wwu"
+/// @returns true if Project Name field is valid, false otherwise
+/// Function changes the style of the field and the error message
 function testProjNameBox(form_id_str: string) {
     const proj_name_elem = (<HTMLInputElement>document.getElementById('proj_name_' + form_id_str));
     const proj_name_err_msg_elem = (<HTMLInputElement>document.getElementById('proj_name_' + form_id_str + '_err_msg'));
@@ -85,6 +100,9 @@ function testProjNameBox(form_id_str: string) {
     }
 }
 
+/// auxiliary function
+/// @param name - name/surname to be checked
+/// @returns true if name/surname format is valid, false otherwise
 function checkName(name: string) {
     if (name == null || name == "") {
         return false;
@@ -92,6 +110,9 @@ function checkName(name: string) {
     return name.match("^[a-zA-Z]+$");
 }
 
+/// auxiliary function
+/// @param email - email to be checked
+/// @returns true if email format is valid, false otherwise
 function checkEmail(email: string) {
     if (email == null || email == "") {
         return false;
@@ -99,6 +120,9 @@ function checkEmail(email: string) {
     return email.match("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
 }
 
+/// auxiliary function
+/// @param phone - phone number to be checked
+/// @returns true if phone number format is valid, false otherwise
 function checkPhone(phone: string) {
     if (phone == null) {
         return true;
@@ -106,6 +130,9 @@ function checkPhone(phone: string) {
     return phone.match(/^[+]?[\\s./0-9]*[(]?[0-9]{1,4}[)]?[-\\s./0-9]*$/g);
 }
 
+/// @param form_id_str - id of the form, "pp" or "wwu"
+/// @returns true if form sent successfully, false otherwise
+/// Function generates a POST request if all fields are valid
 async function checkAndSendForm(form_id_str: string) {
     if (testSurnameBox(form_id_str) && testNameBox(form_id_str) && testEmailBox(form_id_str) && testPhoneBox(form_id_str)) {
         if ((form_id_str == "pp" && testProjNameBox(form_id_str)) || form_id_str == "wwu") {
@@ -125,8 +152,10 @@ async function checkAndSendForm(form_id_str: string) {
             console.log(response);
 
             if (response) {
+                email_address = (<HTMLInputElement>document.getElementById('email_' + form_id_str)).value;
                 clearForm(form_id_str);
                 showFormSentDialogBox();
+                showDialog = true;
                 return true;
             }
             console.log(error);
@@ -136,6 +165,9 @@ async function checkAndSendForm(form_id_str: string) {
     }
 }
 
+/// @param form_id_str - id of the form, "pp" or "wwu"
+///
+/// Function clears all fields and error messages
 function clearForm(form_id_str: string) {
     const surname_elem = (<HTMLInputElement>document.getElementById('sname_' + form_id_str));
     const name_elem = (<HTMLInputElement>document.getElementById('fname_' + form_id_str));
@@ -181,7 +213,7 @@ function clearForm(form_id_str: string) {
 }
 
 function showFormSentDialogBox() {
-    const dialog_box : HTMLElement | null = (<HTMLInputElement>document.getElementById('form_sent_dialog_box')) as HTMLElement;
+    const dialog_box: HTMLElement | null = (<HTMLInputElement>document.getElementById('form_sent_dialog_box')) as HTMLElement;
     const info_box: HTMLElement | null = document.getElementById("info_box") as HTMLElement;
     const work_with_us: HTMLElement | null = document.getElementById("work_with_us") as HTMLElement;
     const propose_project: HTMLElement | null = document.getElementById("propose_project") as HTMLElement;
@@ -200,6 +232,48 @@ function showFormSentDialogBox() {
     propose_tab!.className = propose_tab!.className.replace("_active", "");
 }
 
+/// Tab selection function
+///
+/// Only used in contact_us.vue
+function tab_selection(clicked: any) {
+    const info_box: HTMLElement | null = document.getElementById("info_box");
+    const work_with_us: HTMLElement | null = document.getElementById("work_with_us");
+    const propose_project: HTMLElement | null = document.getElementById("propose_project");
+    const dialog_box: HTMLElement | null = (<HTMLInputElement>document.getElementById('form_sent_dialog_box'));
+
+    const info_tab: HTMLElement | null = document.getElementById("info");
+    const work_tab: HTMLElement | null = document.getElementById("work");
+    const propose_tab: HTMLElement | null = document.getElementById("propose");
+
+    if (clicked.currentTarget.id == "info") {
+        info_box!.style.display = "block";
+        work_with_us!.style.display = "none";
+        propose_project!.style.display = "none";
+        dialog_box!.style.display = "none";
+    } else if (clicked.currentTarget.id == "work") {
+        info_box!.style.display = "none";
+        work_with_us!.style.display = "block";
+        propose_project!.style.display = "none";
+        dialog_box!.style.display = "none";
+    } else if (clicked.currentTarget.id == "propose") {
+        info_box!.style.display = "none";
+        work_with_us!.style.display = "none";
+        propose_project!.style.display = "block";
+        dialog_box!.style.display = "none";
+    }
+
+    info_tab!.className = info_tab!.className.replace("_active", "");
+    work_tab!.className = work_tab!.className.replace("_active", "");
+    propose_tab!.className = propose_tab!.className.replace("_active", "");
+
+    clicked.currentTarget.className += "_active";
+}
+
+function updateEmail() {
+    const email_address: HTMLElement | null = document.getElementById("email_address");
+    console.log("visibility change");
+}
+
 // export functions
 export {
     testSurnameBox,
@@ -208,5 +282,8 @@ export {
     testPhoneBox,
     testProjNameBox,
     checkAndSendForm,
-    clearForm
+    clearForm,
+    tab_selection,
+    email_address,
+    updateEmail,
 };

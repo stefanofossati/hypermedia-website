@@ -102,7 +102,6 @@ import {
   testProjNameBox
 } from "~/composables/form_script.ts";
 
-
 </script>
 
 <style scoped>

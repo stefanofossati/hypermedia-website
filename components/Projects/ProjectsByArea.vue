@@ -5,17 +5,15 @@ const props: Readonly<{
   projects_area?: Project[],
   area?: AreaProjectPreview,
 }> = defineProps(['projects_area', 'area']);
-
-// const details = document.getElementById(props.area!.area_title) as HTMLDetailsElement;
 </script>
 
 <template>
   <div>
-    <details class="text-white text-6xl w-full" open>
+    <details class="text-white text-2xl sm:text-4xl w-full" open>
       <summary class="border-b-2 border-slate-500">
         <NuxtLink :to="'areas/' + props.area?.area" class="inline-flex">
           <div
-              class="text-3xl sm:text-4xl text-black dark:text-white font-bold h-fit py-4 text-center mt-2"
+              class="text-2xl sm:text-4xl text-black dark:text-white font-bold h-fit py-4 text-center mt-2"
               :class="'hover:text-'+props.area?.area_color+'-500 dark:hover:text-'+props.area?.area_color+'-500'">
             {{ props.area.area_title }}
           </div>

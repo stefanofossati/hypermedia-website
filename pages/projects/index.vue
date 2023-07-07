@@ -22,8 +22,8 @@
       </div>
     </div>
 
-    <div id="most_relevant" class="px-10 md:translate-x-1/4">
-      <div class="relative md:w-1/2 flex flex-col place-content-center px-2 py-4 gap-4">
+    <div id="most_relevant" class="px-10 w-full flex flex-row justify-center">
+      <div class="relative w-full md:w-1/2 flex flex-col place-content-center px-2 py-4 gap-4 ">
         <div class="relative rounded-lg mx:auto" v-for="most_pj in most_relevant(projects)">
             <ProjectPreview :project_title="most_pj.project_title"
                             :short_description="most_pj.short_description"

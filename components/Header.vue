@@ -22,7 +22,7 @@
                                             hover:text-orange-500 border-r-4 border-orange-500 border-primary"
                             id="areas"
                             v-on:click="manageMenu">
-                    <span>All Areas</span>
+                    <span>Areas</span>
                   </NuxtLink>
                 </li>
                 <li class="text-white-500 font-bold py-1" title="Projects section">
@@ -91,7 +91,7 @@
           <nav class="text-lg w-full font-bold text-slate-700 dark:text-slate-200">
             <ul class="flex justify-end mr-3">
               <li class="mx-4 lg:mx-6" title="All Areas section">
-                <NuxtLink to="/areas" class="lg:text-2xl hover:text-orange-500 cursor-pointer" id="areas">All
+                <NuxtLink to="/areas" class="lg:text-2xl hover:text-orange-500 cursor-pointer" id="areas">
                   Areas
                 </NuxtLink>
               </li>

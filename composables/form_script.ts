@@ -1,12 +1,5 @@
 import {useFetch} from "nuxt/app";
 
-let email_address: string = "pippo@sempre.it";
-let showDialog: boolean = false;
-
-export function getEmailAddress() {
-    return email_address;
-}
-
 // unified test for First Name and Surname fields
 function testSurnameOrFirstNameBox(s_or_f: string, form_id_str: string) {
     const name_elem = (<HTMLInputElement>document.getElementById(s_or_f + 'name_' + form_id_str));
@@ -138,7 +131,7 @@ async function checkAndSendForm(form_id_str: string) {
         if ((form_id_str == "pp" && testProjNameBox(form_id_str)) || form_id_str == "wwu") {
             // @ts-ignore
             const {data: response, error}: { data: boolean } = await useFetch(
-                "/api/about_us/form",
+                "/api/contact_us/form",
                 {
                     method: "POST",
                     headers: {
@@ -152,10 +145,8 @@ async function checkAndSendForm(form_id_str: string) {
             console.log(response);
 
             if (response) {
-                email_address = (<HTMLInputElement>document.getElementById('email_' + form_id_str)).value;
                 clearForm(form_id_str);
                 showFormSentDialogBox();
-                showDialog = true;
                 return true;
             }
             console.log(error);
@@ -212,6 +203,9 @@ function clearForm(form_id_str: string) {
     }
 }
 
+/// Function hides all other tabs and shows only dialog box with "Form sent" message
+///
+/// Function is called when form is sent successfully
 function showFormSentDialogBox() {
     const dialog_box: HTMLElement | null = (<HTMLInputElement>document.getElementById('form_sent_dialog_box')) as HTMLElement;
     const info_box: HTMLElement | null = document.getElementById("info_box") as HTMLElement;
@@ -269,11 +263,6 @@ function tab_selection(clicked: any) {
     clicked.currentTarget.className += "_active";
 }
 
-function updateEmail() {
-    const email_address: HTMLElement | null = document.getElementById("email_address");
-    console.log("visibility change");
-}
-
 // export functions
 export {
     testSurnameBox,
@@ -284,6 +273,4 @@ export {
     checkAndSendForm,
     clearForm,
     tab_selection,
-    email_address,
-    updateEmail,
 };

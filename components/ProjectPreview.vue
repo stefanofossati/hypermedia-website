@@ -25,7 +25,7 @@ const props: Readonly<{
           </NuxtLink>
         </div>
         <!-- Blur part with title star and description -->
-        <div class="absolute bottom-0 z-20 px-4 py-3 w-full h-12 md:h-28 overflow-hidden backdrop-blur-xl rounded-b-lg">
+        <div class="absolute bottom-0 z-20 px-4 py-3 w-full h-12 md:h-28 overflow-hidden backdrop-blur-2xl rounded-b-lg">
           <div class="flex flex-row justify-between items-center">
             <h1 class="text-black dark:text-white font-semibold text-xl md:text-2xl lg:text-3xl mb-0.5 md:mb-1">
               {{ props.project_title }} </h1>

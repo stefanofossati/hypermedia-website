@@ -24,7 +24,8 @@ const props: Readonly<{
                         :link="'/projects/' + pj.project_title"
                         :tags="pj.areas"
                         :see_tags="false"
-                        :main_image="pj.main_image"/>
+                        :main_image="pj.main_image"
+                        :most_rel="pj.most_relevant==1"/>
       </div>
     </details>
   </div>

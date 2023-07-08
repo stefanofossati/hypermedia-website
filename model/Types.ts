@@ -49,6 +49,7 @@ export interface ProjectAreaPreview{
     project_title: string;
     main_image: string;
     short_description: string;
+    most_relevant: number;
 }
 
 export interface ProjectSupervisor{

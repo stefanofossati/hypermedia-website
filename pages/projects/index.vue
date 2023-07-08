@@ -4,6 +4,7 @@
       <Title>Projects</Title>
       <Meta name="description" content="projects page"/>
     </Head>
+    <!-- Navigation in the Projects -->
     <div class="flex flex-row w-full items-center justify-between border-slate-500 border-b-2 mt-3 sm:mt-0">
       <div id="id_0_div" class="flex-1">
         <h1 id="id_0" v-on:click="selection($event)" class="text-xl sm:text-2xl md:text-4xl font-bold sm:m-10 m-3
@@ -22,6 +23,7 @@
       </div>
     </div>
 
+    <!--Most Relevant-->
     <div id="most_relevant" class="px-10 w-full flex flex-row justify-center">
       <div class="relative w-full md:w-1/2 flex flex-col place-content-center px-2 py-4 gap-4 ">
         <div class="relative rounded-lg mx:auto" v-for="most_pj in most_relevant(projects)">
@@ -30,7 +32,8 @@
                           :link="'/projects/' + most_pj.project_title"
                           :tags="most_pj.areas"
                           :main_image="most_pj.main_image"
-                          :see_tags="true"/>
+                          :see_tags="true"
+                          :most_rel="false"/>
         </div>
       </div>
     </div>
@@ -43,7 +46,8 @@
                         :link="'/projects/' + pj.project_title"
                         :tags="pj.areas"
                         :main_image="pj.main_image"
-                        :see_tags="true"/>
+                        :see_tags="true"
+                        :most_rel="pj.most_relevant==1"/>
       </div>
     </div>
 

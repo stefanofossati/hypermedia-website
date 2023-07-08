@@ -67,11 +67,13 @@
                             :see_tags="false"
                             :short_description="pj.short_description"
                             :link="'/projects/' + pj.project_title"
-                            :main_image="pj.main_image"/>
+                            :main_image="pj.main_image"
+                            :most_rel="pj.most_relevant==1"/>
           </div>
 
           <!-- Buttons -->
-          <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          <button type="button"
+                  class="absolute top-0 left-0 z-10 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
                   v-on:click="carouselPrev(areas.projects.length, areas)" >
             <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10
                           bg-gray-500 dark:bg-gray-900 group-hover:bg-gray-700 dark:group-hover:bg-gray-500
@@ -83,7 +85,7 @@
             </span>
           </button>
           <button type="button"
-                  class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                  class="absolute top-0 right-0 z-10 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
                   v-on:click="carouselNext(areas.projects.length, areas)">
             <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10
                           bg-gray-500 dark:bg-gray-900 group-hover:bg-gray-700 dark:group-hover:bg-gray-500

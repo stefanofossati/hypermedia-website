@@ -19,7 +19,7 @@
       <!-- first name -->
       <div class="contact_us_form_row">
         <div class="contact_us_form_label">
-          <label for="fname">Name</label>
+          <label for="fname_pp">Name</label>
         </div>
         <div class="contact_us_form_input_col">
           <input class="contact_us_form_input" type="text" id="fname_pp" name="firstname"
@@ -33,7 +33,7 @@
       <!-- email -->
       <div class="contact_us_form_row">
         <div class="contact_us_form_label">
-          <label for="email">Email</label>
+          <label for="email_pp">Email</label>
         </div>
         <div class="contact_us_form_input_col">
           <input class="contact_us_form_input" type="email" id="email_pp" name="email" placeholder="Your email.."
@@ -46,7 +46,7 @@
       <!-- phone number -->
       <div class="contact_us_form_row">
         <div class="contact_us_form_label">
-          <label for="phone">Phone Number</label>
+          <label for="phone_pp">Phone Number</label>
         </div>
         <div class="contact_us_form_input_col">
           <input class="contact_us_form_input" type="tel" id="phone_pp" name="phone"
@@ -59,7 +59,7 @@
       <!-- project name -->
       <div class="contact_us_form_row">
         <div class="contact_us_form_label">
-          <label for="proj_name">Project Name</label>
+          <label for="proj_name_pp">Project Name</label>
         </div>
         <div class="contact_us_form_input_col">
           <input class="contact_us_form_input" type="text" id="proj_name_pp" name="project_name"
@@ -72,7 +72,7 @@
       <!-- project description -->
       <div class="contact_us_form_row">
         <div class="contact_us_form_label">
-          <label for="proj_desc">Project Description</label>
+          <label for="proj_desc_pp">Project Description</label>
         </div>
         <div class="contact_us_form_input_col">
           <textarea class="contact_us_form_input" type="text" id="proj_desc_pp" name="project_desc"

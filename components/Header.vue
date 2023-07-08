@@ -90,26 +90,26 @@
         <div class="w-full hidden lg:block">
           <nav class="text-lg w-full font-bold text-slate-700 dark:text-slate-200">
             <ul class="flex justify-end mr-3">
-              <li class="mx-4 lg:mx-8" title="All Areas section">
+              <li class="mx-4 lg:mx-6" title="All Areas section">
                 <NuxtLink to="/areas" class="lg:text-2xl hover:text-orange-500 cursor-pointer" id="areas">All
                   Areas
                 </NuxtLink>
               </li>
-              <li class="mx-4 lg:mx-8" title="Projects section">
+              <li class="mx-4 lg:mx-6" title="Projects section">
                 <NuxtLink to="/projects" class="lg:text-2xl hover:text-orange-500 cursor-pointer" id="projects">
                   Projects
                 </NuxtLink>
               </li>
-              <li class="mx-4 lg:mx-8" title="Team section">
+              <li class="mx-4 lg:mx-6" title="Team section">
                 <NuxtLink to="/team" class="lg:text-2xl hover:text-orange-500 cursor-pointer" id="team">Team
                 </NuxtLink>
               </li>
-              <li class="mx-4 lg:mx-8" title="About Us section">
+              <li class="mx-4 lg:mx-6" title="About Us section">
                 <NuxtLink to="/about_us" class="lg:text-2xl hover:text-orange-500 cursor-pointer" id="contact">About
                   Us
                 </NuxtLink>
               </li>
-              <li class="mx-4 lg:mx-8" title="Contact Us section">
+              <li class="mx-4 lg:mx-6" title="Contact Us section">
                 <NuxtLink to="/contact_us" class="lg:text-2xl hover:text-orange-500 cursor-pointer" id="contact">
                   Contact Us
                 </NuxtLink>
@@ -147,14 +147,17 @@
     </header>
   </div>
 </template>
+
 <style>
 * {
   font-family: 'Roboto', sans-serif;
 }
+</style>
 
-/*.router-link-exact-active {*/
-/*    color: red;*/
-/*}*/
+<style scoped>
+ .router-link-active {
+   @apply text-orange-500 underline;
+ }
 </style>
 
 <script setup lang="js">

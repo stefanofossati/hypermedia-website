@@ -5,7 +5,7 @@
       <Title>Contact Us</Title>
     </Head>
 
-    <div class="flex flex-col items-center lg:my-14"> <!-- Page wrapper -->
+    <div class="flex flex-col items-center lg:mb-14"> <!-- Page wrapper -->
       <div>
         <h1 class="page_title">Contact Us</h1>
       </div>

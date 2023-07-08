@@ -2,15 +2,15 @@
 
 </script>
 
+<!-- Homepage -->
 <template>
-  <div class="grow"> <!-- homepage -->
+  <div class="grow">
     <Head>
       <Title>StartMeUp</Title>
     </Head>
     <div class="bg-scroll bg-cover bg-center aspect-auto w-screen"
          style="background-image:url('https://ojnuafuxohzfjdijkfoi.supabase.co/storage/v1/object/public/Images/background.jpg');">
-      <div
-          class="backdrop-blur-sm flex flex-col w-full text-sm sm:text-base md:text-lg lg:text-xl dark:text-white">
+      <div class="backdrop-blur-sm flex flex-col w-full text-sm sm:text-base md:text-lg lg:text-xl dark:text-white antialiased">
         <div class="homepage-left mt-10">
           <div class="homepage-line-left">
             <details class="homepage-details homepage-text-left">
@@ -67,8 +67,7 @@
                 We focus on building enduring relationships with our portfolio companies, providing ongoing support throughout their growth journey.
                 We invest in companies with high growth potential, strong market traction, and a compelling vision for the future</span>
             </details>
-            <div
-                class="homepage-not-details homepage-text-left">
+            <div class="homepage-not-details homepage-text-left">
               <span> Our investment philosophy is rooted in a long-term approach.
                 We focus on building enduring relationships with our portfolio companies, providing ongoing support throughout their growth journey.
                 We invest in companies with high growth potential, strong market traction, and a compelling vision for the future</span>
@@ -91,8 +90,7 @@
                 Our portfolio spans across various sectors, including technology, healthcare, consumer goods, and clean energy.
                 We take pride in our ability to identify promising opportunities and help our portfolio companies navigate the challenges of scaling and market expansion</span>
             </details>
-            <div
-                class="homepage-not-details homepage-text-left">
+            <div class="homepage-not-details homepage-text-left">
               <span> StartMeUp has a proven track record of successful investments, helping numerous startups reach their full potential.
                 Our portfolio spans across various sectors, including technology, healthcare, consumer goods, and clean energy.
                 We take pride in our ability to identify promising opportunities and help our portfolio companies navigate the challenges of scaling and market expansion</span>
@@ -107,8 +105,7 @@
                 Together, we can transform your vision into reality and create a brighter future.
                 Learn more about our investment criteria, portfolio companies, and how to get in touch on our website</span>
             </details>
-            <div
-                class="homepage-not-details homepage-text-right">
+            <div class="homepage-not-details homepage-text-right">
               <span> If you are an ambitious entrepreneur with a disruptive idea, we invite you to explore the possibility of partnering with us.
                 Together, we can transform your vision into reality and create a brighter future.
                 Learn more about our investment criteria, portfolio companies, and how to get in touch on our website</span>
@@ -121,5 +118,4 @@
 </template>
 
 <style scoped>
-
 </style>

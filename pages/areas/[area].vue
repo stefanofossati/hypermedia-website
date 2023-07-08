@@ -25,6 +25,9 @@
                alt="third Image relative to the area selected">
         </div>
       </div>
+      <div class="absolute top-5 left-5 z-30">
+        <BackButton route="/areas" label="Back to All Areas" class=""/>
+      </div>
     </div>
 
     <!--Area name and description-->
@@ -32,10 +35,23 @@
       <div class="text-3xl lg:text-5xl text-left font-bold text-black dark:text-white my-8 ml-6">
         {{ areas.area_title.toUpperCase() }}
       </div>
-      <p class="text-xl lg:text-2xl text-left text-black dark:text-white mx-6 py-2"
-         v-for="ad in areas.area_description">
-        {{ ad }}
-      </p>
+      <div v-for="(desc, index) in areas.area_description">
+        <p v-if="index < 2" class="text-xl lg:text-2xl text-left text-black dark:text-white mx-6 py-2">
+          {{ desc }}
+        </p>
+        <p v-else class="text-xl lg:text-2xl text-left text-black dark:text-white mx-6 py-2 lg:flex hidden" :id="'more_text_'+ index">
+          {{ desc }}
+        </p>
+      </div>
+      <div class="flex flex-row visible lg:hidden justify-center align-center hover:text-black dark:hover:text-white"
+            v-on:click="show_more(areas.area_description)">
+        <h3 id="more_text_div" class="text-gray-700 dark:text-gray-400 text-2xl align-center cursor-pointer">Show More</h3>
+        <svg id="more_text_button" viewBox="0 -960 960 960"
+             class="dark:text-gray-400 text-gray-700 fill-current h-10 w-10 cursor-pointer">
+          <path
+              d="M480-357q-6 0-11-2t-10-7L261-564q-8-8-7.5-21.5T262-607q10-10 21.5-8.5T304-606l176 176 176-176q8-8 21.5-9t21.5 9q10 8 8.5 21t-9.5 22L501-366q-5 5-10 7t-11 2Z"/>
+        </svg>
+      </div>
     </div>
 
     <!--Carousel to browse different project inside the area-->
@@ -149,6 +165,30 @@ function carouselPrev(n: number, a: Area) {
 function setAllHidden(n: number, a: Area) {
   for (let i = 0; i < n; i++) {
     document.getElementById(a.projects[i].project_title)?.classList.add("hidden");
+  }
+}
+
+let i: number = 0;
+function show_more(descriptions: string[]) {
+  const hide_desc: HTMLElement[] = [];
+  for (i = 3; i < descriptions.length; i++) {
+    hide_desc[i] = document.getElementById("more_text_" + i)!;
+  }
+  const more_text_button: HTMLElement | null = document.getElementById("more_text_button")!;
+  const more_text_div: HTMLElement | null = document.getElementById("more_text_div")!;
+
+  if (hide_desc[3].classList.contains("hidden")) {
+    hide_desc.forEach((element) => {
+      element.classList.replace("hidden", "visible");
+    });
+    more_text_button.classList.add("rotate-180");
+    more_text_div.innerText = "Show less";
+  } else {
+    hide_desc.forEach((element) => {
+      element.classList.replace("visible", "hidden");
+    });
+    more_text_button.classList.remove("rotate-180");
+    more_text_div.innerText = "Show more";
   }
 }
 

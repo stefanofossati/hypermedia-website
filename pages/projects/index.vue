@@ -4,7 +4,7 @@
       <Title>Projects</Title>
       <Meta name="description" content="projects page"/>
     </Head>
-    <div class="flex flex-row w-full items-center justify-between border-slate-500 border-b-2">
+    <div class="flex flex-row w-full items-center justify-between border-slate-500 border-b-2 mt-3 sm:mt-0">
       <div id="id_0_div" class="flex-1">
         <h1 id="id_0" v-on:click="selection($event)" class="text-xl sm:text-2xl md:text-4xl font-bold sm:m-10 m-3
                    text-gray-800 dark:text-gray-200 hover:text-gray-500 dark:hover:text-gray-500

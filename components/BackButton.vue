@@ -8,7 +8,7 @@ const props: Readonly<{
 <template>
   <div class="p-3">
     <NuxtLink :to="route"
-              class="flex flex-row items-center justify-center rounded-xl bg-white dark:bg-gray-600 p-1.5 w-max text-xl sm:text-2xl md:text-3xl dark:text-white">
+              class="flex flex-row items-center justify-center rounded-xl bg-white dark:bg-gray-900 p-1.5 w-max text-xl sm:text-2xl md:text-3xl dark:text-white">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-7 sm:w-7 md:h-9 md:w-9 dark:text-white"
            viewBox="0 0 20 20"
            fill="currentColor">

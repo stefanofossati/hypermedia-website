@@ -4,7 +4,7 @@
     <Head>
       <Title>About Us</Title>
     </Head>
-    <div class="bg-gray-200 dark:bg-gray-800"> <!-- Page wrapper -->
+    <div> <!-- Page wrapper -->
       <div class="flex justify-center">
         <h1 class="page_title">
           About Us

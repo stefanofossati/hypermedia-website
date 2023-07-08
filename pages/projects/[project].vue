@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="grow">
     <Head>
       <Title>{{ pj.project_title }}</Title>
       <Meta name="description" :content="pj.short_description"/>

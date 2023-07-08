@@ -1,6 +1,6 @@
 <!-- All Areas -->
 <template>
-  <div>
+  <div class="grow">
     <Head>
       <Title>{{ areas.area_title }}</Title>
     </Head>

@@ -9,7 +9,7 @@ const {data: team}: { data: Person[] } = await useFetch(
 </script>
 
 <template>
-  <div> <!-- page with team's profile pictures and names -->
+  <div class="grow"> <!-- page with team's profile pictures and names -->
     <Head>
       <Title>Team</Title>
     </Head>

@@ -1,6 +1,6 @@
 <!-- About Us page -->
 <template>
-  <div>
+  <div class="grow">
     <Head>
       <Title>About Us</Title>
     </Head>

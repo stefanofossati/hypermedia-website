@@ -1,6 +1,6 @@
 <!-- Contact Us page -->
 <template>
-  <div>
+  <div class="grow">
     <Head>
       <Title>Contact Us</Title>
     </Head>

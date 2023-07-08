@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="grow">
     <Head>
       <Title>Projects</Title>
       <Meta name="description" content="projects page"/>

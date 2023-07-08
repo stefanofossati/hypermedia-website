@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div> <!-- homepage -->
+  <div class="grow"> <!-- homepage -->
     <Head>
       <Title>StartMeUp</Title>
     </Head>

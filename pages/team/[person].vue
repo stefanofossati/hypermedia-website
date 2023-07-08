@@ -40,7 +40,7 @@ function openMaps(address: string) {
 </script>
 
 <template>
-  <div> <!-- page with Pippo's profile pc and general infos -->
+  <div class="grow"> <!-- page with Pippo's profile pc and general infos -->
     <Head>
       <Title>{{ person.name }} {{person.surname}}</Title>
     </Head>

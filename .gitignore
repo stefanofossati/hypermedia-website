@@ -14,3 +14,13 @@ dist
 
 # VSCode
 .vscode
+
+#JetBrians IDE
+.idea
+
+#Visual Studio
+.vs
+
+# Tailwind css
+assets/css/tailwind.css
+...

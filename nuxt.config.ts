@@ -1,7 +1,25 @@
-import type { NuxtConfig } from '@nuxt/types'
+import type {NuxtConfig} from '@nuxt/types'
 
 const config: NuxtConfig = {
-  buildModules: ['@nuxt/typescript-build']
+    app: {
+        pageTransition: {name: 'page', mode: 'out-in'},
+        buildAssetsDir: '/public/',
+        head: {
+            htmlAttrs: { dir: 'ltr', lang: 'en' },
+            link: [{ rel: 'icon', type: 'image/png', href: "/public/icon.png" }]
+        },
+    },
+    buildModules: ['@nuxt/typescript-build'],
+    build: {
+        transpile: ['vuetify'],
+    },
+    modules: [
+        '@nuxtjs/supabase',
+        '@nuxtjs/tailwindcss',
+        '@nuxtjs/color-mode',
+        '@nuxt/image',
+    ],
+    colorMode: {classSuffix: ''},
 }
 
 export default config

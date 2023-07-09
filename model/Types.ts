@@ -72,3 +72,25 @@ export interface AboutUs {
     icon: string;
     alternative_text: string;
 }
+
+export interface PPFormData {
+    name: string;
+    surname: string;
+    email: string;
+    phone: string;
+    proj_name: string;
+    proj_desc: string;
+}
+
+export interface WWUFormData {
+    name: string;
+    surname: string;
+    email: string;
+    phone: string;
+    brief_intro: string;
+}
+
+export interface FormResponse {
+    statusCode: number;
+    statusMessage: string;
+}

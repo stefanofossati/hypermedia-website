@@ -13,8 +13,8 @@
         </div>
 
         <!--hidden dropdown menu-->
-        <div class="absolute right-0 -z-10 float-right grid cols-4 hidden" id="items">
-          <div class="sm:w-60 flex flex:col justify-end items-center dark:bg-gray-900 bg-white pt-80">
+        <div class="absolute right-0 -z-10 float-right grid cols-6 hidden" id="items">
+          <div class="flex flex:col justify-end items-center dark:bg-gray-900 bg-white pt-80">
             <nav class="text-right">
               <ul class="mr-3 my-2">
                 <li class="text-white-500 font-bold py-1.5" title="All areas section">

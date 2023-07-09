@@ -7,7 +7,7 @@
         <div class="sm:flex sm:justify-between sm:items-center">
           <div class="mb-6 md:mb-0 flex flex-row justify-center">
             <NuxtLink to="/" class="">
-              <img src="../assets/LogoDraft.png" class="h-28 sm:ml-8 cursor-pointer" alt="HyperTugi Logo"/>
+              <img src="../assets/LogoDraft.png" class="h-28 sm:ml-8 cursor-pointer" alt="StartMeUp Logo"/>
             </NuxtLink>
           </div>
           <div class="flex flex-row justify-evenly gap-8 sm:grid sm:grid-cols-3 sm:mx-8 sm:mt-12 mx-4">

@@ -15,7 +15,7 @@ const props: Readonly<{
     <NuxtLink :to="'/projects/' + props.project_title">
       <div
           class="h-52 md:h-96 relative bg-center bg-cover rounded-lg hover:border-8 hover:border-slate-500 transition-all duration-200 ease-linear"
-          :style="'background-image: url(' + props.main_image + ')'" :id="props.project_title">
+          :style="'background-image: url(' + props.main_image + ')'" :id="props.project_title" :aria-label="`${props.project_title} image`">
         <div v-if="props.see_tags" class="absolute top-0 right-0 flex flex-col">
           <NuxtLink :to="'/areas/' + tag.area" v-for="tag in props.tags">
             <div class="dark:text-black text-white dark:hover:text-white px-2 py-1 rounded-lg"

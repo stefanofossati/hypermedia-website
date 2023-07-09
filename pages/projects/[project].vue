@@ -73,8 +73,8 @@
         </div>
 
         <div class="col-span-4 row-span-4 self-center">
-          <img id="big_image" :src="pj.gallery_images[3].url" :alt="pj.gallery_images[3].description"
-               class=" md:h-96 h-56 w-full object-cover px-2 ">
+          <lazy-nuxt-img id="big_image" :src="pj.gallery_images[3].url" :alt="pj.gallery_images[3].description"
+                         class=" md:h-96 h-56 w-full object-cover px-2"/>
         </div>
         <div class="col-span-1 row-span-1"></div>
         <div v-on:click="go_right(pj.gallery_images.length, pj.gallery_images)"
@@ -85,16 +85,16 @@
           </svg>
         </div>
         <div class="xl:col-span-2 xl:row-span-2 hidden xl:flex">
-          <img id="image01" :src="pj.gallery_images[0].url" :alt="pj.gallery_images[0].description"
-               class=" h-48 w-60 object-cover">
+          <lazy-nuxt-img id="image01" :src="pj.gallery_images[0].url" :alt="pj.gallery_images[0].description"
+                         class=" h-48 w-60 object-cover"/>
         </div>
         <div class="lg:col-span-2 lg:row-span-2 hidden lg:flex">
-          <img id="image02" :src="pj.gallery_images[1].url" :alt="pj.gallery_images[1].description"
-               class=" h-48 w-60 object-cover ">
+          <lazy-nuxt-img id="image02" :src="pj.gallery_images[1].url" :alt="pj.gallery_images[1].description"
+                         class=" h-48 w-60 object-cover"/>
         </div>
         <div class="md:col-span-2 md:row-span-2 hidden md:flex">
-          <img id="image03" :src="pj.gallery_images[2].url" :alt="pj.gallery_images[2].description"
-               class=" h-48 w-60 object-cover ">
+          <lazy-nuxt-img id="image03" :src="pj.gallery_images[2].url" :alt="pj.gallery_images[2].description"
+                         class=" h-48 w-60 object-cover"/>
         </div>
         <div v-on:click="go_left(pj.gallery_images.length, pj.gallery_images)"
              class="col-span-1 row-span-2 cursor-pointer">

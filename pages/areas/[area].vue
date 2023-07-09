@@ -10,19 +10,19 @@
       <div class="relative h-64 overflow-hidden md:h-96">
         <!-- Items -->
         <div class="transition-all ease-in-out" id="0">
-          <img :src="areas.area_image[0]"
+          <lazy-nuxt-img :src="areas.area_image[0]"
                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-               alt=" first Image relative to the area selected">
+               alt=" first Image relative to the area selected"/>
         </div>
         <div class="hidden transition-all ease-in-out" id="1">
-          <img :src="areas.area_image[1]"
+          <lazy-nuxt-img :src="areas.area_image[1]"
                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-               alt="second Image relative to the area selected">
+               alt="second Image relative to the area selected"/>
         </div>
         <div class="hidden transition-all ease-in-out" id="2">
-          <img :src="areas.area_image[2]"
+          <lazy-nuxt-img :src="areas.area_image[2]"
                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-               alt="third Image relative to the area selected">
+               alt="third Image relative to the area selected"/>
         </div>
       </div>
       <div class="absolute top-5 left-5 z-30">

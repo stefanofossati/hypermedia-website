@@ -6,10 +6,10 @@
       <div class="fixed flex z-50 h-24 lg:h-28 w-full top-0 dark:bg-gray-900 bg-white items-center justify-between"
            id="navbar">
         <NuxtLink to="/" class="w-32 lg:w-48 flex-none cursor-pointer ml-12">
-          <img alt="logo" src="../assets/LogoDraft.png">
+          <img alt="StartMeUp logo" src="../assets/LogoDraft.png"/>
         </NuxtLink>
         <div class="relative px-4 cursor-pointer lg:hidden items-center mr-6" v-on:click="manageMenu">
-          <img src="../assets/burger-menu.png" class="w-12 relative" id="burgir" alt="dropdown menu">
+          <img src="../assets/burger-menu.png" class="w-12 relative" id="burgir" alt="dropdown menu"/>
         </div>
 
         <!--hidden dropdown menu-->

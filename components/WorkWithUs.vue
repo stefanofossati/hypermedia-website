@@ -71,7 +71,7 @@
           <label for="brief_intro">Brief Introduction</label>
         </div>
         <div class="contact_us_form_input_col">
-          <textarea class="contact_us_form_input" id="brief_intro_wwu" name="brief_intro"
+          <textarea class="contact_us_form_input" type="text" id="brief_intro_wwu" name="brief_intro"
                     placeholder="Write something about yourself.. (optional)" style="height:200px"></textarea>
         </div>
       </div>

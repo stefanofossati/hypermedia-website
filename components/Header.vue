@@ -13,8 +13,8 @@
         </div>
 
         <!--hidden dropdown menu-->
-        <div class="absolute right-0 -z-10 float-right grid cols-4 hidden" id="items">
-          <div class="sm:w-60 flex flex:col justify-end items-center dark:bg-gray-900 bg-white pt-80">
+        <div class="absolute right-0 -z-10 float-right grid cols-6 hidden" id="items">
+          <div class="flex flex:col justify-end items-center dark:bg-gray-900 bg-white pt-80">
             <nav class="text-right">
               <ul class="mr-3 my-2">
                 <li class="text-white-500 font-bold py-1.5" title="All areas section">
@@ -155,16 +155,16 @@
 </style>
 
 <style scoped>
- .router-link-active {
-   @apply text-orange-500 underline;
- }
+.router-link-active {
+  @apply text-orange-500 underline;
+}
 </style>
 
-<script setup lang="js">
-import {useColorMode} from "~/.nuxt/imports";
+<script setup lang="ts">
+//get the theme if it was set before
+let theme: boolean = (useColorMode().value === 'dark');
 
-let theme = useColorMode().value === 'dark'
-
+//changes the theme
 function bright() {
   theme = (useColorMode().value === 'dark');
   if (useColorMode().value === 'dark') {
@@ -176,14 +176,13 @@ function bright() {
 
 //shows the menu
 function manageMenu() {
-  if (document.getElementById("items").classList.contains("hidden")) {
-    document.getElementById("burgir").classList.add("rotate-90");
-    document.getElementById("items").classList.remove("hidden");
+  if (document.getElementById("items")!.classList.contains("hidden")) {
+    document.getElementById("burgir")!.classList.add("rotate-90");
+    document.getElementById("items")!.classList.remove("hidden");
   } else {
-    document.getElementById("burgir").classList.remove("rotate-90");
-    document.getElementById("items").classList.add("hidden");
+    document.getElementById("burgir")!.classList.remove("rotate-90");
+    document.getElementById("items")!.classList.add("hidden");
   }
 }
-
 </script>
 

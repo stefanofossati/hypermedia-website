@@ -14,13 +14,6 @@
                       :link="'/areas/' + a.area"
                       class="snap-center"/>
       </div>
-      <!--Navigation dots-->
-      <div id="nav"
-           class="fixed sm:h-screen sm:bottom-0 sm:left-3 sm:bg-scroll sm:flex sm:flex-col sm:justify-center sm:space-y-16 ">
-        <AreaPointer v-for="d in areas"
-                     :area_title="d.area_title"
-                     v-on:click="getDocument(d.area_title)"/>
-      </div>
     </div>
   </div>
 </template>

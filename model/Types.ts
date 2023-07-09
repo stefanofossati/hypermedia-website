@@ -1,3 +1,5 @@
+// Definition of the interfaces used in the project that are reflected into the database
+
 export interface Person {
     id: number;
     name: string;
@@ -34,7 +36,9 @@ export interface Project {
     most_relevant: number;
 }
 
-export interface ImageGallery{
+// Definition of useful interfaces not related to the database
+
+export interface ImageGallery {
     description: string;
     url: string;
 }
@@ -45,14 +49,14 @@ export interface AreaProjectPreview {
     area_color: string;
 }
 
-export interface ProjectAreaPreview{
+export interface ProjectAreaPreview {
     project_title: string;
     main_image: string;
     short_description: string;
     most_relevant: number;
 }
 
-export interface ProjectSupervisor{
+export interface ProjectSupervisor {
     id: number;
     name: string;
     surname: string;

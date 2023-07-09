@@ -1,12 +1,12 @@
 <script setup lang="ts">
 const props: Readonly<{
-  route?: string,
-  label?: string
+  route?: string, // the route to go back to
+  label?: string  // the label to display
 }> = defineProps(['route', 'label']);
 </script>
 
 <template>
-  <div class="p-3">
+  <div class="p-3"> <!-- back button with a left arrow and a label on larger screen sizes -->
     <NuxtLink :to="route"
               class="flex flex-row items-center justify-center rounded-xl bg-white dark:bg-gray-900 p-1.5 w-max text-xl sm:text-2xl md:text-3xl dark:text-white">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-7 sm:w-7 md:h-9 md:w-9 dark:text-white"

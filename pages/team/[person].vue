@@ -1,7 +1,9 @@
 <script setup lang="ts">
+// get the person's name and surname from the url
 //@ts-ignore
 const nameSurname: string[] = (useRoute().params.person as string).split("_");
 
+// method to fetch person's data from the server
 //@ts-ignore
 const {data: person, error}: { data: Person } = await useFetch(
     "/api/team/" + nameSurname[0] + "_" + nameSurname[1],
@@ -10,6 +12,7 @@ const {data: person, error}: { data: Person } = await useFetch(
     }
 );
 
+// method to fetch projects associated to the person from the server
 //@ts-ignore
 const {data: projects, error: errorProj}: { data: Project[], error: any } = await useFetch(
     "/api/team/" + nameSurname[0] + "_" + nameSurname[1] + "/projects",
@@ -18,6 +21,7 @@ const {data: projects, error: errorProj}: { data: Project[], error: any } = awai
     }
 );
 
+// method to show the dialog and start the animation
 function showDialog(name: string) {
   const dialog = document.getElementById(name) as HTMLDialogElement;
   dialog.showModal();
@@ -25,18 +29,20 @@ function showDialog(name: string) {
   dialog.classList.remove("opacity-0");
 }
 
+// method to email the person
 function emailTo(email: string) {
   window.open("mailto:" + email)!.close();
 }
 
+// method to call the person
 function callTo(phone: string) {
   window.open("tel:" + phone)!.close();
 }
 
+// method to open maps and show the person's address
 function openMaps(address: string) {
   window.open("https://www.google.com/maps/search/?q=" + address);
 }
-
 </script>
 
 <template>

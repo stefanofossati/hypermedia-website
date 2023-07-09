@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// method to fetch all people data from the server
 //@ts-ignore
 const {data: team}: { data: Person[] } = await useFetch(
     '/api/team',
@@ -9,7 +10,7 @@ const {data: team}: { data: Person[] } = await useFetch(
 </script>
 
 <template>
-  <div class="grow"> <!-- page with team's profile pictures and names -->
+  <div class="grow"> <!-- page with team's profile pictures, names and role -->
     <Head>
       <Title>Team</Title>
     </Head>

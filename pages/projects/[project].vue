@@ -59,7 +59,7 @@
       </div>
     </div>
 
-    <!-- Image Gallery -->
+    <!-- Image Gallery of 4 images in the largest screen. In responsive design the number of images changes-->
     <div class="py-4">
       <div class="md:hidden text-black dark:text-white text-3xl text-center px-3 py-2">
         Project Gallery
@@ -117,7 +117,7 @@
           </div>
         </div>
       </div>
-      <!-- Description with mobile -->
+      <!-- Image Description with mobile -->
       <div id="description_mobile_image"
            class="md:hidden flex flex-row justify-center text-black dark:text-white border-t-2 border-slate-500 py-2 w-full">
         {{ pj.gallery_images[(i + 3) % (pj.gallery_images.length)].description }}
@@ -140,6 +140,7 @@ const {data: pj, error}: { data: Project } = await useFetch(
 
 let i: number = 0;
 
+// Function to hide/show the mobile project info
 function hide_function() {
   const div_project: HTMLElement | null = document.getElementById("project_infos")!;
   const button_info: HTMLElement | null = document.getElementById("button_info")!;
@@ -152,6 +153,7 @@ function hide_function() {
   }
 }
 
+// Show more/show less button function
 function show_more(descriptions: string[]) {
   const hide_desc: HTMLElement[] = [];
   for (i = 3; i < descriptions.length; i++) {
@@ -175,6 +177,7 @@ function show_more(descriptions: string[]) {
   }
 }
 
+// Function to move the images in the gallery to the left
 function go_left(length: number, images_src: ImageGallery[]) {
   const big_image: HTMLImageElement | null = document.getElementById("big_image")! as HTMLImageElement;
   const image_01: HTMLImageElement | null = document.getElementById("image01")! as HTMLImageElement;
@@ -204,6 +207,7 @@ function go_left(length: number, images_src: ImageGallery[]) {
 
 }
 
+// Function for moving the image gallery to the right
 function go_right(length: number, images_src: ImageGallery[]) {
   const big_image: HTMLImageElement | null = document.getElementById("big_image")! as HTMLImageElement;
   const image_01: HTMLImageElement | null = document.getElementById("image01")! as HTMLImageElement;

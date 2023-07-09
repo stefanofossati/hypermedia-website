@@ -7,6 +7,7 @@ const props: Readonly<{
 
 <template>
   <div>
+    <!-- This has a title and a list of Project Preview -->
     <details class="text-black dark:text-white text-2xl sm:text-4xl w-full" open>
       <summary class="border-b-2 border-slate-500">
         <NuxtLink :to="'areas/' + props.area?.area" class="ml-2 inline-flex">

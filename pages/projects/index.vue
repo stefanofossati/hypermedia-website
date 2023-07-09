@@ -38,6 +38,7 @@
       </div>
     </div>
 
+    <!--All Projects-->
     <div id="all_projects" class="px-10 py-8 hidden">
       <div class="grid xl:grid-cols-4 gap-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 place-content-center px-2 py-2">
         <ProjectPreview v-for="pj in projects"
@@ -51,6 +52,7 @@
       </div>
     </div>
 
+    <!--Projects by area-->
     <div id="by_area" class="px-10 hidden">
       <ProjectsByArea v-for="area in take_areas(projects)"
                       :area="area"
@@ -68,6 +70,7 @@ const {data: projects, error}: { data: Project[] } = await useFetch(
     }
 );
 
+// This function is used to filter the most relevant projects
 function most_relevant(projects: Project[]) {
   const most_relevant: Project[] = [];
   for (let i = 0; i < projects.length; i++) {
@@ -78,6 +81,7 @@ function most_relevant(projects: Project[]) {
   return most_relevant;
 }
 
+// This function is used to retrieve all the era form the project table
 function take_areas(projects: Project[]) {
   const areas: string[] = [];
   const areas_info: AreaProjectPreview[] = [];
@@ -92,6 +96,7 @@ function take_areas(projects: Project[]) {
   return areas_info;
 }
 
+// This function is used to divide the projects by area
 function projects_by_area(projects: Project[], area: string) {
   const projects_area: Project[] = [];
   for (let i = 0; i < projects.length; i++) {
@@ -104,7 +109,7 @@ function projects_by_area(projects: Project[], area: string) {
   return projects_area;
 }
 
-
+// This function manages the tab selection
 function selection(event: any) {
   const id_click: HTMLElement | null = document.getElementById(event.currentTarget.id)! as HTMLElement;
   const id_0: HTMLElement | null = document.getElementById("id_0")! as HTMLElement

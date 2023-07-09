@@ -12,6 +12,7 @@ const props: Readonly<{
 
 <template>
   <div>
+    <!-- Preview of a projects with personalized fields and layout-->
     <NuxtLink :to="'/projects/' + props.project_title">
       <div
           class="h-52 md:h-96 relative bg-center bg-cover rounded-lg hover:border-8 hover:border-slate-500 transition-all duration-200 ease-linear"

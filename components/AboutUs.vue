@@ -8,6 +8,15 @@ const props: Readonly<{
   icon?: string,
   alternative_text?: string,
 }> = defineProps(['title', 'subtitle', 'paragraph', 'image_url', 'color', 'icon', 'alternative_text']);
+
+const color = [
+  "bg-green-500",
+  "bg-red-500",
+  "bg-yellow-500",
+  "bg-blue-500",
+  "bg-purple-500",
+  "bg-orange-500"
+];
 </script>
 
 <template>

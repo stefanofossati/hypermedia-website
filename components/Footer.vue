@@ -6,11 +6,11 @@
       <div class="mx-auto w-full max-w-screen-xl p-2 py-6 lg:py-8">
         <div class="sm:flex sm:justify-between sm:items-center">
           <div class="mb-6 md:mb-0 flex flex-row justify-center">
-            <NuxtLink to="" class="">
-              <img src="../assets/LogoDraft.png" class="h-28 sm:ml-8" alt="HyperTugi Logo"/>
+            <NuxtLink to="/" class="">
+              <img src="../assets/LogoDraft.png" class="h-28 sm:ml-8 cursor-pointer" alt="HyperTugi Logo"/>
             </NuxtLink>
           </div>
-          <div class="flex flex-row justify-evenly gap-8 sm:grid sm:grid-cols-3 sm:mx-8 sm:mt-12 ">
+          <div class="flex flex-row justify-evenly gap-8 sm:grid sm:grid-cols-3 sm:mx-8 sm:mt-12 mx-4">
             <div>
               <h2 class="mb-6 text-sm font-bold text-gray-900 uppercase dark:text-white">Areas</h2>
               <ul class="text-gray-800 dark:text-gray-300 font-medium">
@@ -27,7 +27,7 @@
                 </li>
               </ul>
             </div>
-            <div>
+            <div class="md:ml-6">
               <h2 class="mb-6 text-sm font-bold text-gray-900 uppercase dark:text-white">Who Are We</h2>
               <ul class="text-gray-800 dark:text-gray-300 font-medium">
                 <li class="mb-4">
@@ -44,12 +44,11 @@
         <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"/>
 
         <div class="flex flex-col items-center sm:flex-row sm:items-center sm:justify-between">
-            <span class="text-sm text-gray-800 dark:text-gray-300 sm:text-center sm:ml-8 cursor-crosshair">HyperTugi Group™
-                 <NuxtLink to="https://www.sinonimi-contrari.it/includes/images/sharers/sinonimi-di-pertugio.png"
-                           class="hover:underline"></NuxtLink>
-            </span>
+          <NuxtLink to="https://www.treccani.it/vocabolario/pertugio/">
+            <span class="text-sm text-gray-800 dark:text-gray-300 sm:text-center sm:ml-8 cursor-crosshair">HyperTugi Group™</span>
+          </NuxtLink>
           <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0 sm:mr-12">
-            <NuxtLink to="https://youtu.be/4H4FVgMOC4o"
+            <NuxtLink to="https://www.youtube.com/watch?v=Euq7uTeYCP0"
                       class="text-gray-800 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white cursor-pointer">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path fill-rule="evenodd"

@@ -9,8 +9,10 @@
       <Title>StartMeUp</Title>
     </Head>
     <div class="bg-scroll bg-cover bg-center aspect-auto w-screen"
-         style="background-image:url('https://ojnuafuxohzfjdijkfoi.supabase.co/storage/v1/object/public/Images/background.jpg');">
-      <div class="backdrop-blur-sm flex flex-col w-full text-sm sm:text-base md:text-lg lg:text-xl dark:text-white antialiased">
+         style="background-image:url('https://ojnuafuxohzfjdijkfoi.supabase.co/storage/v1/object/public/Images/background.jpg');"
+         aria-label="background image of a New York busy road and skyscrapers">
+      <div
+          class="backdrop-blur-sm flex flex-col w-full text-sm sm:text-base md:text-lg lg:text-xl dark:text-white antialiased">
         <div class="homepage-left mt-10">
           <div class="homepage-line-left">
             <details class="homepage-details homepage-text-left">

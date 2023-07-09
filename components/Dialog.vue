@@ -1,12 +1,13 @@
 <script setup lang="ts">
 const props: Readonly<{
-  dialogName?: string,
-  question?: string,
-  ok?: string,
-  method?: Function,
-  args?: any[],
+  dialogName?: string,  // the name of the dialog
+  question?: string,    // the question to ask the user
+  ok?: string,          // the label of the button to confirm the action
+  method?: Function,    // the method to call when the user confirms the action
+  args?: any[],         // the arguments to pass to the method
 }> = defineProps(['dialogName', 'question', 'ok', 'method', 'args']);
 
+// close the dialog and reset the animation
 function closeDialog(dialogName: string) {
   const dialog = document.getElementById(dialogName) as HTMLDialogElement;
   dialog.close();
@@ -16,7 +17,7 @@ function closeDialog(dialogName: string) {
 </script>
 
 <template>
-  <div>
+  <div> <!-- dialog to ask the user if he/she wants to follow the external link or not -->
     <dialog :id="dialogName"
             class="text-sm sm:text-lg md:text-xl dark:bg-gray-300 rounded-xl transform translate-y-96 opacity-0 transition duration-500 ease-out">
       <form method="dialog">

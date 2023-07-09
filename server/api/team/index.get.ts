@@ -5,8 +5,10 @@ import {createError} from "nuxt/app";
 import {Person} from "~/model/Types";
 
 export default async function eventHandler(event: any): Promise<Person[]> {
+    // get the supabase client
     const clientDB: SupabaseClient<any, "public", any> = serverSupabaseClient(event);
 
+    // get all the people's data from the database
     // @ts-ignore
     const {data, error}: { data: Person[] } = await clientDB
         .from('team')
@@ -16,7 +18,7 @@ export default async function eventHandler(event: any): Promise<Person[]> {
     if (data) {
         return data;
     } else if (error) {
-        throw createError({statusCode: 500, statusMessage: "Error form get"});
+        throw createError({statusCode: 500, statusMessage: "Error from people get"});
     } else {
         throw createError({statusCode: 404, statusMessage: "Not found"});
     }

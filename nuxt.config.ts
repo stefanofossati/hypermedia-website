@@ -1,5 +1,7 @@
 import type {NuxtConfig} from '@nuxt/types'
 
+// UNIVERSAL RENDERING MODE
+
 const config: NuxtConfig = {
     app: {
         pageTransition: {name: 'page', mode: 'out-in'},

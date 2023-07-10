@@ -15,10 +15,13 @@ export default async function eventHandler(event: any) {
         .eq('project_title', project_title)
         .limit(1)
         .single();
-    if (error) {
-        throw createError({statusCode: 500, statusMessage: "Error form id-get"});
-    }
+
     if (data) {
         return data;
+    } else if (error) {
+        throw createError({statusCode: 500, statusMessage: "Error form project_title get"});
+    }else {
+        throw createError({statusCode: 404, statusMessage: "Not found"});
     }
+
 }

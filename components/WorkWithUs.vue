@@ -61,7 +61,8 @@
           <label for="cv_file_wwu">CV File</label>
         </div>
         <div class="contact_us_form_input_col">
-          <input type="file" id="cv_file_wwu" name="cv_file">
+          <input type="file" id="cv_file_wwu" name="cv_file"
+                 class="w-full file:hover:bg-orange-600 file:border-0 file:rounded-lg file:m-1 file:p-1 file:z-10 bg-gray-600 rounded-lg">
         </div>
       </div>
 

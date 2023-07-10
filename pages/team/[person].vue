@@ -58,9 +58,9 @@ function openMaps(address: string) {
     <div class="flex flex-col items-center text-center" id="page">
       <div class="w-full flex flex-row place-items-center">
         <BackButton route="/team" label="Back to Team" class=""/>
-        <span class="w-full text-3xl sm:text-4xl md:text-6xl font-bold dark:text-white mt-4 sm:mt-8 md:mt-12 ">
+        <h1 class="w-full text-3xl sm:text-4xl md:text-6xl font-bold dark:text-white mt-4 sm:mt-8 md:mt-12 ">
           {{ person.name }} {{ person.surname }}'s profile
-        </span>
+        </h1>
       </div>
       <div class="w-full mb-10 flex lg:flex-row flex-col justify-evenly items-center">
         <lazy-nuxt-img :src="person.img" :alt="`${person.name} ${person.surname}'s profile pic`"
@@ -80,9 +80,9 @@ function openMaps(address: string) {
             <span>{{ person.surname }}</span>
             <span>{{ person.role }}</span>
             <span>{{ person.age }}</span>
-            <button v-on:click="showDialog('maps')" class="underline">{{ person.address }}</button>
-            <button v-on:click="showDialog('email')" class="underline">{{ person.email }}</button>
-            <button v-on:click="showDialog('phone')" class="underline">{{ person.phone }}</button>
+            <button v-on:click="showDialog('maps')" class="underline hover:text-orange-500 hover:cursor-pointer">{{ person.address }}</button>
+            <button v-on:click="showDialog('email')" class="underline hover:text-orange-500 hover:cursor-pointer">{{ person.email }}</button>
+            <button v-on:click="showDialog('phone')" class="underline hover:text-orange-500 hover:cursor-pointer">{{ person.phone }}</button>
           </div>
         </div>
       </div>

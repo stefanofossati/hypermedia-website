@@ -19,7 +19,7 @@
     }
 
     .contact_us_info_line {
-        @apply underline hover:cursor-pointer
+        @apply underline hover:cursor-pointer hover:text-orange-500
     }
 
     .contact_us_tab_name {

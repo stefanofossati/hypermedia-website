@@ -11,10 +11,13 @@ export default async function eventHandler(event: any) {
     const {data, error}: { data: Project[] } = await clientDB
         .from('projects')
         .select("project_title, short_description, main_image, most_relevant, areas(area, area_title, area_color)");
-    if (error) {
-        throw createError({statusCode: 500, statusMessage: "Error form get"});
-    }
+
     if (data) {
         return data;
+    } else if (error) {
+        throw createError({statusCode: 500, statusMessage: "Error form all projects get"});
+    } else {
+        throw createError({statusCode: 404, statusMessage: "Not found"});
     }
+
 }

@@ -12,10 +12,13 @@ export default async function eventHandler(event: any) {
         .from('about_us')
         .select("id, title, subtitle, paragraph, image_url, color, icon, alternative_text")
         .order('id', {ascending: true});
-    if (error) {
-        throw createError({statusCode: 500, statusMessage: "Error form get"});
-    }
+
     if (data) {
         return data;
+    } else if (error) {
+        throw createError({statusCode: 500, statusMessage: "Error form about_us get"});
+    }else {
+        throw createError({statusCode: 404, statusMessage: "Not found"});
     }
+
 }

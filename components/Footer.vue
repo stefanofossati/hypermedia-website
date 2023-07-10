@@ -45,7 +45,7 @@
 
         <div class="flex flex-col items-center sm:flex-row sm:items-center sm:justify-between">
           <NuxtLink to="https://www.treccani.it/vocabolario/pertugio/">
-            <span class="text-sm text-gray-800 dark:text-gray-300 sm:text-center sm:ml-8 cursor-crosshair">HyperTugi Group™</span>
+            <span class="text-sm text-gray-800 dark:text-gray-300 sm:text-center sm:ml-8 cursor-crosshair">HyperTugo Group™</span>
           </NuxtLink>
           <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0 sm:mr-12">
             <NuxtLink to="https://www.youtube.com/watch?v=Euq7uTeYCP0"

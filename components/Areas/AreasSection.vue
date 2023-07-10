@@ -28,7 +28,7 @@ const colors = [
   <div>
     <section :id="props.id" class="w-screen sm:h-screen relative">
       <NuxtLink :to="props.link">
-        <lazy-nuxt-img :src="props.area_image!" class="object-cover w-screen sm:h-screen" :alt="`image of the area ${props.area_title}`"/>
+        <lazy-nuxt-img :src="props.area_image!" class="object-cover w-full sm:h-screen" :alt="`image of the area ${props.area_title}`"/>
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
           <h1 class="text-xl sm:text-3xl md:text-5xl font-bold font-serif italic antialiased cursor-pointer"
               :class="'text-'+ props.area_color +'-500 hover:text-'+ props.area_color +'-800'">

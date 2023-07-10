@@ -11,6 +11,7 @@ const props: Readonly<{
 
 <template>
   <div>
+    <!--Row of a project info with the icon, title name, description-->
     <div class="flex py-2 items-center w-full justify-center">
       <div class="flex lg:w-1/4 lg:justify-end items-center">
         <div class="h-16 w-16 dark:border-white border-black rounded-full border-2">

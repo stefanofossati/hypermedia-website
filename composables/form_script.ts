@@ -1,4 +1,5 @@
 import {useFetch} from "nuxt/app";
+import {PPFormData, WWUFormData, FormResponse} from "~/model/Types";
 
 // unified test for First Name and Surname fields
 function testSurnameOrFirstNameBox(s_or_f: string, form_id_str: string) {
@@ -130,21 +131,34 @@ async function checkAndSendForm(form_id_str: string) {
     if (testSurnameBox(form_id_str) && testNameBox(form_id_str) && testEmailBox(form_id_str) && testPhoneBox(form_id_str)) {
         if ((form_id_str == "pp" && testProjNameBox(form_id_str)) || form_id_str == "wwu") {
             // @ts-ignore
-            const {data: response, error}: { data: boolean } = await useFetch(
-                "/api/contact_us/form",
+            let post_body: PPFormData | WWUFormData = {
+                name: (<HTMLInputElement>document.getElementById('fname_' + form_id_str)).value,
+                surname: (<HTMLInputElement>document.getElementById('sname_' + form_id_str)).value,
+                email: (<HTMLInputElement>document.getElementById('email_' + form_id_str)).value,
+                phone: (<HTMLInputElement>document.getElementById('phone_' + form_id_str)).value,
+            };
+            if (form_id_str == "pp") {
+                (post_body as PPFormData).proj_name = (<HTMLInputElement>document.getElementById('proj_name_' + form_id_str)).value;
+                (post_body as PPFormData).proj_desc = (<HTMLInputElement>document.getElementById('proj_desc_' + form_id_str)).value;
+            } else {
+                (post_body as WWUFormData).brief_intro = (<HTMLInputElement>document.getElementById('brief_intro_' + form_id_str)).value;
+            }
+
+            // @ts-ignore
+            const {data: response, error}: {data: FormResponse} = await useFetch(
+                "/api/contact_us/" + form_id_str + "_form",
                 {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
                     },
-                    body: JSON.stringify({
-                        name: "form" + form_id_str
-                    }),
+                    body: JSON.stringify(post_body),
                 }
             );
             console.log(response);
 
-            if (response) {
+            // @ts-ignore
+            if (response.value.statusCode == 200) {
                 clearForm(form_id_str);
                 showFormSentDialogBox();
                 return true;
@@ -226,6 +240,13 @@ function showFormSentDialogBox() {
     propose_tab!.className = propose_tab!.className.replace("_active", "");
 }
 
+/// @param body_string - stringified body of the request
+/// @returns true if all fields are present, false otherwise
+/// Function checks if all the shared form fields are present
+function backendFormPartialCheck(body_string: string) {
+    return !(!body_string.includes('name') || !body_string.includes('surname') || !body_string.includes('email') || !body_string.includes('phone'));
+}
+
 /// Tab selection function
 ///
 /// Only used in contact_us.vue
@@ -273,4 +294,5 @@ export {
     checkAndSendForm,
     clearForm,
     tab_selection,
+    backendFormPartialCheck
 };
